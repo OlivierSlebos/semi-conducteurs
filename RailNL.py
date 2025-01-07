@@ -13,7 +13,7 @@ class Kaart():
     def load_stations(self, filename: str) -> None:
 
         id = 1
-
+        print("stap_1")
         #open document
         with open(filename) as f:
             line = f.readline()
@@ -25,3 +25,12 @@ class Kaart():
                 self.stations[station_data[0]] = nieuw_station
                 id += 1
                 line = f.readline()
+    
+    def print_stations(self) -> None:
+        print(self.stations)
+
+if __name__ == "__main__":
+    spel = Kaart
+    print("je bent begonnen")
+    spel.load_stations
+    spel.print_stations
