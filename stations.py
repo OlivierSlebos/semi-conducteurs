@@ -8,9 +8,9 @@ class Station:
         self.coordinates_x: str = station_coordinate_x
         self.coordinates_y: str = station_coordinate_y
         self.visited = False
-        self.connections: dict[Station] = {}
+        self.connections: dict[str, Station] = {}
 
-    def add_connection(self, direction: str, other_station: Self) -> None:
+    def add_connection(self, direction: str, other_station: Self, reisduur: int) -> None:
         self.connections[direction] = other_station
 
     def has_connection(self, direction: str) -> bool:
