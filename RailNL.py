@@ -8,7 +8,7 @@ class Kaart():
         self.stations: dict[str, Station] = {}
 
         #Laad de stations in
-        self.load_stations("station.csv")
+        self.load_stations("stations.csv")
 
     def load_stations(self, filename: str) -> None:
 
@@ -16,6 +16,7 @@ class Kaart():
         print("stap_1")
         #open document
         with open(filename) as f:
+            line = f.readline()
             line = f.readline()
             
             #Maak stations
@@ -27,10 +28,14 @@ class Kaart():
                 line = f.readline()
     
     def print_stations(self) -> None:
-        print(self.stations)
+        lijst_stations = []
+        
+        for x in self.stations:
+            lijst_stations.append(self.stations[x].name)
+        
+        print(lijst_stations)
 
 if __name__ == "__main__":
-    spel = Kaart
+    spel = Kaart()
     print("je bent begonnen")
-    spel.load_stations
-    spel.print_stations
+    spel.print_stations()
