@@ -2,10 +2,11 @@ from typing_extensions import Self
 
 class Station:
 
-    def __init__(self, station_id: int, station_name: str, station_description: str) -> None:
+    def __init__(self, station_id: int, station_name: str, station_coordinate_x: str, station_coordinate_y: str) -> None:
         self.station_id: int = station_id
         self.name: str = station_name
-        self.coordinates: str = station_description
+        self.coordinates_x: str = station_coordinate_x
+        self.coordinates_y: str = station_coordinate_y
         self.visited = False
         self.connections: dict[Station] = {}
 
