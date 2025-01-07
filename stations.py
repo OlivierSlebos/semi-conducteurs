@@ -1,0 +1,28 @@
+from typing_extensions import Self
+
+class Station:
+
+    def __init__(self, station_id: int, station_name: str, station_description: str) -> None:
+        self.station_id: int = station_id
+        self.name: str = station_name
+        self.coordinates: str = station_description
+        self.visited = False
+        self.connections: dict[Station] = {}
+
+    def add_connection(self, direction: str, other_station: Self) -> None:
+        self.connections[direction] = other_station
+
+    def has_connection(self, direction: str) -> bool:
+        if direction in self.connections:
+            return True 
+        else:
+            return False
+
+    def get_connection(self, direction: str) -> Self:
+        return self.connections.get(direction)
+
+    def set_visited(self) -> None:
+        self.visited = True
+
+    def is_visited(self) -> bool:
+        return self.visited
