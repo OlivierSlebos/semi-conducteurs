@@ -1,5 +1,11 @@
 from stations import Station
 
+from trein import Trein
+
+import random
+
+from history import History
+
 class Kaart():
 
     def __init__(self):
@@ -34,6 +40,13 @@ class Kaart():
             lijst_stations.append(self.stations[x].name)
         
         print(lijst_stations)
+
+def genereer_lijnvoering(spel: Kaart) -> History:
+
+    key, val = random.choice(list(spel.stations.items()))
+    trein1 = Trein(val)
+    print(trein1)
+
 
 if __name__ == "__main__":
     spel = Kaart()
