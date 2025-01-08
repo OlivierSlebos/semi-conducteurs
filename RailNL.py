@@ -16,12 +16,12 @@ class Kaart():
         #Laad de stations in
         self.load_stations("stations.csv")
 
+        #Laad de conecties in
         self.load_connecties("connecties.csv")
 
     def load_stations(self, filename: str) -> None:
 
         id = 1
-
         #open document
         with open(filename) as f:
             #Sla de eerste rij over
@@ -53,7 +53,6 @@ class Kaart():
                 self.stations[connection_data[0]].add_connection(self.stations[connection_data[1]], int(connection_data[2]))
                 
                 #Voeg de connectie de andere kant op toe
-                
                 self.stations[connection_data[1]].add_connection(self.stations[connection_data[0]], int(connection_data[2]))
                 
                 #Volgende lijn
