@@ -6,6 +6,8 @@ import random
 
 from history import History
 
+from kaart_maken import kaart_maken, station_uit_csv, verbinding_uit_csv
+
 class Kaart():
 
     def __init__(self):
@@ -81,7 +83,7 @@ class Kaart():
 
 from datetime import datetime
 
-def genereer_lijnvoering(spel: Kaart) -> History:
+def genereer_lijnvoering(spel: Kaart) -> tuple[list, list]:
     # random seed generator 
     r = random.Random(random.seed(datetime.now().timestamp()))
 
@@ -124,15 +126,36 @@ def genereer_lijnvoering(spel: Kaart) -> History:
             trein1.current_station.set_connection_visited(station, reisduur)
             station.set_connection_visited(trein1.current_station, reisduur)
 
+            #Zet de connectie in de history
+            huidige_connectie = (trein1.current_station.name, station.name, reisduur)
+            huidige_connectie_2 = (station.name, trein1.current_station.name, reisduur)
+
+            trein1.traject_history.push_connectie(huidige_connectie)
+            trein1.traject_history.push_connectie(huidige_connectie_2)
+
             # voeg tijd toe en verander het huidige station 
             trein1.time_driven += reisduur 
             trein1.current_station = station
 
-    # print het traject
+    #Print het traject
     print(trein1.traject_history._data)
+
+    #Print de connecties
+    # print(trein1.traject_history._data_connectie)
+
+    return (trein1.traject_history._data, trein1.traject_history._data_connectie)
 
 if __name__ == "__main__":
     spel = Kaart()
     
+    lijst_stations_gereden = []
+    lijst_connecties_gerenden = []
+
     for i in range(7):
-        genereer_lijnvoering(spel)
+        antwoord = genereer_lijnvoering(spel)
+        lijst_stations_gereden.extend(antwoord[0])
+        lijst_connecties_gerenden.extend(antwoord[1])
+
+    stations = station_uit_csv("stations.csv")
+    verbindingen = verbinding_uit_csv("connecties.csv")
+    kaart_maken(stations, verbindingen, lijst_stations_gereden, lijst_connecties_gerenden)
