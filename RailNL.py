@@ -47,18 +47,24 @@ class Kaart():
             while line != "":
                 #Split de data op in een lijst
                 connection_data = line.split(',')
-                #              Naam                             Naam                 object - Station                       tijdsduur
-                self.stations[connection_data[0]].add_connection(connection_data[0], self.stations[connection_data[1]], int(connection_data[2]))
+                
+                #Voeg de connectie de ene kant op toe
+                #              Naam-huidig station                    doel - object - Station            tijdsduur
+                self.stations[connection_data[0]].add_connection(self.stations[connection_data[1]], int(connection_data[2]))
+                
+                #Voeg de connectie de andere kant op toe
+                
+                self.stations[connection_data[1]].add_connection(self.stations[connection_data[0]], int(connection_data[2]))
+                
                 #Volgende lijn
                 line = f.readline()
 
-    #Kijk of de station er goed in staat           
+    #Kijk of de stations er goed in staan          
     def print_stations(self) -> None:
         lijst_stations = []
         
         for x in self.stations:
             lijst_stations.append(self.stations[x].name)
-        
         print(lijst_stations)
 
     #Kijk of de connecties er goed in staan
@@ -68,7 +74,6 @@ class Kaart():
         station = self.stations[station_geven]
         for x in station.connections:
             lijst_conections.append(station.connections[x][0].name)
-        
         print(lijst_conections)
 
 from datetime import datetime
@@ -90,5 +95,5 @@ if __name__ == "__main__":
     spel = Kaart()
     print("je bent begonnen")
     # spel.print_stations()
-    spel.print_conecties("Alkmaar")
-    genereer_lijnvoering(spel)
+    spel.print_conecties("Den Haag Centraal")
+    # genereer_lijnvoering(spel)
