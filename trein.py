@@ -3,8 +3,8 @@ from stations import Station
 from history import History
 
 class Trein():
-    def __init__(self):
-        self.current_station = Station
+    def __init__(self, station):
+        self.current_station = station
         self.time_driven = 0
         self.traject_history = History()
 
