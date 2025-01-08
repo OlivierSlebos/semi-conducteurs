@@ -80,42 +80,47 @@ from datetime import datetime
 def genereer_lijnvoering(spel: Kaart) -> History:
 
     # random seed generator 
-    random.seed(datetime.now().timestamp())
+    r = random.Random(random.seed(datetime.now().timestamp()))
 
     # pak een random station uit de lijst met stations en maak een trein op die plek 
-    key, val = random.choice(list(spel.stations.items()))
-    trein1 = Trein(spel.stations[key])
+    station, reisduur = r.choice(list(spel.stations.items()))
 
-    # check
-    print(trein1.current_station.name)
+    while spel.stations[station].is_visited():
+        station, reisduur = r.choice(list(spel.stations.items()))
+
+    trein1 = Trein(spel.stations[station])
 
     # trein mag 2 uur rijden, dus <= 120
-    while trein1.time_driven <= 120:
-
+    counter = 0
+    while trein1.time_driven <= 120 and counter < 4:
         # voeg het huidige station toe aan het traject dat is gereden 
+        trein1.current_station.set_visited()
         trein1.traject_history.push(trein1.current_station.name)
-
+        
         # pak een random volgend station uit de lijst connecties van het huidige station
-        volgend_station = random.choice(list(trein1.current_station.connections.items()))
+        volgend_station, val = r.choice(list(trein1.current_station.connections.items()))
 
         # pak de onderdelen van de tuple van de connectie
         station, reisduur = trein1.current_station.connections[volgend_station]
 
-        # als de reisduur boven de 2 uur wordt met het huidige station pakt ie een andere 
-        counter = 0
-        while trein1.time_driven + reisduur > 120 or counter >= 4:
+        # als de reisduur boven de 2 uur wordt met het huidige station pakt hij een andere 
+        while trein1.time_driven + reisduur > 120 or station.is_visited():
+            if counter > 4:
+                break
+            volgend_station, val = r.choice(list(trein1.current_station.connections.items()))
             station, reisduur = trein1.current_station.connections[volgend_station]
             counter += 1
 
-        # voeg de tijd toe en verander het huidige station 
-        trein1.time_driven += reisduur 
-        trein1.current_station = station
+        # voeg de tijd toe en verander het huidige station
+        if counter < 4 and not station.is_visited():
+            trein1.time_driven += reisduur 
+            trein1.current_station = station
+            trein1.current_station.set_visited()
 
-    print(trein1.traject_history)
+    print(trein1.traject_history._data)
 
 if __name__ == "__main__":
     spel = Kaart()
-    print("je bent begonnen")
-    # spel.print_stations()
-    spel.print_conecties("Den Haag Centraal")
-    # genereer_lijnvoering(spel)
+    
+    for i in range(7):
+        genereer_lijnvoering(spel)
