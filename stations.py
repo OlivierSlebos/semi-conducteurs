@@ -11,7 +11,7 @@ class Station:
         self.connections: dict[str, Station] = {}
 
     def add_connection(self, direction: str, other_station: Self, reisduur: int) -> None:
-        self.connections[direction] = other_station
+        self.connections[other_station.name] = (other_station, reisduur)
 
     def has_connection(self, direction: str) -> bool:
         if direction in self.connections:
