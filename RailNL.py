@@ -61,12 +61,13 @@ class Kaart():
         
         print(lijst_stations)
 
+    #Kijk of de connecties er goed in staan
     def print_conecties(self, station_geven: str) -> None:
         lijst_conections = []
 
         station = self.stations[station_geven]
         for x in station.connections:
-            lijst_conections.append(station.connections[x].name)
+            lijst_conections.append(station.connections[x][0].name)
         
         print(lijst_conections)
 
