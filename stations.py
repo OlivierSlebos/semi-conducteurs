@@ -11,6 +11,7 @@ class Station:
         self.connections: dict[str, Station] = {}
 
     def add_connection(self, other_station: Self, reisduur: int) -> None:
+        # Key = de naam van het doel staion     tuple(Object van het doel station, reisduur)
         self.connections[other_station.name] = (other_station, reisduur)
 
     def has_connection(self, direction: str) -> bool:

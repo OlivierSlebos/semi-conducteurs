@@ -111,7 +111,7 @@ def genereer_lijnvoering(spel: Kaart) -> History:
         trein1.time_driven += reisduur 
         trein1.current_station = station
 
-    print(trein1.traject_history)
+    print(trein1.traject_history._data)
 
 if __name__ == "__main__":
     spel = Kaart()
