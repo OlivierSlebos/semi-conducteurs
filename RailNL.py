@@ -70,11 +70,19 @@ class Kaart():
         
         print(lijst_conections)
 
+from datetime import datetime
+
+
 def genereer_lijnvoering(spel: Kaart) -> History:
 
+    random.seed(datetime.now().timestamp())
     key, val = random.choice(list(spel.stations.items()))
-    trein1 = Trein(val)
-    print(trein1)
+    trein1 = Trein(spel.stations[key])
+    print(trein1.current_station.name)
+
+    while trein1.time_driven < 120:
+        trein1.traject_history.push(trein1.current_station)
+        trein1.current_station.connections
 
 
 if __name__ == "__main__":
@@ -82,3 +90,4 @@ if __name__ == "__main__":
     print("je bent begonnen")
     # spel.print_stations()
     spel.print_conecties("Alkmaar")
+    genereer_lijnvoering(spel)
