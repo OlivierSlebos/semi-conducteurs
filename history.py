@@ -2,7 +2,7 @@ from stations import Station
 
 class History:
     def __init__(self):
-        self._data: list[Station] = list()
+        self._data: list[str] = list()
 
     # add element to top of stack
     def push(self, element: Station) -> None:
