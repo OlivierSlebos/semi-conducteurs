@@ -82,7 +82,10 @@ def genereer_lijnvoering(spel: Kaart) -> History:
 
     while trein1.time_driven < 120:
         trein1.traject_history.push(trein1.current_station)
-        trein1.current_station.connections
+        volgend_station = random.choice(list(trein1.current_station.connections.items()))
+        trein1.current_station.connections[volgend_station]
+        while trein1.time_driven + random.choice(list(trein1.current_station.connections.items()))
+        volgend_station = random.choice(list(trein1.current_station.connections.items()))
 
 
 if __name__ == "__main__":
