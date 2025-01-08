@@ -75,14 +75,22 @@ from datetime import datetime
 
 def genereer_lijnvoering(spel: Kaart) -> History:
 
+    # random seed generator 
     random.seed(datetime.now().timestamp())
+
+    # pak een random station uit de lijst met stations en maak een trein op die plek 
     key, val = random.choice(list(spel.stations.items()))
     trein1 = Trein(spel.stations[key])
+
+    # check
     print(trein1.current_station.name)
 
-    while trein1.time_driven < 120:
+    # trein mag 2 uur rijden, dus =< 120
+    while trein1.time_driven =< 120:
         trein1.traject_history.push(trein1.current_station)
         volgend_station = random.choice(list(trein1.current_station.connections.items()))
+
+
         trein1.current_station.connections[volgend_station]
         while trein1.time_driven + random.choice(list(trein1.current_station.connections.items()))
         volgend_station = random.choice(list(trein1.current_station.connections.items()))
