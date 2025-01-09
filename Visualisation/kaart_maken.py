@@ -61,7 +61,7 @@ def kaart_maken(stations, verbindingen, is_visited, verbindingen_geweest):
         folium.PolyLine([(start_lat, start_lon), (eind_lat, eind_lon)], color=color, weight=2.5, opacity=0.8).add_to(m)
 
     # Bewaar de kaart in een HTML bestand
-    m.save("stations_verbindingen_2.html")
+    m.save("Visualisation/resultaten_kaart.html")
 
 if __name__ == "__main__":
     stations = station_uit_csv("stations.csv")
