@@ -15,6 +15,6 @@ if __name__ == "__main__":
         lijst_stations_gereden.extend(antwoord[0])
         lijst_connecties_gerenden.extend(antwoord[1])
 
-    stations = station_uit_csv("stations.csv")
-    verbindingen = verbinding_uit_csv("connecties.csv")
+    stations = station_uit_csv("Data/stations.csv")
+    verbindingen = verbinding_uit_csv("Data/connecties.csv")
     kaart_maken(stations, verbindingen, lijst_stations_gereden, lijst_connecties_gerenden)

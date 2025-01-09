@@ -1,4 +1,4 @@
-from Station import Station
+from Classes.Station import Station
 
 class Kaart():
 
@@ -8,10 +8,10 @@ class Kaart():
         self.stations: dict[str, Station] = {}
 
         #Laad de stations in
-        self.load_stations("stations.csv")
+        self.load_stations("Data/stations.csv")
 
         #Laad de conecties in
-        self.load_connecties("connecties.csv")
+        self.load_connecties("Data/connecties.csv")
 
     def load_stations(self, filename: str) -> None:
 

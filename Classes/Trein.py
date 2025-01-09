@@ -1,6 +1,6 @@
-from Station import Station
+from Classes.Station import Station
 
-from History import History
+from Classes.History import History
 
 class Trein():
     def __init__(self, station):

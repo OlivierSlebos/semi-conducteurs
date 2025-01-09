@@ -1,4 +1,4 @@
-from Station import Station
+from Classes.Station import Station
 
 class History:
     def __init__(self):
