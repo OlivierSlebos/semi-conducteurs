@@ -1,6 +1,6 @@
 from Classes.Kaart import Kaart
 
-from kaart_maken import kaart_maken, station_uit_csv, verbinding_uit_csv
+from Visualisation.kaart_maken import kaart_maken, station_uit_csv, verbinding_uit_csv
 
 from Algorithms.random_algorithm import genereer_lijnvoering
 
