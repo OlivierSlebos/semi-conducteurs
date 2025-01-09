@@ -5,7 +5,11 @@ from Visualisation.kaart_maken import kaart_maken
 def genereer_output(traject, verbindingen, trein_nummer):
     with open('Output.csv', mode='a', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
-        
+
+        if trein_nummer == 0:
+            writer.writerow(['NIEUWE DIENSTREGELING'])
+            writer.writerow([])
+
         #Voeg trein nummer toe
         writer.writerow([f'Trein nummer {trein_nummer}'])
 
@@ -22,7 +26,7 @@ def genereer_output(traject, verbindingen, trein_nummer):
         writer.writerow([])
 
 def run_algoritme(algorimte, spel, aantal_treinen: int):
-    
+
     lijst_stations_gereden = []
     lijst_connecties_gerenden = []
 
@@ -31,9 +35,12 @@ def run_algoritme(algorimte, spel, aantal_treinen: int):
         #Voer het algoritme uit
         antwoord = algorimte(spel)
 
-        #Sla de uitkomsten van de 
+        #Sla de uitkomsten van de history op
         lijst_stations_gereden.extend(antwoord[0])
         lijst_connecties_gerenden.extend(antwoord[1])
+
+        #Genereer output in een csv
         genereer_output(antwoord[0], antwoord[1], i)
-    
+
+    #Maak een kaart
     kaart_maken(lijst_stations_gereden, lijst_connecties_gerenden)

@@ -51,7 +51,7 @@ def kaart_maken(is_visited, verbindingen_geweest):
     station_dict = {name: (lat, lon) for name, lat, lon in stations}
     
     for naam, (lat, lon) in station_dict.items():
-        if naam in is_visited: color = 'green'
+        if naam in is_visited: color = 'blue'
         else: color = 'red'
         folium.Marker([lat, lon], popup=naam, icon=folium.Icon(color=color)).add_to(m)
 
@@ -60,7 +60,7 @@ def kaart_maken(is_visited, verbindingen_geweest):
         start_lat, start_lon = station_dict[start]
         eind_lat, eind_lon = station_dict[eind]
         if (start, eind, reistijd) in verbindingen_geweest:
-            color = 'green'
+            color = 'blue'
         else: color = 'red'
         folium.PolyLine([(start_lat, start_lon), (eind_lat, eind_lon)], color=color, weight=2.5, opacity=0.8).add_to(m)
 

@@ -12,7 +12,12 @@ if __name__ == "__main__":
     #  NAAM VAN HET ALGORITME, SPEL, AANTAL TREINEN
     run_algoritme(genereer_lijnvoering, spel, 7)
 
-
+    
+    
+    
+    
+    #In alg stop je het spel
+    #Uitkomt moet een Tuple (list[stations], list[verbindingen]) zijn uit history
 
     # lijst_stations_gereden = []
     # lijst_connecties_gerenden = []
@@ -28,5 +33,4 @@ if __name__ == "__main__":
 
     # kaart_maken(lijst_stations_gereden, lijst_connecties_gerenden)
 
-    #In alg stop je het spel
-    #Uitkomt moet een Tuple (list[stations], list[verbindingen]) zijn uit history
+    
