@@ -95,7 +95,7 @@ def genereer_lijnvoering(spel: Kaart) -> tuple[list, list]:
 
     # trein mag 2 uur rijden, dus <= 120
     counter = 0
-    while trein1.time_driven <= 120 and counter < 4:
+    while trein1.time_driven <= 120 and counter < 10:
         # voeg het huidige station toe aan het traject dat is gereden en zet hem op visited (outdated, visited wordt nu niet gebruikt)
         trein1.current_station.set_visited()
         trein1.traject_history.push(trein1.current_station.name)
@@ -111,7 +111,7 @@ def genereer_lijnvoering(spel: Kaart) -> tuple[list, list]:
         while trein1.time_driven + reisduur > 120 or trein1.current_station.is_connection_visited(station):
 
             # counter voor checks 
-            if counter > 4:
+            if counter > 10:
                 break
 
             # pak ander station en onderdelen 
@@ -120,7 +120,7 @@ def genereer_lijnvoering(spel: Kaart) -> tuple[list, list]:
             counter += 1
 
         # voeg de tijd toe en verander het huidige station
-        if counter < 4 and not trein1.current_station.is_connection_visited(station):
+        if counter < 10 and not trein1.current_station.is_connection_visited(station):
             
             # zorg dat de connection op visited gaat, tussen het huidige station en het volgende station, en het omgekeerde
             trein1.current_station.set_connection_visited(station, reisduur)
