@@ -39,7 +39,11 @@ def verbinding_uit_csv(filename: str) -> list:
     return verbindingen
 
 
-def kaart_maken(stations, verbindingen, is_visited, verbindingen_geweest):
+def kaart_maken(is_visited, verbindingen_geweest):
+    
+    stations = station_uit_csv("Data/stations.csv")
+    verbindingen = verbinding_uit_csv("Data/connecties.csv")
+    
     # Maak een basismap van Nederland (centraal punt)
     m = folium.Map(location=[52.3794, 4.9009], zoom_start=8)
 
