@@ -44,3 +44,5 @@ def run_algoritme(algorimte, spel, aantal_treinen: int):
 
     #Maak een kaart
     kaart_maken(lijst_stations_gereden, lijst_connecties_gerenden)
+
+# def score_bereken(lijst_connecties, )
