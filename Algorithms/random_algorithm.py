@@ -6,6 +6,30 @@ from Classes.Kaart import Kaart
 
 from Classes.Trein import Trein
 
+from Helpers import genereer_output
+
+def random_algoritme(spel: Kaart) -> None:
+
+
+    lijst_stations_gereden = []
+    lijst_connecties_gerenden = []
+
+    r = random.Random(random.seed(datetime.now().timestamp()))
+    aantal_treinen = r.randrange(1,8)
+
+    for i in range(aantal_treinen):
+
+        #Voer het algoritme uit
+        traject, verbindingen = genereer_lijnvoering(spel)
+
+        #Sla de uitkomsten van de history op
+        lijst_stations_gereden.extend(traject)
+        lijst_connecties_gerenden.extend(verbindingen)
+
+        #Genereer output in een csv
+        genereer_output(traject, verbindingen, i)
+
+
 def genereer_lijnvoering(spel: Kaart) -> tuple[list, list]:
     # random seed generator 
     r = random.Random(random.seed(datetime.now().timestamp()))
