@@ -4,7 +4,7 @@ from Visualisation.kaart_maken import kaart_maken
 
 from Algorithms.random_algorithm import random_algoritme
 
-from Helpers import genereer_output, run_algoritme
+from Helpers import genereer_output, run_algoritme, schrijf_output
 
 if __name__ == "__main__":
     spel = Kaart()
@@ -12,6 +12,8 @@ if __name__ == "__main__":
     #  NAAM VAN HET ALGORITME, SPEL, AANTAL TREINEN
     # run_algoritme(random_algoritme, spel)
     random_algoritme(spel)
+
+    schrijf_output([['Amsterdam', 'Alkmaar'], ['Kosmos', 'New York']], [('verbinding','Den Helder', 'Schieddam'), ('verbinding','Gorichem', 'Kaapstad')], 5, 65, 12)
 
     
     #In alg stop je het spel
