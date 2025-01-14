@@ -4,13 +4,15 @@ from Visualisation.kaart_maken import kaart_maken
 
 from Algorithms.random_algorithm import genereer_lijnvoering
 
-from Helpers import genereer_output, run_algoritme
+from Helpers import genereer_output, run_algoritme, schrijf_output
 
 if __name__ == "__main__":
     spel = Kaart()
 
     #  NAAM VAN HET ALGORITME, SPEL, AANTAL TREINEN
     run_algoritme(genereer_lijnvoering, spel, 7)
+
+    schrijf_output([['Amsterdam', 'Alkmaar'], ['Kosmos', 'New York']], [('verbinding','Den Helder', 'Schieddam'), ('verbinding','Gorichem', 'Kaapstad')], 5, 65, 12)
 
     
     
