@@ -10,6 +10,7 @@ Spontaan perfect verbinding: Bewaar Even
 NIEUWE DIENSTREGELING
 
 Trein nummer 0
+<<<<<<< HEAD
 Amsterdam Amstel,Amsterdam Zuid,Amsterdam Sloterdijk,Zaandam,Beverwijk,Haarlem,Amsterdam Sloterdijk
 
 "('Amsterdam Amstel', 'Amsterdam Zuid', 10)","('Amsterdam Zuid', 'Amsterdam Amstel', 10)","('Amsterdam Zuid', 'Amsterdam Sloterdijk', 16)","('Amsterdam Sloterdijk', 'Amsterdam Zuid', 16)","('Amsterdam Sloterdijk', 'Zaandam', 6)","('Zaandam', 'Amsterdam Sloterdijk', 6)","('Zaandam', 'Beverwijk', 25)","('Beverwijk', 'Zaandam', 25)","('Beverwijk', 'Haarlem', 16)","('Haarlem', 'Beverwijk', 16)","('Haarlem', 'Amsterdam Sloterdijk', 11)","('Amsterdam Sloterdijk', 'Haarlem', 11)"
@@ -94,10 +95,28 @@ Amsterdam Amstel,Amsterdam Zuid,Schiphol Airport,Leiden Centraal,Alphen a/d Rijn
 "('Amsterdam Amstel', 'Amsterdam Zuid', 10)","('Amsterdam Zuid', 'Amsterdam Amstel', 10)","('Amsterdam Zuid', 'Schiphol Airport', 6)","('Schiphol Airport', 'Amsterdam Zuid', 6)","('Schiphol Airport', 'Leiden Centraal', 15)","('Leiden Centraal', 'Schiphol Airport', 15)","('Leiden Centraal', 'Alphen a/d Rijn', 14)","('Alphen a/d Rijn', 'Leiden Centraal', 14)","('Alphen a/d Rijn', 'Gouda', 19)","('Gouda', 'Alphen a/d Rijn', 19)","('Gouda', 'Den Haag Centraal', 18)","('Den Haag Centraal', 'Gouda', 18)"
 
 Trein nummer 2
+=======
+Gouda,Den Haag Centraal,Leiden Centraal,Schiphol Airport,Amsterdam Zuid,Amsterdam Sloterdijk,Zaandam,Beverwijk,Haarlem,Heemstede-Aerdenhout
+
+"('Gouda', 'Den Haag Centraal', 18)","('Den Haag Centraal', 'Gouda', 18)","('Den Haag Centraal', 'Leiden Centraal', 12)","('Leiden Centraal', 'Den Haag Centraal', 12)","('Leiden Centraal', 'Schiphol Airport', 15)","('Schiphol Airport', 'Leiden Centraal', 15)","('Schiphol Airport', 'Amsterdam Zuid', 6)","('Amsterdam Zuid', 'Schiphol Airport', 6)","('Amsterdam Zuid', 'Amsterdam Sloterdijk', 16)","('Amsterdam Sloterdijk', 'Amsterdam Zuid', 16)","('Amsterdam Sloterdijk', 'Zaandam', 6)","('Zaandam', 'Amsterdam Sloterdijk', 6)","('Zaandam', 'Beverwijk', 25)","('Beverwijk', 'Zaandam', 25)","('Beverwijk', 'Haarlem', 16)","('Haarlem', 'Beverwijk', 16)","('Haarlem', 'Heemstede-Aerdenhout', 6)","('Heemstede-Aerdenhout', 'Haarlem', 6)"
+
+Trein nummer 1
+Amsterdam Sloterdijk,Haarlem
+
+"('Amsterdam Sloterdijk', 'Haarlem', 11)","('Haarlem', 'Amsterdam Sloterdijk', 11)"
+
+Trein nummer 2
+Zaandam,Hoorn,Alkmaar,Castricum,Zaandam
+
+"('Zaandam', 'Hoorn', 26)","('Hoorn', 'Zaandam', 26)","('Hoorn', 'Alkmaar', 24)","('Alkmaar', 'Hoorn', 24)","('Alkmaar', 'Castricum', 9)","('Castricum', 'Alkmaar', 9)","('Castricum', 'Zaandam', 12)","('Zaandam', 'Castricum', 12)"
+
+Trein nummer 3
+>>>>>>> 49cbbd8ba785c7e37724a0ed8f88e94be0eefcc5
 Alkmaar,Den Helder
 
 "('Alkmaar', 'Den Helder', 36)","('Den Helder', 'Alkmaar', 36)"
 
+<<<<<<< HEAD
 Trein nummer 3
 Dordrecht,Rotterdam Centraal,Rotterdam Alexander,Gouda
 
@@ -117,10 +136,27 @@ Trein nummer 6
 Haarlem,Amsterdam Sloterdijk,Amsterdam Zuid
 
 "('Haarlem', 'Amsterdam Sloterdijk', 11)","('Amsterdam Sloterdijk', 'Haarlem', 11)","('Amsterdam Sloterdijk', 'Amsterdam Zuid', 16)","('Amsterdam Zuid', 'Amsterdam Sloterdijk', 16)"
+=======
+Trein nummer 4
+Leiden Centraal,Alphen a/d Rijn,Gouda,Rotterdam Alexander,Rotterdam Centraal,Schiedam Centrum,Delft,Den Haag Centraal
+
+"('Leiden Centraal', 'Alphen a/d Rijn', 14)","('Alphen a/d Rijn', 'Leiden Centraal', 14)","('Alphen a/d Rijn', 'Gouda', 19)","('Gouda', 'Alphen a/d Rijn', 19)","('Gouda', 'Rotterdam Alexander', 10)","('Rotterdam Alexander', 'Gouda', 10)","('Rotterdam Alexander', 'Rotterdam Centraal', 8)","('Rotterdam Centraal', 'Rotterdam Alexander', 8)","('Rotterdam Centraal', 'Schiedam Centrum', 5)","('Schiedam Centrum', 'Rotterdam Centraal', 5)","('Schiedam Centrum', 'Delft', 7)","('Delft', 'Schiedam Centrum', 7)","('Delft', 'Den Haag Centraal', 13)","('Den Haag Centraal', 'Delft', 13)"
+
+Trein nummer 5
+Beverwijk,Castricum
+
+"('Beverwijk', 'Castricum', 13)","('Castricum', 'Beverwijk', 13)"
+
+Trein nummer 6
+Leiden Centraal,Heemstede-Aerdenhout
+
+"('Leiden Centraal', 'Heemstede-Aerdenhout', 13)","('Heemstede-Aerdenhout', 'Leiden Centraal', 13)"
+>>>>>>> 49cbbd8ba785c7e37724a0ed8f88e94be0eefcc5
 
 NIEUWE DIENSTREGELING
 
 Trein nummer 0
+<<<<<<< HEAD
 Schiedam Centrum,Rotterdam Centraal,Dordrecht
 
 "('Schiedam Centrum', 'Rotterdam Centraal', 5)","('Rotterdam Centraal', 'Schiedam Centrum', 5)","('Rotterdam Centraal', 'Dordrecht', 17)","('Dordrecht', 'Rotterdam Centraal', 17)"
@@ -220,18 +256,53 @@ Beverwijk,Castricum,Zaandam,Beverwijk,Haarlem,Heemstede-Aerdenhout,Leiden Centra
 "('Beverwijk', 'Castricum', 13)","('Castricum', 'Beverwijk', 13)","('Castricum', 'Zaandam', 12)","('Zaandam', 'Castricum', 12)","('Zaandam', 'Beverwijk', 25)","('Beverwijk', 'Zaandam', 25)","('Beverwijk', 'Haarlem', 16)","('Haarlem', 'Beverwijk', 16)","('Haarlem', 'Heemstede-Aerdenhout', 6)","('Heemstede-Aerdenhout', 'Haarlem', 6)","('Heemstede-Aerdenhout', 'Leiden Centraal', 13)","('Leiden Centraal', 'Heemstede-Aerdenhout', 13)"
 
 Trein nummer 5
+=======
+Castricum,Alkmaar,Den Helder
+
+"('Castricum', 'Alkmaar', 9)","('Alkmaar', 'Castricum', 9)","('Alkmaar', 'Den Helder', 36)","('Den Helder', 'Alkmaar', 36)"
+
+Trein nummer 1
+Schiphol Airport,Amsterdam Zuid,Amsterdam Sloterdijk,Amsterdam Centraal,Amsterdam Amstel,Amsterdam Zuid
+
+"('Schiphol Airport', 'Amsterdam Zuid', 6)","('Amsterdam Zuid', 'Schiphol Airport', 6)","('Amsterdam Zuid', 'Amsterdam Sloterdijk', 16)","('Amsterdam Sloterdijk', 'Amsterdam Zuid', 16)","('Amsterdam Sloterdijk', 'Amsterdam Centraal', 6)","('Amsterdam Centraal', 'Amsterdam Sloterdijk', 6)","('Amsterdam Centraal', 'Amsterdam Amstel', 8)","('Amsterdam Amstel', 'Amsterdam Centraal', 8)","('Amsterdam Amstel', 'Amsterdam Zuid', 10)","('Amsterdam Zuid', 'Amsterdam Amstel', 10)"
+
+Trein nummer 2
+Schiphol Airport,Leiden Centraal,Den Haag Centraal,Gouda,Rotterdam Alexander,Rotterdam Centraal,Schiedam Centrum,Delft
+
+"('Schiphol Airport', 'Leiden Centraal', 15)","('Leiden Centraal', 'Schiphol Airport', 15)","('Leiden Centraal', 'Den Haag Centraal', 12)","('Den Haag Centraal', 'Leiden Centraal', 12)","('Den Haag Centraal', 'Gouda', 18)","('Gouda', 'Den Haag Centraal', 18)","('Gouda', 'Rotterdam Alexander', 10)","('Rotterdam Alexander', 'Gouda', 10)","('Rotterdam Alexander', 'Rotterdam Centraal', 8)","('Rotterdam Centraal', 'Rotterdam Alexander', 8)","('Rotterdam Centraal', 'Schiedam Centrum', 5)","('Schiedam Centrum', 'Rotterdam Centraal', 5)","('Schiedam Centrum', 'Delft', 7)","('Delft', 'Schiedam Centrum', 7)"
+
+Trein nummer 3
+Zaandam,Hoorn,Alkmaar
+
+"('Zaandam', 'Hoorn', 26)","('Hoorn', 'Zaandam', 26)","('Hoorn', 'Alkmaar', 24)","('Alkmaar', 'Hoorn', 24)"
+
+Trein nummer 4
+>>>>>>> 49cbbd8ba785c7e37724a0ed8f88e94be0eefcc5
 Den Haag Centraal,Delft
 
 "('Den Haag Centraal', 'Delft', 13)","('Delft', 'Den Haag Centraal', 13)"
 
+<<<<<<< HEAD
 Trein nummer 6
 Dordrecht,Rotterdam Centraal
 
 "('Dordrecht', 'Rotterdam Centraal', 17)","('Rotterdam Centraal', 'Dordrecht', 17)"
+=======
+Trein nummer 5
+Alphen a/d Rijn,Gouda
+
+"('Alphen a/d Rijn', 'Gouda', 19)","('Gouda', 'Alphen a/d Rijn', 19)"
+
+Trein nummer 6
+Haarlem,Heemstede-Aerdenhout,Leiden Centraal,Alphen a/d Rijn
+
+"('Haarlem', 'Heemstede-Aerdenhout', 6)","('Heemstede-Aerdenhout', 'Haarlem', 6)","('Heemstede-Aerdenhout', 'Leiden Centraal', 13)","('Leiden Centraal', 'Heemstede-Aerdenhout', 13)","('Leiden Centraal', 'Alphen a/d Rijn', 14)","('Alphen a/d Rijn', 'Leiden Centraal', 14)"
+>>>>>>> 49cbbd8ba785c7e37724a0ed8f88e94be0eefcc5
 
 NIEUWE DIENSTREGELING
 
 Trein nummer 0
+<<<<<<< HEAD
 Haarlem,Amsterdam Sloterdijk,Zaandam,Hoorn,Alkmaar,Castricum,Zaandam
 
 "('Haarlem', 'Amsterdam Sloterdijk', 11)","('Amsterdam Sloterdijk', 'Haarlem', 11)","('Amsterdam Sloterdijk', 'Zaandam', 6)","('Zaandam', 'Amsterdam Sloterdijk', 6)","('Zaandam', 'Hoorn', 26)","('Hoorn', 'Zaandam', 26)","('Hoorn', 'Alkmaar', 24)","('Alkmaar', 'Hoorn', 24)","('Alkmaar', 'Castricum', 9)","('Castricum', 'Alkmaar', 9)","('Castricum', 'Zaandam', 12)","('Zaandam', 'Castricum', 12)"
@@ -262,10 +333,38 @@ Heemstede-Aerdenhout,Haarlem,Beverwijk,Zaandam
 "('Heemstede-Aerdenhout', 'Haarlem', 6)","('Haarlem', 'Heemstede-Aerdenhout', 6)","('Haarlem', 'Beverwijk', 16)","('Beverwijk', 'Haarlem', 16)","('Beverwijk', 'Zaandam', 25)","('Zaandam', 'Beverwijk', 25)"
 
 Trein nummer 6
+=======
+Den Helder,Alkmaar,Hoorn,Zaandam,Beverwijk
+
+"('Den Helder', 'Alkmaar', 36)","('Alkmaar', 'Den Helder', 36)","('Alkmaar', 'Hoorn', 24)","('Hoorn', 'Alkmaar', 24)","('Hoorn', 'Zaandam', 26)","('Zaandam', 'Hoorn', 26)","('Zaandam', 'Beverwijk', 25)","('Beverwijk', 'Zaandam', 25)"
+
+Trein nummer 1
+Schiedam Centrum,Delft,Den Haag Centraal,Gouda,Alphen a/d Rijn,Leiden Centraal,Schiphol Airport,Amsterdam Zuid,Amsterdam Amstel,Amsterdam Centraal,Amsterdam Sloterdijk
+
+"('Schiedam Centrum', 'Delft', 7)","('Delft', 'Schiedam Centrum', 7)","('Delft', 'Den Haag Centraal', 13)","('Den Haag Centraal', 'Delft', 13)","('Den Haag Centraal', 'Gouda', 18)","('Gouda', 'Den Haag Centraal', 18)","('Gouda', 'Alphen a/d Rijn', 19)","('Alphen a/d Rijn', 'Gouda', 19)","('Alphen a/d Rijn', 'Leiden Centraal', 14)","('Leiden Centraal', 'Alphen a/d Rijn', 14)","('Leiden Centraal', 'Schiphol Airport', 15)","('Schiphol Airport', 'Leiden Centraal', 15)","('Schiphol Airport', 'Amsterdam Zuid', 6)","('Amsterdam Zuid', 'Schiphol Airport', 6)","('Amsterdam Zuid', 'Amsterdam Amstel', 10)","('Amsterdam Amstel', 'Amsterdam Zuid', 10)","('Amsterdam Amstel', 'Amsterdam Centraal', 8)","('Amsterdam Centraal', 'Amsterdam Amstel', 8)","('Amsterdam Centraal', 'Amsterdam Sloterdijk', 6)","('Amsterdam Sloterdijk', 'Amsterdam Centraal', 6)"
+
+Trein nummer 2
+Rotterdam Alexander,Rotterdam Centraal,Schiedam Centrum
+
+"('Rotterdam Alexander', 'Rotterdam Centraal', 8)","('Rotterdam Centraal', 'Rotterdam Alexander', 8)","('Rotterdam Centraal', 'Schiedam Centrum', 5)","('Schiedam Centrum', 'Rotterdam Centraal', 5)"
+
+Trein nummer 3
+Amsterdam Sloterdijk,Amsterdam Zuid
+
+"('Amsterdam Sloterdijk', 'Amsterdam Zuid', 16)","('Amsterdam Zuid', 'Amsterdam Sloterdijk', 16)"
+
+Trein nummer 4
+Leiden Centraal,Heemstede-Aerdenhout,Haarlem,Amsterdam Sloterdijk,Zaandam,Castricum,Alkmaar
+
+"('Leiden Centraal', 'Heemstede-Aerdenhout', 13)","('Heemstede-Aerdenhout', 'Leiden Centraal', 13)","('Heemstede-Aerdenhout', 'Haarlem', 6)","('Haarlem', 'Heemstede-Aerdenhout', 6)","('Haarlem', 'Amsterdam Sloterdijk', 11)","('Amsterdam Sloterdijk', 'Haarlem', 11)","('Amsterdam Sloterdijk', 'Zaandam', 6)","('Zaandam', 'Amsterdam Sloterdijk', 6)","('Zaandam', 'Castricum', 12)","('Castricum', 'Zaandam', 12)","('Castricum', 'Alkmaar', 9)","('Alkmaar', 'Castricum', 9)"
+
+Trein nummer 5
+>>>>>>> 49cbbd8ba785c7e37724a0ed8f88e94be0eefcc5
 Rotterdam Alexander,Gouda
 
 "('Rotterdam Alexander', 'Gouda', 10)","('Gouda', 'Rotterdam Alexander', 10)"
 
+<<<<<<< HEAD
 NIEUWE DIENSTREGELING
 
 Trein nummer 0
@@ -335,6 +434,8 @@ Amsterdam Zuid,Amsterdam Sloterdijk,Zaandam
 
 "('Amsterdam Zuid', 'Amsterdam Sloterdijk', 16)","('Amsterdam Sloterdijk', 'Amsterdam Zuid', 16)","('Amsterdam Sloterdijk', 'Zaandam', 6)","('Zaandam', 'Amsterdam Sloterdijk', 6)"
 
+=======
+>>>>>>> 49cbbd8ba785c7e37724a0ed8f88e94be0eefcc5
 Trein nummer 6
 Castricum,Beverwijk,Haarlem
 
@@ -343,6 +444,7 @@ Castricum,Beverwijk,Haarlem
 NIEUWE DIENSTREGELING
 
 Trein nummer 0
+<<<<<<< HEAD
 Hoorn,Zaandam,Castricum,Beverwijk,Zaandam,Amsterdam Sloterdijk,Haarlem,Heemstede-Aerdenhout,Leiden Centraal
 
 "('Hoorn', 'Zaandam', 26)","('Zaandam', 'Hoorn', 26)","('Zaandam', 'Castricum', 12)","('Castricum', 'Zaandam', 12)","('Castricum', 'Beverwijk', 13)","('Beverwijk', 'Castricum', 13)","('Beverwijk', 'Zaandam', 25)","('Zaandam', 'Beverwijk', 25)","('Zaandam', 'Amsterdam Sloterdijk', 6)","('Amsterdam Sloterdijk', 'Zaandam', 6)","('Amsterdam Sloterdijk', 'Haarlem', 11)","('Haarlem', 'Amsterdam Sloterdijk', 11)","('Haarlem', 'Heemstede-Aerdenhout', 6)","('Heemstede-Aerdenhout', 'Haarlem', 6)","('Heemstede-Aerdenhout', 'Leiden Centraal', 13)","('Leiden Centraal', 'Heemstede-Aerdenhout', 13)"
@@ -376,4 +478,76 @@ Trein nummer 6
 Alkmaar,Den Helder
 
 "('Alkmaar', 'Den Helder', 36)","('Den Helder', 'Alkmaar', 36)"
+=======
+Den Helder,Alkmaar,Castricum,Zaandam,Amsterdam Sloterdijk,Amsterdam Zuid,Amsterdam Amstel,Amsterdam Centraal,Amsterdam Sloterdijk
+
+"('Den Helder', 'Alkmaar', 36)","('Alkmaar', 'Den Helder', 36)","('Alkmaar', 'Castricum', 9)","('Castricum', 'Alkmaar', 9)","('Castricum', 'Zaandam', 12)","('Zaandam', 'Castricum', 12)","('Zaandam', 'Amsterdam Sloterdijk', 6)","('Amsterdam Sloterdijk', 'Zaandam', 6)","('Amsterdam Sloterdijk', 'Amsterdam Zuid', 16)","('Amsterdam Zuid', 'Amsterdam Sloterdijk', 16)","('Amsterdam Zuid', 'Amsterdam Amstel', 10)","('Amsterdam Amstel', 'Amsterdam Zuid', 10)","('Amsterdam Amstel', 'Amsterdam Centraal', 8)","('Amsterdam Centraal', 'Amsterdam Amstel', 8)","('Amsterdam Centraal', 'Amsterdam Sloterdijk', 6)","('Amsterdam Sloterdijk', 'Amsterdam Centraal', 6)"
+
+Trein nummer 1
+Rotterdam Alexander,Rotterdam Centraal,Schiedam Centrum,Delft,Den Haag Centraal,Gouda,Alphen a/d Rijn,Leiden Centraal,Den Haag Centraal
+
+"('Rotterdam Alexander', 'Rotterdam Centraal', 8)","('Rotterdam Centraal', 'Rotterdam Alexander', 8)","('Rotterdam Centraal', 'Schiedam Centrum', 5)","('Schiedam Centrum', 'Rotterdam Centraal', 5)","('Schiedam Centrum', 'Delft', 7)","('Delft', 'Schiedam Centrum', 7)","('Delft', 'Den Haag Centraal', 13)","('Den Haag Centraal', 'Delft', 13)","('Den Haag Centraal', 'Gouda', 18)","('Gouda', 'Den Haag Centraal', 18)","('Gouda', 'Alphen a/d Rijn', 19)","('Alphen a/d Rijn', 'Gouda', 19)","('Alphen a/d Rijn', 'Leiden Centraal', 14)","('Leiden Centraal', 'Alphen a/d Rijn', 14)","('Leiden Centraal', 'Den Haag Centraal', 12)","('Den Haag Centraal', 'Leiden Centraal', 12)"
+
+Trein nummer 2
+Amsterdam Zuid,Schiphol Airport,Leiden Centraal,Heemstede-Aerdenhout,Haarlem,Beverwijk,Castricum
+
+"('Amsterdam Zuid', 'Schiphol Airport', 6)","('Schiphol Airport', 'Amsterdam Zuid', 6)","('Schiphol Airport', 'Leiden Centraal', 15)","('Leiden Centraal', 'Schiphol Airport', 15)","('Leiden Centraal', 'Heemstede-Aerdenhout', 13)","('Heemstede-Aerdenhout', 'Leiden Centraal', 13)","('Heemstede-Aerdenhout', 'Haarlem', 6)","('Haarlem', 'Heemstede-Aerdenhout', 6)","('Haarlem', 'Beverwijk', 16)","('Beverwijk', 'Haarlem', 16)","('Beverwijk', 'Castricum', 13)","('Castricum', 'Beverwijk', 13)"
+
+Trein nummer 3
+Rotterdam Alexander,Gouda
+
+"('Rotterdam Alexander', 'Gouda', 10)","('Gouda', 'Rotterdam Alexander', 10)"
+
+Trein nummer 4
+Rotterdam Centraal,Dordrecht
+
+"('Rotterdam Centraal', 'Dordrecht', 17)","('Dordrecht', 'Rotterdam Centraal', 17)"
+
+Trein nummer 5
+Beverwijk,Zaandam,Hoorn,Alkmaar
+
+"('Beverwijk', 'Zaandam', 25)","('Zaandam', 'Beverwijk', 25)","('Zaandam', 'Hoorn', 26)","('Hoorn', 'Zaandam', 26)","('Hoorn', 'Alkmaar', 24)","('Alkmaar', 'Hoorn', 24)"
+
+Trein nummer 6
+Haarlem,Amsterdam Sloterdijk
+
+"('Haarlem', 'Amsterdam Sloterdijk', 11)","('Amsterdam Sloterdijk', 'Haarlem', 11)"
+
+NIEUWE DIENSTREGELING
+
+Trein nummer 0
+Hoorn,Alkmaar,Castricum,Zaandam,Beverwijk,Castricum
+
+"('Hoorn', 'Alkmaar', 24)","('Alkmaar', 'Hoorn', 24)","('Alkmaar', 'Castricum', 9)","('Castricum', 'Alkmaar', 9)","('Castricum', 'Zaandam', 12)","('Zaandam', 'Castricum', 12)","('Zaandam', 'Beverwijk', 25)","('Beverwijk', 'Zaandam', 25)","('Beverwijk', 'Castricum', 13)","('Castricum', 'Beverwijk', 13)"
+
+Trein nummer 1
+Alphen a/d Rijn,Gouda,Rotterdam Alexander,Rotterdam Centraal,Schiedam Centrum,Delft,Den Haag Centraal,Gouda
+
+"('Alphen a/d Rijn', 'Gouda', 19)","('Gouda', 'Alphen a/d Rijn', 19)","('Gouda', 'Rotterdam Alexander', 10)","('Rotterdam Alexander', 'Gouda', 10)","('Rotterdam Alexander', 'Rotterdam Centraal', 8)","('Rotterdam Centraal', 'Rotterdam Alexander', 8)","('Rotterdam Centraal', 'Schiedam Centrum', 5)","('Schiedam Centrum', 'Rotterdam Centraal', 5)","('Schiedam Centrum', 'Delft', 7)","('Delft', 'Schiedam Centrum', 7)","('Delft', 'Den Haag Centraal', 13)","('Den Haag Centraal', 'Delft', 13)","('Den Haag Centraal', 'Gouda', 18)","('Gouda', 'Den Haag Centraal', 18)"
+
+Trein nummer 2
+Den Helder,Alkmaar
+
+"('Den Helder', 'Alkmaar', 36)","('Alkmaar', 'Den Helder', 36)"
+
+Trein nummer 3
+Beverwijk,Haarlem,Amsterdam Sloterdijk,Amsterdam Zuid,Schiphol Airport,Leiden Centraal,Alphen a/d Rijn
+
+"('Beverwijk', 'Haarlem', 16)","('Haarlem', 'Beverwijk', 16)","('Haarlem', 'Amsterdam Sloterdijk', 11)","('Amsterdam Sloterdijk', 'Haarlem', 11)","('Amsterdam Sloterdijk', 'Amsterdam Zuid', 16)","('Amsterdam Zuid', 'Amsterdam Sloterdijk', 16)","('Amsterdam Zuid', 'Schiphol Airport', 6)","('Schiphol Airport', 'Amsterdam Zuid', 6)","('Schiphol Airport', 'Leiden Centraal', 15)","('Leiden Centraal', 'Schiphol Airport', 15)","('Leiden Centraal', 'Alphen a/d Rijn', 14)","('Alphen a/d Rijn', 'Leiden Centraal', 14)"
+
+Trein nummer 4
+Hoorn,Zaandam,Amsterdam Sloterdijk
+
+"('Hoorn', 'Zaandam', 26)","('Zaandam', 'Hoorn', 26)","('Zaandam', 'Amsterdam Sloterdijk', 6)","('Amsterdam Sloterdijk', 'Zaandam', 6)"
+
+Trein nummer 5
+Leiden Centraal,Den Haag Centraal
+
+"('Leiden Centraal', 'Den Haag Centraal', 12)","('Den Haag Centraal', 'Leiden Centraal', 12)"
+
+Trein nummer 6
+Heemstede-Aerdenhout,Leiden Centraal
+
+"('Heemstede-Aerdenhout', 'Leiden Centraal', 13)","('Leiden Centraal', 'Heemstede-Aerdenhout', 13)"
+>>>>>>> 49cbbd8ba785c7e37724a0ed8f88e94be0eefcc5
 

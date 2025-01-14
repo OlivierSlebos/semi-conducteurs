@@ -27,15 +27,15 @@ def genereer_output(traject, verbindingen, trein_nummer):
         #Voeg een lege rij toe
         writer.writerow([])
 
-def run_algoritme(algorimte, spel, aantal_treinen: int):
+def run_algoritme(algoritme, spel, aantal_treinen: int):
 
     lijst_stations_gereden = []
     lijst_connecties_gerenden = []
 
     for i in range(aantal_treinen):
-        
+
         #Voer het algoritme uit
-        antwoord = algorimte(spel)
+        antwoord = algoritme(spel)
 
         #Sla de uitkomsten van de history op
         lijst_stations_gereden.extend(antwoord[0])
