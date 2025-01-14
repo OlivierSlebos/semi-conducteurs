@@ -2,7 +2,7 @@ def score_bereken(treinen, minuten, verbindingen) -> int:
 
     # fractie gereden verbindingen, 28 verbindingen totaal
     p = verbindingen / 28
-    score = p * 1000 - ((treinen * 100) + minuten)
+    score = p * 10000 - ((treinen * 100) + minuten)
     return score
 
 
