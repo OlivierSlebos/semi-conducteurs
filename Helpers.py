@@ -76,4 +76,6 @@ def schrijf_output(verbindingen: list[list], trajecten: list, treinen: int, minu
             writer.writerow(x)
             #Voeg een lege rij toe
             writer.writerow([])
+        
+        writer.writerow(['EOF'])
             

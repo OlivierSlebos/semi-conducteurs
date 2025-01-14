@@ -1,5 +1,7 @@
 import folium
 
+import ast
+
 def station_uit_csv(filename: str) -> list:
     stations = []
     #open document
@@ -66,6 +68,43 @@ def kaart_maken(is_visited, verbindingen_geweest):
 
     # Bewaar de kaart in een HTML bestand
     m.save("Visualisation/resultaten_kaart.html")
+
+def kaart_maken_csv(filename):
+    
+    is_visited = []
+    verbindingen_geweest_2 = []
+
+    with open(f'resultaten/{filename}') as f:
+        #Sla de eerste rij over
+        line = f.readline()
+        
+
+        while line != 'EOF':
+            line = f.readline()
+            if line == "EOF\n":
+                break
+            # print(F"1: {line}") #trein nummer
+            line = f.readline()
+            # print(F"2: {line}") #Verbindingen
+
+            #Voeg verbindingen toe
+            result = ast.literal_eval(line)
+            is_visited.extend(result)
+
+            #Pak de lijst met stations en voeg die toe
+            line = f.readline()
+            # print(F"3: {line}")
+            result = line.split(',')
+            # print(F"4: {result}")
+            verbindingen_geweest_2.extend(result)
+
+            # #Volgende line
+            line = f.readline()
+            # print(line)
+    print(is_visited)
+    kaart_maken(is_visited, verbindingen_geweest_2)
+
+
 
 if __name__ == "__main__":
     stations = station_uit_csv("stations.csv")

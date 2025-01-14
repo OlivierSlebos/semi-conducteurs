@@ -42,7 +42,7 @@ def random_algoritme(spel: Kaart) -> None:
         schrijf_output_verbindingen.append(verbindingen)
 
         #Genereer output in een csv
-        genereer_output(traject, verbindingen, i)
+        # genereer_output(traject, verbindingen, i)
     
     
 
@@ -53,7 +53,7 @@ def random_algoritme(spel: Kaart) -> None:
 
     aantal_connecties_gereden: int = len(nieuwe_lijst_connecties_gereden)/2
     
-    
+
     # kaart_maken(lijst_stations_gereden, lijst_connecties_gereden)
 
     score = score_bereken(aantal_connecties_gereden, tijd_gereden, aantal_connecties_gereden)
