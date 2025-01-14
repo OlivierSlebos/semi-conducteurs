@@ -12,7 +12,7 @@ from Visualisation.kaart_maken import kaart_maken
 
 from Helpers import schrijf_output
 
-from ..score import score_bereken
+from score import score_bereken
 
 def random_algoritme(spel: Kaart) -> None:
 
