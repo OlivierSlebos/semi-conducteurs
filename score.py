@@ -4,6 +4,7 @@ def score_bereken(treinen, minuten, verbindingen)
         p = verbindingen / 28
         score = p * 1000 - ((treinen * 100) + minuten)
 
+    return score
 
 
 from data import 
