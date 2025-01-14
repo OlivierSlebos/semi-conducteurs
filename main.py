@@ -13,7 +13,7 @@ if __name__ == "__main__":
     # run_algoritme(random_algoritme, spel)
     random_algoritme(spel)
 
-    schrijf_output([['Amsterdam', 'Alkmaar'], ['Kosmos', 'New York']], [('verbinding','Den Helder', 'Schieddam'), ('verbinding','Gorichem', 'Kaapstad')], 5, 65, 12)
+    # schrijf_output([['Amsterdam', 'Alkmaar'], ['Kosmos', 'New York']], [('verbinding','Den Helder', 'Schieddam'), ('verbinding','Gorichem', 'Kaapstad')], 5, 65, 12)
 
     
     #In alg stop je het spel
