@@ -2,6 +2,8 @@ import csv
 
 from Visualisation.kaart_maken import kaart_maken
 
+import random
+
 def genereer_output(traject, verbindingen, trein_nummer):
     with open('Output.csv', mode='a', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
@@ -46,3 +48,29 @@ def run_algoritme(algorimte, spel, aantal_treinen: int):
     kaart_maken(lijst_stations_gereden, lijst_connecties_gerenden)
 
 # def score_bereken(lijst_connecties, )
+
+def schrijf_output(verbindingen: list[list], trajecten: list, treinen: int, minuten: int, verbinding_aantal: int):
+    
+    getal = random.randint(1000000000, 9999999999)
+    bestandsnaam = f'run_{getal}'
+    
+    # Open het bestand in schrijfmodus ('w'), waardoor het bestand wordt aangemaakt als het nog niet bestaat
+    with open(fr'resultaten/{bestandsnaam}', mode='w', newline='') as bestand:
+        # Maak een CSV writer object aan
+        writer = csv.writer(bestand)
+        
+        trein = 0
+
+        writer.writerow([treinen, minuten, verbinding_aantal])
+
+        for x, y in zip(trajecten, verbindingen):
+            trein += 1
+            #Voeg het trein nummer toe
+            writer.writerow([f'Trein nummer {trein}'])
+            #Voeg traject toe
+            writer.writerow(y)
+            #Voeg de conectie toe in de csv
+            writer.writerow(x)
+            #Voeg een lege rij toe
+            writer.writerow([])
+            
