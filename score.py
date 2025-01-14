@@ -8,7 +8,7 @@ def score_bereken(treinen, minuten, verbindingen) -> int:
 
 def score_bereken_csv(filename: str) -> int:
 
-    with open(filename) as f:
+    with open(f "resultaten/{filename}") as f:
         line = f.readline()
 
         #gevens splitsen
@@ -22,8 +22,3 @@ def score_bereken_csv(filename: str) -> int:
         score = p * 1000 - ((aantal_treinen * 100) + aantal_minuten)
             
     return score
-
-
-
-
-
