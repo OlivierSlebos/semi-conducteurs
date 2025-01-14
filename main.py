@@ -6,12 +6,16 @@ from Algorithms.random_algorithm import random_algoritme
 
 from Helpers import genereer_output, run_algoritme, schrijf_output
 
+from score import score_bereken_csv
+
 if __name__ == "__main__":
     spel = Kaart()
 
     #  NAAM VAN HET ALGORITME, SPEL, AANTAL TREINEN
     # run_algoritme(random_algoritme, spel)
     random_algoritme(spel)
+    print(score_bereken_csv('run_231.1428571428571_8520447002.csv'))
+
 
     # schrijf_output([['Amsterdam', 'Alkmaar'], ['Kosmos', 'New York']], [('verbinding','Den Helder', 'Schieddam'), ('verbinding','Gorichem', 'Kaapstad')], 5, 65, 12)
 
