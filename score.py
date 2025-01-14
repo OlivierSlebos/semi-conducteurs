@@ -1,15 +1,12 @@
-def score_bereken(treinen, minuten, verbindingen)
+def score_bereken(treinen, minuten, verbindingen) -> int:
 
-        # fractie gereden verbindingen, 28 verbindingen totaal
-        p = verbindingen / 28
-        score = p * 1000 - ((treinen * 100) + minuten)
-
+    # fractie gereden verbindingen, 28 verbindingen totaal
+    p = verbindingen / 28
+    score = p * 1000 - ((treinen * 100) + minuten)
     return score
 
 
-from data import 
-
-def score_bereken_csv(filename: str) 
+def score_bereken_csv(filename: str) -> int:
 
     with open(filename) as f:
         line = f.readline()
