@@ -49,10 +49,10 @@ def run_algoritme(algoritme, spel, aantal_treinen: int):
 
 # def score_bereken(lijst_connecties, )
 
-def schrijf_output(verbindingen: list[list], trajecten: list, treinen: int, minuten: int, verbinding_aantal: int):
+def schrijf_output(verbindingen: list[list], trajecten: list, treinen: int, minuten: int, verbinding_aantal: int, score: int):
     
     getal = random.randint(1000000000, 9999999999)
-    bestandsnaam = f'run_{getal}'
+    bestandsnaam = f'run_{score}_{getal}.csv'
     
     # Open het bestand in schrijfmodus ('w'), waardoor het bestand wordt aangemaakt als het nog niet bestaat
     with open(fr'resultaten/{bestandsnaam}', mode='w', newline='') as bestand:

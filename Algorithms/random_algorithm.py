@@ -12,6 +12,8 @@ from Visualisation.kaart_maken import kaart_maken
 
 from Helpers import schrijf_output
 
+from ..score import score_bereken
+
 def random_algoritme(spel: Kaart) -> None:
 
 
@@ -54,7 +56,9 @@ def random_algoritme(spel: Kaart) -> None:
     
     kaart_maken(lijst_stations_gereden, lijst_connecties_gereden)
 
-    schrijf_output(schrijf_output_verbindingen, schrijf_output_trajecten, aantal_treinen, tijd_gereden, aantal_connecties_gereden)
+    score = score_bereken(aantal_connecties_gereden, tijd_gereden, aantal_connecties_gereden)
+
+    schrijf_output(schrijf_output_verbindingen, schrijf_output_trajecten, aantal_treinen, tijd_gereden, aantal_connecties_gereden, score)
 
 def genereer_lijnvoering(spel: Kaart) -> tuple[list, list, int]:
     # random seed generator 
