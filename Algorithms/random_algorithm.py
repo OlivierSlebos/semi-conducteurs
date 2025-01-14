@@ -10,12 +10,17 @@ from Helpers import genereer_output
 
 from Visualisation.kaart_maken import kaart_maken
 
+from Helpers import schrijf_output
+
 def random_algoritme(spel: Kaart) -> None:
 
 
     lijst_stations_gereden = []
     lijst_connecties_gereden = []
     tijd_gereden = 0
+
+    schrijf_output_verbindingen = []
+    schrijf_output_trajecten = []
 
     r = random.Random(random.seed(datetime.now().timestamp()))
     aantal_treinen = r.randrange(1,8)
@@ -30,8 +35,14 @@ def random_algoritme(spel: Kaart) -> None:
         lijst_connecties_gereden.extend(verbindingen)
         tijd_gereden += reistijd
 
+        #Sla op zodat schrijf_output werkt
+        schrijf_output_trajecten.append(traject)
+        schrijf_output_verbindingen.append(verbindingen)
+
         #Genereer output in een csv
         genereer_output(traject, verbindingen, i)
+    
+    
 
     nieuwe_lijst_connecties_gereden = []
     for connectie in lijst_connecties_gereden:
@@ -43,6 +54,7 @@ def random_algoritme(spel: Kaart) -> None:
     
     kaart_maken(lijst_stations_gereden, lijst_connecties_gereden)
 
+    schrijf_output(schrijf_output_verbindingen, schrijf_output_trajecten, aantal_treinen, tijd_gereden, aantal_connecties_gereden)
 
 def genereer_lijnvoering(spel: Kaart) -> tuple[list, list, int]:
     # random seed generator 
