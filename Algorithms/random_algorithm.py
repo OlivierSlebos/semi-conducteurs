@@ -54,7 +54,7 @@ def random_algoritme(spel: Kaart) -> None:
     aantal_connecties_gereden: int = len(nieuwe_lijst_connecties_gereden)/2
     
     
-    kaart_maken(lijst_stations_gereden, lijst_connecties_gereden)
+    # kaart_maken(lijst_stations_gereden, lijst_connecties_gereden)
 
     score = score_bereken(aantal_connecties_gereden, tijd_gereden, aantal_connecties_gereden)
 
@@ -108,7 +108,7 @@ def genereer_lijnvoering(spel: Kaart) -> tuple[list, list, int]:
             trein1.traject_history.push(trein1.current_station.name)
 
     #Print het traject
-    print(trein1.traject_history._data)
+    # print(trein1.traject_history._data)
 
     #Print de connecties
     # print(trein1.traject_history._data_connectie)

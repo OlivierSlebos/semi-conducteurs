@@ -51,6 +51,9 @@ def run_algoritme(algoritme, spel, aantal_treinen: int):
 
 def schrijf_output(verbindingen: list[list], trajecten: list, treinen: int, minuten: int, verbinding_aantal: int, score: int):
     
+    if score < 4000:
+        return None
+
     getal = random.randint(1000000000, 9999999999)
     bestandsnaam = f'run_{score}_{getal}.csv'
     

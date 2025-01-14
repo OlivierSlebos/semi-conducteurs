@@ -13,8 +13,8 @@ if __name__ == "__main__":
 
     #  NAAM VAN HET ALGORITME, SPEL, AANTAL TREINEN
     # run_algoritme(random_algoritme, spel)
-    random_algoritme(spel)
-    print(score_bereken_csv('run_231.1428571428571_8520447002.csv'))
+    for i in range(100000):
+        random_algoritme(spel)
 
 
     # schrijf_output([['Amsterdam', 'Alkmaar'], ['Kosmos', 'New York']], [('verbinding','Den Helder', 'Schieddam'), ('verbinding','Gorichem', 'Kaapstad')], 5, 65, 12)
