@@ -77,7 +77,6 @@ def kaart_maken_csv(filename):
     with open(f'resultaten/{filename}') as f:
         #Sla de eerste rij over
         line = f.readline()
-        
 
         while line != 'EOF':
             line = f.readline()
@@ -89,22 +88,47 @@ def kaart_maken_csv(filename):
 
             #Voeg verbindingen toe
             result = ast.literal_eval(line)
-            is_visited.extend(result)
+            verbindingen_geweest_2.extend(result)
 
             #Pak de lijst met stations en voeg die toe
             line = f.readline()
             # print(F"3: {line}")
-            result = line.split(',')
+            result = line.strip().split(',')
             # print(F"4: {result}")
-            verbindingen_geweest_2.extend(result)
+            is_visited.extend(result)
 
             # #Volgende line
             line = f.readline()
             # print(line)
-    print(is_visited)
-    kaart_maken(is_visited, verbindingen_geweest_2)
+    kaart_maken_voor_csv(is_visited, verbindingen_geweest_2)
 
+def kaart_maken_voor_csv(is_visited, verbindingen_geweest):
+    
+    stations = station_uit_csv("Data/stations.csv")
+    verbindingen = verbinding_uit_csv("Data/connecties.csv")
+    
+    # Maak een basismap van Nederland (centraal punt)
+    m = folium.Map(location=[52.3794, 4.9009], zoom_start=8)
 
+    # Voeg stations toe als markers
+    station_dict = {name: (lat, lon) for name, lat, lon in stations}
+    
+    for naam, (lat, lon) in station_dict.items():
+        if naam in is_visited: color = 'blue'
+        else: color = 'red'
+        folium.Marker([lat, lon], popup=naam, icon=folium.Icon(color=color)).add_to(m)
+
+    # Voeg verbindingen toe als lijnen tussen stations
+    for start, eind, reistijd in verbindingen:
+        start_lat, start_lon = station_dict[start]
+        eind_lat, eind_lon = station_dict[eind]
+        if str((start, eind, reistijd)) in verbindingen_geweest:
+            color = 'blue'
+        else: color = 'red'
+        folium.PolyLine([(start_lat, start_lon), (eind_lat, eind_lon)], color=color, weight=2.5, opacity=0.8).add_to(m)
+
+    # Bewaar de kaart in een HTML bestand
+    m.save("Visualisation/resultaten_kaart.html")
 
 if __name__ == "__main__":
     stations = station_uit_csv("stations.csv")
