@@ -6,8 +6,6 @@ from Classes.Kaart import Kaart
 
 from Classes.Trein import Trein
 
-from Helpers import genereer_output
-
 from Visualisation.kaart_maken import kaart_maken
 
 from Helpers import schrijf_output
@@ -15,7 +13,6 @@ from Helpers import schrijf_output
 from score import score_bereken
 
 def random_algoritme(spel: Kaart) -> None:
-
 
     lijst_stations_gereden = []
     lijst_connecties_gereden = []
@@ -44,8 +41,6 @@ def random_algoritme(spel: Kaart) -> None:
         #Genereer output in een csv
         # genereer_output(traject, verbindingen, i)
     
-    
-
     nieuwe_lijst_connecties_gereden = []
     for connectie in lijst_connecties_gereden:
         if connectie not in nieuwe_lijst_connecties_gereden:
@@ -86,7 +81,6 @@ def genereer_lijnvoering(spel: Kaart) -> tuple[list, list, int]:
         station, reisduur, connection_visited = trein1.current_station.connections[volgend_station]
 
         while trein1.time_driven + reisduur > time_to_drive and counter < max:
-
             # pak ander station en onderdelen 
             volgend_station = volgende_stations[counter]
             station, reisduur, connection_visited = trein1.current_station.connections[volgend_station]
@@ -106,6 +100,8 @@ def genereer_lijnvoering(spel: Kaart) -> tuple[list, list, int]:
             trein1.current_station = station
 
             trein1.traject_history.push(trein1.current_station.name)
+        else:
+            break
 
     #Print het traject
     # print(trein1.traject_history._data)
