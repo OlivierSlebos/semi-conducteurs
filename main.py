@@ -6,7 +6,7 @@ from Algorithms.semi_random_algorithm import semi_random_algoritme
 
 from Algorithms.random_algorithm import random_algoritme
 
-from Algorithms.olivier_algorithm import roep_functie_aan
+from Algorithms.Random_algorithm_2 import roep_functie_aan
 
 from Helpers import bereken_max
 
