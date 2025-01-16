@@ -65,16 +65,17 @@ def genereer_lijnvoering(spel: Kaart) -> tuple[list, list, int]:
 
     trein1.traject_history.push(trein1.current_station.name)
 
-    time_to_drive = 120
+    time_to_drive = 100
     while trein1.time_driven <= time_to_drive:
         
         counter = 0
         # voeg het huidige station toe aan het traject dat is gereden en zet hem op visited (outdated, visited wordt nu niet gebruikt)
 
+        r = random.Random(random.seed(datetime.now().timestamp()))
         volgende_stations = list(trein1.current_station.connections)
-        r.shuffle(list(volgende_stations))
+        r.shuffle(volgende_stations)
         max = len(volgende_stations)
-        
+
         # pak een random volgend station uit de lijst connecties van het huidige station
         # pak de onderdelen van de tuple van de connectie
         volgend_station = volgende_stations[counter]
@@ -87,7 +88,7 @@ def genereer_lijnvoering(spel: Kaart) -> tuple[list, list, int]:
             counter += 1
 
         # voeg de tijd toe en verander het huidige station
-        if counter < max:
+        if trein1.time_driven + reisduur <= time_to_drive:
             #Zet de connectie in de history
             huidige_connectie = (trein1.current_station.name, station.name, reisduur)
             huidige_connectie_2 = (station.name, trein1.current_station.name, reisduur)

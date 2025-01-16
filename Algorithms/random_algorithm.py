@@ -22,7 +22,7 @@ def random_algoritme(spel: Kaart) -> None:
     schrijf_output_trajecten = []
 
     r = random.Random(random.seed(datetime.now().timestamp()))
-    aantal_treinen = r.randrange(1,8)
+    aantal_treinen = r.randrange(4,8)
 
     for i in range(aantal_treinen):
 
@@ -64,14 +64,14 @@ def genereer_lijnvoering(spel: Kaart) -> tuple[list, list, int]:
 
     trein1.traject_history.push(trein1.current_station.name)
 
-    time_to_drive = r.randrange(1, 121)
+    time_to_drive = r.randrange(60, 121)
     while trein1.time_driven <= time_to_drive:
         
         counter = 0
         # voeg het huidige station toe aan het traject dat is gereden en zet hem op visited (outdated, visited wordt nu niet gebruikt)
 
         volgende_stations = list(trein1.current_station.connections)
-        r.shuffle(list(volgende_stations))
+        r.shuffle(volgende_stations)
         max = len(volgende_stations)
         
         # pak een random volgend station uit de lijst connecties van het huidige station
