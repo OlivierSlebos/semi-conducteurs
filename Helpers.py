@@ -51,7 +51,7 @@ def run_algoritme(algoritme, spel, aantal_treinen: int):
 
 def schrijf_output(verbindingen: list[list], trajecten: list, treinen: int, minuten: int, verbinding_aantal: int, score: int):
     
-    if score < 4000:
+    if score < 7000:
         return None
 
     getal = random.randint(1000000000, 9999999999)
@@ -78,4 +78,13 @@ def schrijf_output(verbindingen: list[list], trajecten: list, treinen: int, minu
             writer.writerow([])
         
         writer.writerow(['EOF'])
-            
+
+def bereken_max(filename):
+    
+    with open(filename) as f:
+        line = f.readline()
+        som = 0
+        for line in f:
+            som += int(line.split(',')[-1])
+    
+    return som
