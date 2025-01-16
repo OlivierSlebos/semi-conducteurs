@@ -87,7 +87,7 @@ def genereer_lijnvoering(spel: Kaart) -> tuple[list, list, int]:
             counter += 1
 
         # voeg de tijd toe en verander het huidige station
-        if counter <= max:
+        if counter < max:
             #Zet de connectie in de history
             huidige_connectie = (trein1.current_station.name, station.name, reisduur)
             huidige_connectie_2 = (station.name, trein1.current_station.name, reisduur)
