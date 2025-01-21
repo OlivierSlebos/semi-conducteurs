@@ -51,7 +51,7 @@ def run_algoritme(algoritme, spel, aantal_treinen: int):
 
 def schrijf_output(verbindingen: list[list], trajecten: list, treinen: int, minuten: int, verbinding_aantal: int, score: int):
     
-    if score < 7000:
+    if score < 8796:
         return None
 
     getal = random.randint(1000000000, 9999999999)
