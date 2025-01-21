@@ -51,9 +51,11 @@ def connection_driven_greedy_algoritme(spel: Kaart) -> None:
     schrijf_output(schrijf_output_verbindingen, schrijf_output_trajecten, aantal_treinen, tijd_gereden, aantal_connecties_gereden, score)
 
 
-def genereer_lijnvoering(spel: Kaart) -> tuple[list, list]:
+def score_greedy_algorithm(spel: Kaart) -> tuple[list, list]:
 
     # random seed generator 
+    aantal_connecties_gereden = 0
+
     r = random.Random(random.seed(datetime.now().timestamp()))
 
     # lijst met mogelijke begint stations 
@@ -100,7 +102,8 @@ def genereer_lijnvoering(spel: Kaart) -> tuple[list, list]:
 
         # voeg de tijd toe en verander het huidige station
         if not trein1.time_driven + reisduur > time_to_drive:
-            
+            trein1.traject_history.push(trein1.current_station.name)
+            trein1.current_station.set_visited()
             
             # zorg dat de connection op visited gaat, tussen het huidige station en het volgende station, en het omgekeerde
             trein1.current_station.set_connection_visited(station, reisduur)
@@ -116,9 +119,6 @@ def genereer_lijnvoering(spel: Kaart) -> tuple[list, list]:
             # voeg tijd toe en verander het huidige station 
             trein1.time_driven += reisduur 
             trein1.current_station = station
-
-            trein1.traject_history.push(trein1.current_station.name)
-            trein1.current_station.set_visited()
         else:
             break
 

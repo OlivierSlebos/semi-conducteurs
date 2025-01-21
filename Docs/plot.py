@@ -2,7 +2,16 @@ import matplotlib.pyplot as plt
 import csv
 import numpy as np
 
+from uitlezen import scores_csv
+
+from boxplot import maak_boxplot
+
 def maak_binned_bargraph(data_csv, output_image, bin_size):
+
+    maak_boxplot("Docs/scores_boxplot.csv", "boxplot_treinen_scores.png")
+
+    scores_csv()
+
     try:
         # Data inlezen uit CSV-bestand
         scores = []
@@ -27,6 +36,7 @@ def maak_binned_bargraph(data_csv, output_image, bin_size):
         # Bar graph maken
         plt.figure(figsize=(12, 6))
         plt.bar(bin_edges[:-1], fractions, width=bin_size, color='skyblue', edgecolor='black', align='edge')
+        plt.xlim(0, 10000)
         plt.title("Binned Scores (Fraction)", fontsize=16)
         plt.xlabel(f"Scores per (bin size = {bin_size})", fontsize=14)
         plt.ylabel("Fraction", fontsize=14)

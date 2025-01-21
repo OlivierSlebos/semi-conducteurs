@@ -1,9 +1,9 @@
 import csv
 import os
 
-def scores_csv() -> None:
+def scores_boxplot_csv() -> None:
 
-    bestandsnaam = 'scores.csv'
+    bestandsnaam = 'scores_boxplot.csv'
     
     # Lijst van bestanden in de map ophalen
     bestanden = os.listdir("resultaten")
@@ -18,8 +18,8 @@ def scores_csv() -> None:
         # Bestandnamen en nummers schrijven
         for i, bestand in enumerate(bestanden):
             score = bestand.split('_')
-            writer.writerow([i, score[2]])
+            writer.writerow([score[1], score[2]])
 
 
 if __name__ == "__main__":
-    scores_csv()
+    scores_boxplot_csv()
