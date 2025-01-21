@@ -2,10 +2,13 @@ from Classes.Kaart import Kaart
 from Classes.Trein import Trein 
 import random
 from score import score_bereken
+from Helpers import schrijf_output
 
 def constructief_algoritme(spel: Kaart) -> None:
     # maak lege lijsten voor output
     lijst_trajecten = []
+    schrijf_output_verbindingen = []
+    schrijf_output_trajecten = []
     unieke_connecties_gereden = set()
     tijd_gereden = 0
 
@@ -19,6 +22,8 @@ def constructief_algoritme(spel: Kaart) -> None:
 
         # voeg trajectdata toe aan lijsten
         lijst_trajecten.append(traject)
+        schrijf_output_trajecten.append(traject)
+        schrijf_output_verbindingen.append(traject_connecties)
         for connectie in traject_connecties:
             unieke_connecties_gereden.add(tuple(sorted(connectie)))
         tijd_gereden += traject_tijd
@@ -29,6 +34,10 @@ def constructief_algoritme(spel: Kaart) -> None:
     aantal_treinen = len(lijst_trajecten)
     aantal_connecties_gereden = len(unieke_connecties_gereden)
     score = score_bereken(aantal_treinen, tijd_gereden, aantal_connecties_gereden)
+
+    # maak een csv met de resultaten
+    # Schrijf de output naar een CSV
+    schrijf_output(schrijf_output_verbindingen, schrijf_output_trajecten, aantal_treinen, tijd_gereden, aantal_connecties_gereden, score)
 
     # Print resultaten
     print(f"Trajecten: {lijst_trajecten}")
