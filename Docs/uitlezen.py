@@ -15,13 +15,8 @@ def scores_csv() -> None:
     with open(fr"Docs/{bestandsnaam}", mode='w', newline='', encoding='utf-8') as csvfile:
         writer = csv.writer(csvfile)
         
-        # Koprij toevoegen (optioneel)
-        writer.writerow(['Run', 'Score'])
-        
         # Bestandnamen en nummers schrijven
         for i, bestand in enumerate(bestanden):
-            if bestand == "uitlezen.py":
-                continue
             score = bestand.split('_')
             writer.writerow([i, score[1]])
 
