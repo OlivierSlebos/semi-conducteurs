@@ -40,10 +40,10 @@ def constructief_algoritme(spel: Kaart) -> None:
     schrijf_output(schrijf_output_verbindingen, schrijf_output_trajecten, aantal_treinen, tijd_gereden, aantal_connecties_gereden, score)
 
     # Print resultaten
-    print(f"Trajecten: {lijst_trajecten}")
-    print(f"Tijd gereden: {tijd_gereden}")
-    print(f"Aantal connecties bereden: {len(unieke_connecties_gereden)}")
-    print(f"Score: {score}")
+    # print(f"Trajecten: {lijst_trajecten}")
+    # print(f"Tijd gereden: {tijd_gereden}")
+    # print(f"Aantal connecties bereden: {len(unieke_connecties_gereden)}")
+    # print(f"Score: {score}")
     
 def bouw_traject(spel: Kaart, max_tijd: int):
     # willekeurig station
@@ -71,15 +71,26 @@ def bouw_traject(spel: Kaart, max_tijd: int):
 
         # Stop als er geen verdere connecties mogelijk zijn
         if not mogelijke_connecties:
-            break
+            mogelijke_connecties = [
+                (doel_station, reistijd)
+                for doel_station, (station, reistijd, _) in trein.current_station.connections.items()
+                if trein.time_driven + reistijd <= max_tijd
+            ]
+            # Stop volledig als er geen enkele verbinding meer binnen de tijd past
+            if not mogelijke_connecties:
+                break
+        
+            # Kies een willekeurige verbinding
+            volgende_station, reistijd = random.choice(mogelijke_connecties)
 
-        # Vind de kortste connectie
-        kortste_connectie = mogelijke_connecties[0]
-        for connectie in mogelijke_connecties:
-            if connectie[1] < kortste_connectie[1]:
-                kortste_connectie = connectie
+        else:
+            # Vind de kortste connectie
+            kortste_connectie = mogelijke_connecties[0]
+            for connectie in mogelijke_connecties:
+                if connectie[1] < kortste_connectie[1]:
+                    kortste_connectie = connectie
 
-        volgende_station, reistijd = kortste_connectie
+            volgende_station, reistijd = kortste_connectie
 
         # Update de tijd en voeg verbindingen toe aan de geschiedenis
         trein.time_driven += reistijd
