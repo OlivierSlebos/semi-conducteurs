@@ -63,8 +63,11 @@ def hill_climber_2(spel: Kaart):
 
     print(f"Begin Score = {oplossing_huidig['score']}")
 
+    #Hoeveel haal je weg
+    # aantal_verwijderen = 7
+
     #Run nog een x aantal keer als hij nog geen beter score heeft gevonden
-    while k < 2:
+    while k < 500000:
 
         if verbeterd:
             k = 0
@@ -78,6 +81,11 @@ def hill_climber_2(spel: Kaart):
 
         oplossing_tijdelijke["aantal_treinen"] -= aantal_verwijderen
         
+        # if oplossing_tijdelijke["aantal_treinen"] < 0:
+        #     overschot = oplossing_tijdelijke["aantal_treinen"]
+        #     oplossing_tijdelijke["aantal_treinen"] = 0
+        #     aantal_verwijderen -= overschot
+
         #Verwijder de trajecten
         for i in range(aantal_verwijderen):
             
@@ -122,10 +130,15 @@ def hill_climber_2(spel: Kaart):
                     other_station = spel.stations[l[1]]
                     huidige_station.set_connection_visited(other_station, int(l[2]))
 
+            # for d in spel.stations:
+            #     station_object = spel.stations[d]
+            #     print(f"\n Naam = {station_object.name}\nConecties Hudiige station -> {station_object.connections}\n")
+                    
             nieuwe_oplossing = genereer_lijnvoering(spel)
             oplossing_tijdelijke["tijd_gereden"] += nieuwe_oplossing[2]
             oplossing_tijdelijke["trajecten"].append(nieuwe_oplossing[0])
             oplossing_tijdelijke["verbindingen"].append(nieuwe_oplossing[1])
+            
 
         #Haal dubbele conecties weg (Eerst lijst met tupples door dan elke tuple door)
         nieuwe_lijst_connecties_gereden = []
@@ -153,8 +166,12 @@ def hill_climber_2(spel: Kaart):
         graph_score.append(oplossing_tijdelijke["score"])
         graph_runs.append(runs)
 
-        if runs % 10000 == 0:
+        if runs % 1000 == 0:
             print(oplossing_huidig["score"])
+        
+        # #Verlaag het aantal treinen dat je verwijderd als hij 5000x niks heeft gevonden
+        # if k == 1000:
+        #     aantal_verwijderen -= 1
     
     print(f"Eind Score = {oplossing_huidig["score"]}")
 
