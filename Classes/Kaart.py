@@ -72,3 +72,8 @@ class Kaart():
         for x in station.connections:
             lijst_conections.append(station.connections[x][0].name)
         print(lijst_conections)
+
+    def reset_kaart(self):
+        # Reset de staat van stations en connecties
+        self.load_stations("Data/stations.csv")
+        self.load_connecties("Data/connecties.csv")
