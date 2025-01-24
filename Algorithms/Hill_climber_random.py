@@ -25,8 +25,6 @@ def maak_grafiek(score: list, runs: list):
     plt.legend()
     plt.grid(True)
     plt.savefig("Hill_Climber_grafiek.png")
-    plt.show()
-
 
 def hill_climber(spel: Kaart):
 
@@ -62,24 +60,18 @@ def hill_climber(spel: Kaart):
     print(f"Begin Score = {oplossing_huidig['score']}")
 
     #Run nog een x aantal keer als hij nog geen beter score heeft gevonden
-    while k < 100000:
-        # print("\nNIEUWE RONDEN\n")
+    while k < 50000:
 
         if verbeterd:
             k = 0
+            print("verbeterd")
             verbeterd = False
-
-        # print(f"\nAantal treinen Start= {oplossing_tijdelijke["aantal_treinen"]}")
 
         #Kies een random aantal oplossingen die je verwijdert
         max_verwijderen = (oplossing_tijdelijke["aantal_treinen"] - 1)
         aantal_verwijderen = random.randint(0, max_verwijderen)
 
-        aantal_verwijderen = max_verwijderen
-
         oplossing_tijdelijke["aantal_treinen"] -= aantal_verwijderen
-        # print(f"\n\nAantal Verwijderd = {aantal_verwijderen}")
-        # print(f"\n\nAantal Treinen over {oplossing_tijdelijke["aantal_treinen"]}")
         
         #Verwijder de trajecten
         for i in range(aantal_verwijderen):
@@ -90,13 +82,6 @@ def hill_climber(spel: Kaart):
 
             if index != 0:
                 index -= 1
-
-            # print(f"\n\nLengte = {lengte}")
-
-            # print(f"\n\nIndex = {index}")
-
-            # for h in range(len(oplossing_tijdelijke["verbindingen"])):
-            #     print(f"\n\nVerbinding {h}= {oplossing_tijdelijke["verbindingen"][h]}")
 
             if len(oplossing_tijdelijke["verbindingen"]) != 0:
                 #Bereken de tijd die die verbinding kost
@@ -114,18 +99,12 @@ def hill_climber(spel: Kaart):
         aantal_toevoegen = random.randint(0, max_toevoegen)
         oplossing_tijdelijke["aantal_treinen"] += aantal_toevoegen
 
-        # print(f"Aantal toevoegen = {aantal_toevoegen}")
-        # print(f"Nieuw aantal = {oplossing_tijdelijke['aantal_treinen']}")
-
         #Voeg de nieuwe verbindingen toe
         for m in range(aantal_toevoegen):
             nieuwe_oplossing = laat_trein_rijden(spel)
             oplossing_tijdelijke["tijd_gereden"] += nieuwe_oplossing[2]
             oplossing_tijdelijke["trajecten"].append(nieuwe_oplossing[0])
             oplossing_tijdelijke["verbindingen"].append(nieuwe_oplossing[1])
-
-        # for e in oplossing_tijdelijke["verbindingen"]:
-        #     print(f"\n\nnieuwe verbindingen lijst = {e}\n\n")
 
         #Haal dubbele conecties weg (Eerst lijst met tupples door dan elke tuple door)
         nieuwe_lijst_connecties_gereden = []
@@ -141,10 +120,10 @@ def hill_climber(spel: Kaart):
         oplossing_tijdelijke["score"] = score_bereken(oplossing_tijdelijke["aantal_treinen"], oplossing_tijdelijke["tijd_gereden"], oplossing_tijdelijke["aantal_conecties"])
 
         #Kijk welke hoger is
-        if oplossing_huidig["score"] > oplossing_tijdelijke["score"]:
+        if oplossing_huidig["score"] >= oplossing_tijdelijke["score"]:
             oplossing_tijdelijke = copy.deepcopy(oplossing_huidig)
 
-        elif oplossing_tijdelijke["score"] >= oplossing_huidig["score"]:
+        elif oplossing_tijdelijke["score"] > oplossing_huidig["score"]:
             oplossing_huidig = copy.deepcopy(oplossing_tijdelijke)          
             verbeterd = True
         k += 1
@@ -152,6 +131,9 @@ def hill_climber(spel: Kaart):
 
         graph_score.append(oplossing_tijdelijke["score"])
         graph_runs.append(runs)
+
+        if runs % 1000 == 0:
+            print(oplossing_huidig["score"])
         
     print(f"Eind Score = {oplossing_huidig["score"]}")
 

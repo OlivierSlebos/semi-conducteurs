@@ -12,7 +12,9 @@ from Helpers import bereken_max
 
 from Visualisation.kaart_maken import kaart_maken_csv
 
-from Algorithms.Hill_climber import hill_climber
+from Algorithms.Hill_climber_random import hill_climber
+
+from Algorithms.Hill_climber_heuristiek import hill_climber_2
 
 if __name__ == "__main__":
     spel = Kaart()
