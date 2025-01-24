@@ -4,7 +4,7 @@ import ast
 
 from kaart_maken import station_uit_csv, verbinding_uit_csv
 
-def kaart_maken_csv(filename):
+def kaart_maken_csv_per_trein(filename):
     
     is_visited = []
     verbindingen_geweest_2 = []
@@ -36,9 +36,9 @@ def kaart_maken_csv(filename):
             # #Volgende line
             line = f.readline()
             # print(line)
-    kaart_maken_voor_csv(is_visited, verbindingen_geweest_2)
+    kaart_maken_voor_csv_per_trein(is_visited, verbindingen_geweest_2)
 
-def kaart_maken_voor_csv(is_visited, verbindingen_geweest):
+def kaart_maken_voor_csv_per_trein(is_visited, verbindingen_geweest):
     
     stations = station_uit_csv("Data/stations.csv")
     verbindingen = verbinding_uit_csv("Data/connecties.csv")
@@ -73,7 +73,7 @@ def kaart_maken_voor_csv(is_visited, verbindingen_geweest):
     for naam, (lat, lon, loop) in station_dict.items():
         if naam in geweest: color = 'blue'
         else: color = 'red'
-        folium.Marker([lat, lon], popup=station_dict[naam][2], icon=folium.Icon(color=color)).add_to(m)
+        folium.Marker([lat, lon], popup=(naam, station_dict[naam][2]), icon=folium.Icon(color=color)).add_to(m)
 
     #Voeg verbindingen toe als lijnen tussen stations
     i = 0
@@ -96,8 +96,8 @@ def kaart_maken_voor_csv(is_visited, verbindingen_geweest):
 
     #Alles wat over is rood maken
     for start, eind, reistijd in verbindingen:
-        start_lat, start_lon = station_dict[start]
-        eind_lat, eind_lon = station_dict[eind]
+        start_lat, start_lon, loop = station_dict[start]
+        eind_lat, eind_lon, loop = station_dict[eind]
         color = 'red'
         folium.PolyLine([(start_lat, start_lon), (eind_lat, eind_lon)], color=color, weight=2.5, opacity=0.8).add_to(m)
 
@@ -105,4 +105,4 @@ def kaart_maken_voor_csv(is_visited, verbindingen_geweest):
     m.save("Visualisation/resultaten_kaart.html")
 
 if __name__ == "__main__":
-    kaart_maken_csv("OEPS.csv")
+    kaart_maken_csv_per_trein("run_7_4434.696629213483_7966.csv")

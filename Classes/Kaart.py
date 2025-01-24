@@ -44,10 +44,10 @@ class Kaart():
                 
                 #Voeg de connectie de ene kant op toe
                 #              Naam-huidig station                    doel - object - Station            tijdsduur
-                self.stations[connection_data[0]].add_connection(self.stations[connection_data[1]], int(connection_data[2]))
+                self.stations[connection_data[0]].add_connection(self.stations[connection_data[1]], int(float(connection_data[2].strip())))
                 
                 #Voeg de connectie de andere kant op toe
-                self.stations[connection_data[1]].add_connection(self.stations[connection_data[0]], int(connection_data[2]))
+                self.stations[connection_data[1]].add_connection(self.stations[connection_data[0]], int(float(connection_data[2])))
                 
                 #Volgende lijn
                 line = f.readline()
