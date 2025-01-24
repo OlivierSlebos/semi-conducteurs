@@ -16,6 +16,7 @@ def constructief_algoritme(spel: Kaart) -> None:
     max_tijd_per_traject = 120
     max_aantal_trajecten = random.randint(4, 7)
     
+    
     for i in range(max_aantal_trajecten):
         # start nieuw traject en sla op
         traject, traject_connecties, traject_tijd = bouw_traject(spel, max_tijd_per_traject)
