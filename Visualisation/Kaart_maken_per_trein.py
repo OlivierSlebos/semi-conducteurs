@@ -42,22 +42,6 @@ def kaart_maken_voor_csv(is_visited, verbindingen_geweest):
     
     stations = station_uit_csv("Data/stations.csv")
     verbindingen = verbinding_uit_csv("Data/connecties.csv")
-    
-    # Maak een basismap van Nederland (centraal punt)
-    m = folium.Map(location=[52.3794, 4.9009], zoom_start=8, tiles='CartoDB Positron')
-
-    # Voeg stations toe als markers
-    station_dict = {name: [lat, lon] for name, lat, lon in stations}
-
-    # for g in station_dict:
-    #     station_dict[g].append([])
-
-    for naam, (lat, lon) in station_dict.items():
-        if naam in is_visited: color = 'blue'
-        else: color = 'red'
-        folium.Marker([lat, lon], popup=naam, icon=folium.Icon(color=color)).add_to(m)
-
-    #Voeg verbindingen toe als lijnen tussen stations
     colors = [
     'yellow',
     'orange',
@@ -67,6 +51,43 @@ def kaart_maken_voor_csv(is_visited, verbindingen_geweest):
     'blue',
     'black'
     ]
+
+    # Maak een basismap van Nederland (centraal punt)
+    m = folium.Map(location=[52.3794, 4.9009], zoom_start=8, tiles='CartoDB Positron')
+
+    # Voeg stations toe als markers
+    station_dict = {name: [lat, lon] for name, lat, lon in stations}
+
+    for g in station_dict:
+        station_dict[g].append([])
+        # print(g)
+        # print(station_dict[g])
+
+    k = 0
+
+    print(is_visited)
+
+    for a in is_visited:
+        k += 1
+        print(k)
+        print(a)
+        # print("\n")
+        for q in a:
+            print(q)
+            # print(station_dict[station])
+            if f"Trein {k} ({colors[(k-1)]})" not in station_dict[q][2]:
+                station_dict[q][2].append(f"Trein {k} ({colors[(k-1)]})")
+                # print(station_dict[station][2])
+
+    print(station_dict['Den Helder'][2])
+
+    for naam, (lat, lon, loop) in station_dict.items():
+        if naam in is_visited: color = 'blue'
+        else: color = 'red'
+        folium.Marker([lat, lon], popup=station_dict[naam][2], icon=folium.Icon(color=color)).add_to(m)
+
+
+    #Voeg verbindingen toe als lijnen tussen stations
     i = 0
     #FOR-LOOP per trein toevoegen
     for g in verbindingen_geweest:
@@ -79,8 +100,8 @@ def kaart_maken_voor_csv(is_visited, verbindingen_geweest):
                 plaats = verbindingen.index(eval(s))
                 verbindingen.pop(plaats)
             start, eind, reistijd = eval(s)
-            start_lat, start_lon = station_dict[start]
-            eind_lat, eind_lon = station_dict[eind]
+            start_lat, start_lon, loop = station_dict[start]
+            eind_lat, eind_lon, loop = station_dict[eind]
             folium.PolyLine([(start_lat + schuiven, start_lon + schuiven), (eind_lat + schuiven, eind_lon + schuiven)], color=color, weight=4, opacity=0.5).add_to(m)
     
     #Alleen als verbinding al is gereden stukje opschuiven
