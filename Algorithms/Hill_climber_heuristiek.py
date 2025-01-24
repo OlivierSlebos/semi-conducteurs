@@ -64,7 +64,7 @@ def hill_climber_2(spel: Kaart):
     print(f"Begin Score = {oplossing_huidig['score']}")
 
     #Run nog een x aantal keer als hij nog geen beter score heeft gevonden
-    while k < 100000:
+    while k < 5000000:
 
         if verbeterd:
             k = 0
@@ -73,6 +73,7 @@ def hill_climber_2(spel: Kaart):
 
         #Kies een random aantal oplossingen die je verwijdert
         max_verwijderen = (oplossing_tijdelijke["aantal_treinen"] - 1)
+        # max_verwijderen = 4
         aantal_verwijderen = random.randint(0, max_verwijderen)
 
         oplossing_tijdelijke["aantal_treinen"] -= aantal_verwijderen
@@ -101,12 +102,17 @@ def hill_climber_2(spel: Kaart):
         #Voeg een random aantal oplossingen toe (Totaal max 7)
         max_toevoegen = 7 - oplossing_tijdelijke["aantal_treinen"]
         aantal_toevoegen = random.randint(0, max_toevoegen)
+
+        #Zorg dat het altijd vier treinen worden
+        # aantal_toevoegen = 4 - oplossing_tijdelijke["aantal_treinen"]
+        # if aantal_toevoegen < 0:
+        #     aantal_toevoegen = 0
+
         oplossing_tijdelijke["aantal_treinen"] += aantal_toevoegen
 
         #Voeg de nieuwe verbindingen toe
         for m in range(aantal_toevoegen):
             spel.load_connecties
-            spel.load_stations
             nieuwe_oplossing = genereer_lijnvoering(spel)
             oplossing_tijdelijke["tijd_gereden"] += nieuwe_oplossing[2]
             oplossing_tijdelijke["trajecten"].append(nieuwe_oplossing[0])
@@ -138,9 +144,9 @@ def hill_climber_2(spel: Kaart):
         graph_score.append(oplossing_tijdelijke["score"])
         graph_runs.append(runs)
 
-        if runs % 1000 == 0:
+        if runs % 10000 == 0:
             print(oplossing_huidig["score"])
-        
+    
     print(f"Eind Score = {oplossing_huidig["score"]}")
 
     schrijf_output(oplossing_huidig["verbindingen"], oplossing_huidig["trajecten"], oplossing_huidig["aantal_treinen"], oplossing_huidig["tijd_gereden"],oplossing_huidig["aantal_conecties"], oplossing_huidig["score"])

@@ -60,7 +60,7 @@ def hill_climber(spel: Kaart):
     print(f"Begin Score = {oplossing_huidig['score']}")
 
     #Run nog een x aantal keer als hij nog geen beter score heeft gevonden
-    while k < 50000:
+    while k < 500000:
 
         if verbeterd:
             k = 0
@@ -132,7 +132,7 @@ def hill_climber(spel: Kaart):
         graph_score.append(oplossing_tijdelijke["score"])
         graph_runs.append(runs)
 
-        if runs % 1000 == 0:
+        if runs % 10000 == 0:
             print(oplossing_huidig["score"])
         
     print(f"Eind Score = {oplossing_huidig["score"]}")
