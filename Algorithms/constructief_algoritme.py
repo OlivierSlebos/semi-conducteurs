@@ -14,8 +14,8 @@ def constructief_algoritme(spel: Kaart) -> None:
 
     # max treinen en tijd
     max_tijd_per_traject = 120
-    max_aantal_trajecten = 7
-
+    max_aantal_trajecten = random.randint(4, 7)
+    
     for i in range(max_aantal_trajecten):
         # start nieuw traject en sla op
         traject, traject_connecties, traject_tijd = bouw_traject(spel, max_tijd_per_traject)
@@ -24,6 +24,7 @@ def constructief_algoritme(spel: Kaart) -> None:
         lijst_trajecten.append(traject)
         schrijf_output_trajecten.append(traject)
         schrijf_output_verbindingen.append(traject_connecties)
+        # filter dubbele connecties er uit
         for connectie in traject_connecties:
             unieke_connecties_gereden.add(tuple(sorted(connectie)))
         tijd_gereden += traject_tijd
@@ -35,20 +36,13 @@ def constructief_algoritme(spel: Kaart) -> None:
     aantal_connecties_gereden = len(unieke_connecties_gereden)
     score = score_bereken(aantal_treinen, tijd_gereden, aantal_connecties_gereden)
 
-    # maak een csv met de resultaten
     # Schrijf de output naar een CSV
     schrijf_output(schrijf_output_verbindingen, schrijf_output_trajecten, aantal_treinen, tijd_gereden, aantal_connecties_gereden, score)
-
-    # Print resultaten
-    # print(f"Trajecten: {lijst_trajecten}")
-    # print(f"Tijd gereden: {tijd_gereden}")
-    # print(f"Aantal connecties bereden: {len(unieke_connecties_gereden)}")
-    # print(f"Score: {score}")
     
 def bouw_traject(spel: Kaart, max_tijd: int):
     # willekeurig station
     start_station = random.choice(list(spel.stations.items()))
-
+    
     #Plaats trein op een plek
     trein = Trein(start_station[1])
 
@@ -69,7 +63,7 @@ def bouw_traject(spel: Kaart, max_tijd: int):
             if not bezocht and trein.time_driven + reistijd <= max_tijd
         ]
 
-        # Stop als er geen verdere connecties mogelijk zijn
+        # als er geen onbereden connectie meer is, rij random verbinding
         if not mogelijke_connecties:
             mogelijke_connecties = [
                 (doel_station, reistijd)
