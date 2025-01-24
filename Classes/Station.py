@@ -20,6 +20,12 @@ class Station:
         self.connections[other_station.name] = (other_station, reisduur, True)
         self.connection_amount -= 1
 
+    # Verwijder de connection weer
+    def verwijder_connection_visited(self, other_station: Self, reisduur) -> None:
+        if other_station.name in self.connections:
+            self.connections[other_station.name] = (other_station, reisduur, False)
+            self.connection_amount += 1
+
     # check of de connectie is bereden, wordt uit de tuple gelezen 
     def is_connection_visited(self, other_station: Self) -> bool:
         return self.connections[other_station.name][2]

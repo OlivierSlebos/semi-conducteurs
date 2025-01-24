@@ -1,4 +1,4 @@
-def score_bereken(treinen, minuten, verbindingen) -> int:
+def score_bereken(treinen, minuten, verbindingen) -> float:
 
     # fractie gereden verbindingen, 28 verbindingen totaal
     p = verbindingen / 28
