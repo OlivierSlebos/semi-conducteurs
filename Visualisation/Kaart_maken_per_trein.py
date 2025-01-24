@@ -60,32 +60,20 @@ def kaart_maken_voor_csv(is_visited, verbindingen_geweest):
 
     for g in station_dict:
         station_dict[g].append([])
-        # print(g)
-        # print(station_dict[g])
 
+    geweest = []
     k = 0
-
-    print(is_visited)
-
     for a in is_visited:
         k += 1
-        print(k)
-        print(a)
-        # print("\n")
         for q in a:
-            print(q)
-            # print(station_dict[station])
+            geweest.append(q)
             if f"Trein {k} ({colors[(k-1)]})" not in station_dict[q][2]:
                 station_dict[q][2].append(f"Trein {k} ({colors[(k-1)]})")
-                # print(station_dict[station][2])
-
-    print(station_dict['Den Helder'][2])
 
     for naam, (lat, lon, loop) in station_dict.items():
-        if naam in is_visited: color = 'blue'
+        if naam in geweest: color = 'blue'
         else: color = 'red'
         folium.Marker([lat, lon], popup=station_dict[naam][2], icon=folium.Icon(color=color)).add_to(m)
-
 
     #Voeg verbindingen toe als lijnen tussen stations
     i = 0
