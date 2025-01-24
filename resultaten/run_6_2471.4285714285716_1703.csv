@@ -1,0 +1,26 @@
+6,500,10.0
+Trein nummer 1
+"('Hoorn', 'Alkmaar', 24)","('Alkmaar', 'Hoorn', 24)","('Alkmaar', 'Hoorn', 24)","('Hoorn', 'Alkmaar', 24)","('Hoorn', 'Alkmaar', 24)","('Alkmaar', 'Hoorn', 24)","('Alkmaar', 'Castricum', 9)","('Castricum', 'Alkmaar', 9)","('Castricum', 'Zaandam', 12)","('Zaandam', 'Castricum', 12)","('Zaandam', 'Beverwijk', 25)","('Beverwijk', 'Zaandam', 25)"
+Hoorn,Alkmaar,Hoorn,Alkmaar,Castricum,Zaandam,Beverwijk
+
+Trein nummer 2
+"('Den Helder', 'Alkmaar', 36)","('Alkmaar', 'Den Helder', 36)","('Alkmaar', 'Castricum', 9)","('Castricum', 'Alkmaar', 9)","('Castricum', 'Zaandam', 12)","('Zaandam', 'Castricum', 12)","('Zaandam', 'Castricum', 12)","('Castricum', 'Zaandam', 12)"
+Den Helder,Alkmaar,Castricum,Zaandam,Castricum
+
+Trein nummer 3
+"('Amsterdam Sloterdijk', 'Zaandam', 6)","('Zaandam', 'Amsterdam Sloterdijk', 6)","('Zaandam', 'Castricum', 12)","('Castricum', 'Zaandam', 12)","('Castricum', 'Zaandam', 12)","('Zaandam', 'Castricum', 12)","('Zaandam', 'Castricum', 12)","('Castricum', 'Zaandam', 12)","('Castricum', 'Beverwijk', 13)","('Beverwijk', 'Castricum', 13)","('Beverwijk', 'Zaandam', 25)","('Zaandam', 'Beverwijk', 25)"
+Amsterdam Sloterdijk,Zaandam,Castricum,Zaandam,Castricum,Beverwijk,Zaandam
+
+Trein nummer 4
+"('Rotterdam Alexander', 'Gouda', 10)","('Gouda', 'Rotterdam Alexander', 10)","('Gouda', 'Alphen a/d Rijn', 19)","('Alphen a/d Rijn', 'Gouda', 19)","('Alphen a/d Rijn', 'Gouda', 19)","('Gouda', 'Alphen a/d Rijn', 19)","('Gouda', 'Alphen a/d Rijn', 19)","('Alphen a/d Rijn', 'Gouda', 19)","('Alphen a/d Rijn', 'Gouda', 19)","('Gouda', 'Alphen a/d Rijn', 19)"
+Rotterdam Alexander,Gouda,Alphen a/d Rijn,Gouda,Alphen a/d Rijn,Gouda
+
+Trein nummer 5
+"('Beverwijk', 'Zaandam', 25)","('Zaandam', 'Beverwijk', 25)","('Zaandam', 'Hoorn', 26)","('Hoorn', 'Zaandam', 26)","('Hoorn', 'Alkmaar', 24)","('Alkmaar', 'Hoorn', 24)","('Alkmaar', 'Hoorn', 24)","('Hoorn', 'Alkmaar', 24)"
+Beverwijk,Zaandam,Hoorn,Alkmaar,Hoorn
+
+Trein nummer 6
+"('Alkmaar', 'Hoorn', 24)","('Hoorn', 'Alkmaar', 24)","('Hoorn', 'Alkmaar', 24)","('Alkmaar', 'Hoorn', 24)"
+Alkmaar,Hoorn,Alkmaar
+
+EOF
