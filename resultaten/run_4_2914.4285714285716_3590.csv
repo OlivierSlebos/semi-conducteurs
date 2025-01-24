@@ -1,0 +1,18 @@
+4,257,10.0
+Trein nummer 1
+"('Castricum', 'Beverwijk', 13)","('Beverwijk', 'Castricum', 13)","('Beverwijk', 'Castricum', 13)","('Castricum', 'Beverwijk', 13)","('Castricum', 'Zaandam', 12)","('Zaandam', 'Castricum', 12)","('Zaandam', 'Amsterdam Sloterdijk', 6)","('Amsterdam Sloterdijk', 'Zaandam', 6)","('Amsterdam Sloterdijk', 'Haarlem', 11)","('Haarlem', 'Amsterdam Sloterdijk', 11)","('Haarlem', 'Amsterdam Sloterdijk', 11)","('Amsterdam Sloterdijk', 'Haarlem', 11)","('Amsterdam Sloterdijk', 'Amsterdam Zuid', 16)","('Amsterdam Zuid', 'Amsterdam Sloterdijk', 16)"
+Castricum,Beverwijk,Castricum,Zaandam,Amsterdam Sloterdijk,Haarlem,Amsterdam Sloterdijk,Amsterdam Zuid
+
+Trein nummer 2
+"('Hoorn', 'Alkmaar', 24)","('Alkmaar', 'Hoorn', 24)","('Alkmaar', 'Hoorn', 24)","('Hoorn', 'Alkmaar', 24)"
+Hoorn,Alkmaar,Hoorn
+
+Trein nummer 3
+"('Amsterdam Amstel', 'Amsterdam Zuid', 10)","('Amsterdam Zuid', 'Amsterdam Amstel', 10)","('Amsterdam Zuid', 'Amsterdam Amstel', 10)","('Amsterdam Amstel', 'Amsterdam Zuid', 10)","('Amsterdam Amstel', 'Amsterdam Zuid', 10)","('Amsterdam Zuid', 'Amsterdam Amstel', 10)","('Amsterdam Zuid', 'Amsterdam Amstel', 10)","('Amsterdam Amstel', 'Amsterdam Zuid', 10)","('Amsterdam Amstel', 'Amsterdam Zuid', 10)","('Amsterdam Zuid', 'Amsterdam Amstel', 10)"
+Amsterdam Amstel,Amsterdam Zuid,Amsterdam Amstel,Amsterdam Zuid,Amsterdam Amstel,Amsterdam Zuid
+
+Trein nummer 4
+"('Amsterdam Amstel', 'Amsterdam Zuid', 10)","('Amsterdam Zuid', 'Amsterdam Amstel', 10)","('Amsterdam Zuid', 'Amsterdam Sloterdijk', 16)","('Amsterdam Sloterdijk', 'Amsterdam Zuid', 16)","('Amsterdam Sloterdijk', 'Amsterdam Zuid', 16)","('Amsterdam Zuid', 'Amsterdam Sloterdijk', 16)","('Amsterdam Zuid', 'Schiphol Airport', 6)","('Schiphol Airport', 'Amsterdam Zuid', 6)","('Schiphol Airport', 'Leiden Centraal', 15)","('Leiden Centraal', 'Schiphol Airport', 15)","('Leiden Centraal', 'Alphen a/d Rijn', 14)","('Alphen a/d Rijn', 'Leiden Centraal', 14)"
+Amsterdam Amstel,Amsterdam Zuid,Amsterdam Sloterdijk,Amsterdam Zuid,Schiphol Airport,Leiden Centraal,Alphen a/d Rijn
+
+EOF

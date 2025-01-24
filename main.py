@@ -28,7 +28,7 @@ if __name__ == "__main__":
     #     if i % 100000 == 0:
     #         print(i)
 
-    hill_climber(spel)
+    hill_climber_2(spel)
 
     # kaart_maken_csv("run_8797.0_4521439157.csv")
 

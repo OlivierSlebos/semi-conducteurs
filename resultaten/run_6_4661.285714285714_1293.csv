@@ -1,0 +1,10 @@
+6,453,16.0
+Trein nummer 1
+"('Den Haag Centraal', 'Delft', 13)","('Delft', 'Den Haag Centraal', 13)","('Delft', 'Den Haag Centraal', 13)","('Den Haag Centraal', 'Delft', 13)","('Den Haag Centraal', 'Leiden Centraal', 12)","('Leiden Centraal', 'Den Haag Centraal', 12)","('Leiden Centraal', 'Alphen a/d Rijn', 14)","('Alphen a/d Rijn', 'Leiden Centraal', 14)"
+Den Haag Centraal,Delft,Den Haag Centraal,Leiden Centraal,Alphen a/d Rijn
+
+Trein nummer 2
+"('Heemstede-Aerdenhout', 'Haarlem', 6)","('Haarlem', 'Heemstede-Aerdenhout', 6)","('Haarlem', 'Heemstede-Aerdenhout', 6)","('Heemstede-Aerdenhout', 'Haarlem', 6)","('Heemstede-Aerdenhout', 'Leiden Centraal', 13)","('Leiden Centraal', 'Heemstede-Aerdenhout', 13)","('Leiden Centraal', 'Alphen a/d Rijn', 14)","('Alphen a/d Rijn', 'Leiden Centraal', 14)"
+Heemstede-Aerdenhout,Haarlem,Heemstede-Aerdenhout,Leiden Centraal,Alphen a/d Rijn
+
+EOF

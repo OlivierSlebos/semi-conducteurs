@@ -64,7 +64,7 @@ def hill_climber_2(spel: Kaart):
     print(f"Begin Score = {oplossing_huidig['score']}")
 
     #Run nog een x aantal keer als hij nog geen beter score heeft gevonden
-    while k < 5000000:
+    while k < 2:
 
         if verbeterd:
             k = 0
@@ -89,6 +89,7 @@ def hill_climber_2(spel: Kaart):
                 index -= 1
 
             if len(oplossing_tijdelijke["verbindingen"]) != 0:
+                
                 #Bereken de tijd die die verbinding kost
                 for g in oplossing_tijdelijke["verbindingen"][index]:
                     tijd_gereden += g[2]
@@ -112,7 +113,15 @@ def hill_climber_2(spel: Kaart):
 
         #Voeg de nieuwe verbindingen toe
         for m in range(aantal_toevoegen):
-            spel.load_connecties
+            spel.load_connecties 
+            
+            #Zorg er voor dat de verbindingen opnieuw worden aangezet voor de treinen van een eerder traject
+            for q in oplossing_tijdelijke["verbindingen"]:
+                for l in q:
+                    huidige_station = spel.stations[l[0]]
+                    other_station = spel.stations[l[1]]
+                    huidige_station.set_connection_visited(other_station, int(l[2]))
+
             nieuwe_oplossing = genereer_lijnvoering(spel)
             oplossing_tijdelijke["tijd_gereden"] += nieuwe_oplossing[2]
             oplossing_tijdelijke["trajecten"].append(nieuwe_oplossing[0])
