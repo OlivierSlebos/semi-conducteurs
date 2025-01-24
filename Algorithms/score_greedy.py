@@ -1,24 +1,20 @@
-from datetime import datetime
-
 import random
+
+from datetime import datetime
 
 from Classes.Kaart import Kaart
 
 from Classes.Trein import Trein
 
-from Helpers import genereer_output
+from score import score_bereken
 
 from Helpers import schrijf_output
 
-from score import score_bereken
+def score_greedy_algorithm(spel: Kaart) -> None:
+    spel.load_connecties("Data/connecties.csv")
 
-def connection_driven_greedy_algoritme(spel: Kaart) -> None:
-
-
-    lijst_stations_gereden = []
-    lijst_connecties_gereden = []
-    tijd_gereden = 0
-
+    aantal_gereden_connecties = 0
+    totale_reistijd = 0
     schrijf_output_verbindingen = []
     schrijf_output_trajecten = []
 
@@ -27,99 +23,78 @@ def connection_driven_greedy_algoritme(spel: Kaart) -> None:
 
     for i in range(aantal_treinen):
 
-        #Voer het algoritme uit
-        traject, verbindingen, reistijd = genereer_lijnvoering(spel)
+        traject, verbindingen, reistijd, temp_aantal_gereden_connecties = genereer_lijnvoering(spel, aantal_gereden_connecties, totale_reistijd, aantal_treinen)
 
-        #Sla de uitkomsten van de history op
-        lijst_stations_gereden.extend(traject)
-        lijst_connecties_gereden.extend(verbindingen)
-        tijd_gereden += reistijd
-
-        #Sla op zodat schrijf_output werkt
+        #Sla de verbindingen & trajecten op per trein
         schrijf_output_trajecten.append(traject)
         schrijf_output_verbindingen.append(verbindingen)
 
-    nieuwe_lijst_connecties_gereden = []
-    for connectie in lijst_connecties_gereden:
-        if connectie not in nieuwe_lijst_connecties_gereden:
-            nieuwe_lijst_connecties_gereden.append(connectie)
+        totale_reistijd = reistijd
+        aantal_gereden_connecties = temp_aantal_gereden_connecties
 
-    aantal_connecties_gereden: int = len(nieuwe_lijst_connecties_gereden)/2
+    #Bereken een score
+    score = score_bereken(aantal_treinen, totale_reistijd, aantal_gereden_connecties)
 
-    score = score_bereken(aantal_treinen, tijd_gereden, aantal_connecties_gereden)
-
-    schrijf_output(schrijf_output_verbindingen, schrijf_output_trajecten, aantal_treinen, tijd_gereden, aantal_connecties_gereden, score)
+    #Maak een csv
+    schrijf_output(schrijf_output_verbindingen, schrijf_output_trajecten, aantal_treinen, totale_reistijd, aantal_gereden_connecties, score)
 
 
-def score_greedy_algorithm(spel: Kaart) -> tuple[list, list]:
-
-    # random seed generator 
-    aantal_connecties_gereden = 0
-
-    r = random.Random(random.seed(datetime.now().timestamp()))
-
-    # lijst met mogelijke begint stations 
-    stations = list(spel.stations)
-    r.shuffle(stations)
-    max = len(stations)
-
-    # pak een random station uit de lijst met stations en maak een trein op die plek, mag niet een plek zijn die nog maar 0 connecties over heeft
-    counter = 0
-    volgend_station = stations[counter]
-    station_item = spel.stations[volgend_station]
+def genereer_lijnvoering(spel: Kaart, aantal_gereden_connecties, totale_reistijd, aantal_treinen):
     
-    while station_item.connection_amount <= 0 and counter < max:
-        volgend_station = stations[counter]
-        station_item = spel.stations[volgend_station]
-        counter += 1
-    trein1 = Trein(station_item)
+    r = random.Random(random.seed(datetime.now().timestamp()))
+    begin_station_naam = r.choice(list(spel.stations))
+    begin_station_object = spel.stations[begin_station_naam]
+    
+    trein1 = Trein(begin_station_object)
 
     trein1.traject_history.push(trein1.current_station.name)
     trein1.current_station.set_visited()
 
-    # trein mag 2 uur rijden, dus <= 120
-
     time_to_drive = r.randint(60,120)
-    while trein1.time_driven <= time_to_drive:
+    while trein1.time_driven <= time_to_drive and aantal_gereden_connecties < 28:
 
-        counter = 0
+        te_rijden_connectie = None
+        maximale_score = -10000
 
-        volgende_stations = list(trein1.current_station.connections)
-        r.shuffle(volgende_stations)
-        max = len(volgende_stations)
+        for connectie in trein1.current_station.connections:
+            station_item, reisduur, connection_visited = trein1.current_station.connections[connectie]
+            if not connection_visited:
+                tussentijdse_score = score_bereken(aantal_treinen, totale_reistijd + reisduur, aantal_gereden_connecties + 1)
+            else:
+                tussentijdse_score = score_bereken(aantal_treinen, totale_reistijd + reisduur, aantal_gereden_connecties)
+            if tussentijdse_score > maximale_score and trein1.time_driven + reisduur < time_to_drive:
+                maximale_score = tussentijdse_score
+                te_rijden_connectie = connectie
 
-        # pak de onderdelen van de tuple van de connectie
-        volgend_station = volgende_stations[counter]
-        station, reisduur, connection_visited = trein1.current_station.connections[volgend_station]
-        
-        # als de reisduur boven de 2 uur wordt met het huidige station of het traject is al gereden, pakt hij een andere, dit checkt hij 4 keer
-        # probleem: het is nog random, dus werkt niet altijd 
-        while (trein1.time_driven + reisduur > time_to_drive or connection_visited) and counter < max:
-            # pak ander station en onderdelen 
-            volgend_station = volgende_stations[counter]
-            station, reisduur, connection_visited = trein1.current_station.connections[volgend_station]
-            counter += 1
+        if not te_rijden_connectie is None:
+            volgend_station, reisduur, connection_visited = trein1.current_station.connections[te_rijden_connectie]
+        else:
+            break
 
-        # voeg de tijd toe en verander het huidige station
-        if not trein1.time_driven + reisduur > time_to_drive:
-            trein1.traject_history.push(trein1.current_station.name)
-            trein1.current_station.set_visited()
-            
+        if not connection_visited:
+            aantal_gereden_connecties += 1
+
+        if trein1.time_driven + reisduur <= time_to_drive:
+                
             # zorg dat de connection op visited gaat, tussen het huidige station en het volgende station, en het omgekeerde
-            trein1.current_station.set_connection_visited(station, reisduur)
-            station.set_connection_visited(trein1.current_station, reisduur)
+            trein1.current_station.set_connection_visited(volgend_station, reisduur)
+            volgend_station.set_connection_visited(trein1.current_station, reisduur)
 
             #Zet de connectie in de history
-            huidige_connectie = (trein1.current_station.name, station.name, reisduur)
-            huidige_connectie_2 = (station.name, trein1.current_station.name, reisduur)
+            huidige_connectie = (trein1.current_station.name, volgend_station.name, reisduur)
+            huidige_connectie_2 = (volgend_station.name, trein1.current_station.name, reisduur)
 
             trein1.traject_history.push_connectie(huidige_connectie)
             trein1.traject_history.push_connectie(huidige_connectie_2)
 
             # voeg tijd toe en verander het huidige station 
+            totale_reistijd += reisduur
             trein1.time_driven += reisduur 
-            trein1.current_station = station
-        else:
+            trein1.current_station = volgend_station
+
+            trein1.traject_history.push(trein1.current_station.name)
+            trein1.current_station.set_visited()
+        else: 
             break
 
-    return (trein1.traject_history._data, trein1.traject_history._data_connectie, trein1.time_driven)
+    return(trein1.traject_history._data, trein1.traject_history._data_connectie, totale_reistijd, aantal_gereden_connecties)

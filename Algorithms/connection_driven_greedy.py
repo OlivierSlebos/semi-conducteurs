@@ -14,7 +14,7 @@ from score import score_bereken
 
 def connection_driven_greedy_algoritme(spel: Kaart) -> None:
 
-
+    spel.load_connecties("Data/connecties.csv")
     lijst_stations_gereden = []
     lijst_connecties_gereden = []
     tijd_gereden = 0
@@ -101,7 +101,6 @@ def genereer_lijnvoering(spel: Kaart) -> tuple[list, list]:
         # voeg de tijd toe en verander het huidige station
         if not trein1.time_driven + reisduur > time_to_drive:
             
-            
             # zorg dat de connection op visited gaat, tussen het huidige station en het volgende station, en het omgekeerde
             trein1.current_station.set_connection_visited(station, reisduur)
             station.set_connection_visited(trein1.current_station, reisduur)
@@ -112,6 +111,9 @@ def genereer_lijnvoering(spel: Kaart) -> tuple[list, list]:
 
             trein1.traject_history.push_connectie(huidige_connectie)
             trein1.traject_history.push_connectie(huidige_connectie_2)
+
+            trein1.current_station.connection_amount -= 1
+            station.connection_amount -= 1
 
             # voeg tijd toe en verander het huidige station 
             trein1.time_driven += reisduur 
