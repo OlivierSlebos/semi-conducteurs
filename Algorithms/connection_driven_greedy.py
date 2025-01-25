@@ -77,7 +77,7 @@ def genereer_lijnvoering(spel: Kaart) -> tuple[list, list]:
 
     # trein mag 2 uur rijden, dus <= 120
 
-    time_to_drive = r.randint(60,120)
+    time_to_drive = r.randint(60,180) #Verhoogd voor holland
     while trein1.time_driven <= time_to_drive:
 
         counter = 0

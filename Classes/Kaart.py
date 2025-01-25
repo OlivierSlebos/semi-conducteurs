@@ -8,10 +8,10 @@ class Kaart():
         self.stations: dict[str, Station] = {}
 
         #Laad de stations in
-        self.load_stations("Data/stations.csv")
+        self.load_stations("Data/stations_nederland.csv") #AANGEPAST NAAR HEEL NEDERLAND
 
         #Laad de conecties in
-        self.load_connecties("Data/connecties.csv")
+        self.load_connecties("Data/connecties_nederland.csv") #AANGEPAST NAAR HEEL NEDERLAND
 
     def load_stations(self, filename: str) -> None:
 

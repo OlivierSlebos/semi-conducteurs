@@ -40,8 +40,8 @@ def kaart_maken_csv_per_trein(filename):
 
 def kaart_maken_voor_csv_per_trein(is_visited, verbindingen_geweest):
     
-    stations = station_uit_csv("Data/stations.csv")
-    verbindingen = verbinding_uit_csv("Data/connecties.csv")
+    stations = station_uit_csv("Data/stations_nederland.csv")
+    verbindingen = verbinding_uit_csv("Data/connecties_nederland.csv")
     colors = [
     'yellow',
     'orange',
@@ -49,7 +49,15 @@ def kaart_maken_voor_csv_per_trein(is_visited, verbindingen_geweest):
     'blue',
     'purple',
     'blue',
-    'black'
+    'black',
+    'beige', 
+    'lightblue', 
+    'gray', 
+    'darkred', 
+    'lightgreen', 
+    'black', 'blue', 'darkblue', 'darkpurple', 'cadetblue', 
+    'lightgray', 
+    'darkgreen'
     ]
 
     # Maak een basismap van Nederland (centraal punt)
@@ -105,4 +113,4 @@ def kaart_maken_voor_csv_per_trein(is_visited, verbindingen_geweest):
     m.save("Visualisation/resultaten_kaart.html")
 
 if __name__ == "__main__":
-    kaart_maken_csv_per_trein("run_7_4434.696629213483_7966.csv")
+    kaart_maken_csv_per_trein("run_12_7042.640449438202_2630.csv")

@@ -101,7 +101,7 @@ def maak_grafiek(score: list, runs: list):
     plt.ylabel('Score')
     plt.title('Getrapte Grafiek: Score per Run')
 
-    plt.ylim(7000,9300)
+    plt.ylim(5000, 7600)
 
     # Toon de grafiek
     plt.legend()

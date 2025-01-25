@@ -14,7 +14,7 @@ from Visualisation.kaart_maken import kaart_maken_csv
 
 from Algorithms.Hill_climber_random import hill_climber
 
-from Algorithms.Hill_climber_heuristiek import hill_climber_2
+from Algorithms.Hill_climber_heuristiek import hill_climber_2, hill_climber_nederland
 
 if __name__ == "__main__":
     spel = Kaart()
@@ -32,7 +32,7 @@ if __name__ == "__main__":
 
     # kaart_maken_csv("run_8797.0_4521439157.csv")
 
-    hill_climber_2(spel)
+    hill_climber_nederland(spel)
 
     # bereken_max("Data/connecties_nederland.csv")
 
