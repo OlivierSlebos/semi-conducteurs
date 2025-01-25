@@ -8,32 +8,16 @@ from score import score_bereken
 
 import copy
 
-from Helpers import schrijf_output
-
-import matplotlib.pyplot as plt
-
-def maak_grafiek(score: list, runs: list):
-    # Maak een getrapte grafiek
-    plt.step(runs, score, where='post', label='Score per run', color='blue')
-
-    # Voeg labels en titel toe
-    plt.xlabel('Aantal Runs')
-    plt.ylabel('Score')
-    plt.title('Getrapte Grafiek: Score per Run')
-
-    # Toon de grafiek
-    plt.legend()
-    plt.grid(True)
-    plt.savefig("Hill_Climber_grafiek.png")
+from Helpers import schrijf_output, maak_grafiek
 
 def hill_climber(spel: Kaart):
 
-    #Neem een random oplossing
+    #Neem een random eerste oplossing
     oplossing_1 = roep_functie_aan(spel)
     
     oplossing_tijdelijke = {}
     
-    #schrijf de uitkomsten naar een dict
+    #schrijf de uitkomsten naar een dict die tijdelijk is 
     oplossing_tijdelijke["verbindingen"] = oplossing_1[0]
     oplossing_tijdelijke["trajecten"] = oplossing_1[1]
     oplossing_tijdelijke["aantal_treinen"] = oplossing_1[2]
@@ -43,6 +27,7 @@ def hill_climber(spel: Kaart):
 
     oplossing_huidig = {}
 
+    #Dit is steeds de 'beste' oplossing
     oplossing_huidig["verbindingen"] = oplossing_1[0]
     oplossing_huidig["trajecten"] = oplossing_1[1]
     oplossing_huidig["aantal_treinen"] = oplossing_1[2]
@@ -50,17 +35,19 @@ def hill_climber(spel: Kaart):
     oplossing_huidig["aantal_conecties"] = oplossing_1[4]
     oplossing_huidig["score"] = oplossing_1[5]
 
+    #Zet alle info op start positie + Sla dingen op voor de grafiek
     k = 0
     runs = 0
     graph_score = []
     graph_runs = []
-
     verbeterd = False
 
+    #Laar zien wat de begin positie is
     print(f"Begin Score = {oplossing_huidig['score']}")
 
     #Run nog een x aantal keer als hij nog geen beter score heeft gevonden
     while k < 500000:
+
 
         if verbeterd:
             k = 0
