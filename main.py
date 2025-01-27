@@ -16,6 +16,8 @@ from Algorithms.Hill_climber_random import hill_climber
 
 from Algorithms.Hill_climber_heuristiek import hill_climber_2, hill_climber_nederland
 
+from Algorithms.korste_afstand_greedy import kortste_connectie_greedy
+
 if __name__ == "__main__":
     spel = Kaart()
 
@@ -32,7 +34,9 @@ if __name__ == "__main__":
 
     # kaart_maken_csv("run_8797.0_4521439157.csv")
 
-    hill_climber_nederland(spel)
+    for i in range(10000):
+        kortste_connectie_greedy(spel)
+        spel.reset_kaart()  # Reset de kaart na elke run
 
     # bereken_max("Data/connecties_nederland.csv")
 
