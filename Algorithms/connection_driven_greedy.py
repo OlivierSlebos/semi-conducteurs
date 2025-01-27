@@ -25,7 +25,7 @@ def connection_driven_greedy_algoritme(spel: Kaart) -> None:
     schrijf_output_trajecten = []
 
     r = random.Random(random.seed(datetime.now().timestamp()))
-    aantal_treinen = r.randint(9,12)
+    aantal_treinen = r.randint(9,15)
 
     for i in range(aantal_treinen):
 
