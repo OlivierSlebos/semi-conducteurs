@@ -13,8 +13,8 @@ def constructief_algoritme(spel: Kaart) -> None:
     tijd_gereden = 0
 
     # max treinen en tijd
-    max_tijd_per_traject = 120
-    max_aantal_trajecten = random.randint(4, 7)
+    max_tijd_per_traject = 180
+    max_aantal_trajecten = random.randint(10, 14)
     
     
     for i in range(max_aantal_trajecten):
@@ -30,8 +30,8 @@ def constructief_algoritme(spel: Kaart) -> None:
             unieke_connecties_gereden.add(tuple(sorted(connectie)))
         tijd_gereden += traject_tijd
 
-        if len(unieke_connecties_gereden) == sum(station.connection_amount for station in spel.stations.values()) / 2:
-            break
+        # if len(unieke_connecties_gereden) == sum(station.connection_amount for station in spel.stations.values()) / 2:
+        #     break
     
     aantal_treinen = len(lijst_trajecten)
     aantal_connecties_gereden = len(unieke_connecties_gereden)
