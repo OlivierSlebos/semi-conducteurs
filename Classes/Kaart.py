@@ -75,5 +75,5 @@ class Kaart():
 
     def reset_kaart(self):
         # Reset de staat van stations en connecties
-        self.load_stations("Data/stations.csv")
-        self.load_connecties("Data/connecties.csv")
+        self.load_stations("Data/stations_nederland.csv")
+        self.load_connecties("Data/connecties_nederland.csv")
