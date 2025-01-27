@@ -29,8 +29,8 @@ def maak_boxplot(data_csv, output_image):
         plt.ylim(0, 10000)
         plt.boxplot(scores, labels=treinen, patch_artist=True, boxprops=dict(facecolor='skyblue', color='black'), )
         plt.title("Boxplot van Scores per Trein", fontsize=16)
-        plt.xlabel("Aantal Treinen", fontsize=14)
-        plt.ylabel("Scores", fontsize=14)
+        plt.xlabel("Aantal treinen (n)", fontsize=14)
+        plt.ylabel("Kwaliteitsscore (K)", fontsize=14)
         plt.grid(axis='y', linestyle='--', alpha=0.7)
         
         # Opslaan als afbeelding
