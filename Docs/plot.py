@@ -34,16 +34,18 @@ def maak_binned_bargraph(data_csv, output_image, bin_size):
         fractions = frequencies / total  # Fractie berekenen
         
         # Bar graph maken
-        plt.figure(figsize=(12, 6))
+        plt.figure(figsize=(12, 8))
         plt.bar(bin_edges[:-1], fractions, width=bin_size, color='skyblue', edgecolor='black', align='edge')
         plt.xlim(0, 10000)
         plt.title("Binned Scores (Fraction)", fontsize=16)
-        plt.xlabel(f"Scores per (bin size = {bin_size})", fontsize=14)
+        plt.xlabel(f"Scores (K) per (bin size = {bin_size})", fontsize=14)
         plt.ylabel("Fraction", fontsize=14)
         plt.xticks(bin_edges, rotation=45, fontsize=12)
         plt.yticks(fontsize=12)
         plt.grid(axis='y', linestyle='--', alpha=0.7)
-        
+        plt.axvline(x=np.nanmean(scores), color="red")
+        plt.legend([f"mean = {int(np.nanmean(scores))}"])
+
         # Opslaan als afbeelding
         plt.savefig(output_image)
         print(f"Bargraph opgeslagen als {output_image}")

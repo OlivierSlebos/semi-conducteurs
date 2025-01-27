@@ -12,9 +12,11 @@ from Helpers import schrijf_output
 
 from score import score_bereken
 
+from Algorithms.korste_afstand_greedy import constructief_algoritme
+
 def connection_driven_greedy_algoritme(spel: Kaart) -> None:
 
-    spel.load_connecties("Data/connecties.csv")
+    spel.load_connecties("Data/connecties_nederland.csv")
     lijst_stations_gereden = []
     lijst_connecties_gereden = []
     tijd_gereden = 0
@@ -23,7 +25,7 @@ def connection_driven_greedy_algoritme(spel: Kaart) -> None:
     schrijf_output_trajecten = []
 
     r = random.Random(random.seed(datetime.now().timestamp()))
-    aantal_treinen = r.randint(4,7)
+    aantal_treinen = r.randint(9,12)
 
     for i in range(aantal_treinen):
 

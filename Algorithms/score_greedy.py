@@ -11,7 +11,7 @@ from score import score_bereken
 from Helpers import schrijf_output
 
 def score_greedy_algorithm(spel: Kaart) -> None:
-    spel.load_connecties("Data/connecties.csv")
+    spel.load_connecties("Data/connecties_nederland.csv")
 
     aantal_gereden_connecties = 0
     totale_reistijd = 0
@@ -19,7 +19,7 @@ def score_greedy_algorithm(spel: Kaart) -> None:
     schrijf_output_trajecten = []
 
     r = random.Random(random.seed(datetime.now().timestamp()))
-    aantal_treinen = r.randint(4,7)
+    aantal_treinen = r.randint(9,12)
 
     for i in range(aantal_treinen):
 
@@ -50,13 +50,16 @@ def genereer_lijnvoering(spel: Kaart, aantal_gereden_connecties, totale_reistijd
     trein1.traject_history.push(trein1.current_station.name)
     trein1.current_station.set_visited()
 
-    time_to_drive = r.randint(60,120)
-    while trein1.time_driven <= time_to_drive and aantal_gereden_connecties < 28:
+    time_to_drive = r.randint(60,180)
+    while trein1.time_driven <= time_to_drive and aantal_gereden_connecties < 89:
 
         te_rijden_connectie = None
-        maximale_score = -10000
+        maximale_score = -1000000
 
-        for connectie in trein1.current_station.connections:
+        mogelijke_stations = list(trein1.current_station.connections)
+        r.shuffle(mogelijke_stations)
+
+        for connectie in mogelijke_stations:
             station_item, reisduur, connection_visited = trein1.current_station.connections[connectie]
             if not connection_visited:
                 tussentijdse_score = score_bereken(aantal_treinen, totale_reistijd + reisduur, aantal_gereden_connecties + 1)
