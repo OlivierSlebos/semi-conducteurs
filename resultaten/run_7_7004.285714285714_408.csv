@@ -1,0 +1,30 @@
+7,510,23.0
+Trein nummer 1
+"('Hilversum', 'Almere Centrum', 26)","('Almere Centrum', 'Hilversum', 26)","('Almere Centrum', 'Amsterdam Centraal', 20)","('Amsterdam Centraal', 'Almere Centrum', 20)"
+Hilversum,Almere Centrum,Amsterdam Centraal
+
+Trein nummer 2
+"('Etten-Leur', 'Breda', 7)","('Breda', 'Etten-Leur', 7)","('Breda', 'Tilburg', 13)","('Tilburg', 'Breda', 13)","('Tilburg', 'Breda', 13)","('Breda', 'Tilburg', 13)","('Breda', 'Tilburg', 13)","('Tilburg', 'Breda', 13)","('Tilburg', 'Breda', 13)","('Breda', 'Tilburg', 13)","('Breda', 'Dordrecht', 18)","('Dordrecht', 'Breda', 18)","('Dordrecht', 'Rotterdam Blaak', 14)","('Rotterdam Blaak', 'Dordrecht', 14)","('Rotterdam Blaak', 'Rotterdam Alexander', 9)","('Rotterdam Alexander', 'Rotterdam Blaak', 9)"
+Etten-Leur,Breda,Tilburg,Breda,Tilburg,Breda,Dordrecht,Rotterdam Blaak,Rotterdam Alexander
+
+Trein nummer 3
+"('Heemstede-Aerdenhout', 'Leiden Centraal', 13)","('Leiden Centraal', 'Heemstede-Aerdenhout', 13)","('Leiden Centraal', 'Schiphol Airport', 15)","('Schiphol Airport', 'Leiden Centraal', 15)","('Schiphol Airport', 'Amsterdam Zuid', 6)","('Amsterdam Zuid', 'Schiphol Airport', 6)","('Amsterdam Zuid', 'Amsterdam Sloterdijk', 16)","('Amsterdam Sloterdijk', 'Amsterdam Zuid', 16)","('Amsterdam Sloterdijk', 'Amsterdam Centraal', 6)","('Amsterdam Centraal', 'Amsterdam Sloterdijk', 6)","('Amsterdam Centraal', 'Amsterdam Amstel', 8)","('Amsterdam Amstel', 'Amsterdam Centraal', 8)","('Amsterdam Amstel', 'Utrecht Centraal', 19)","('Utrecht Centraal', 'Amsterdam Amstel', 19)"
+Heemstede-Aerdenhout,Leiden Centraal,Schiphol Airport,Amsterdam Zuid,Amsterdam Sloterdijk,Amsterdam Centraal,Amsterdam Amstel,Utrecht Centraal
+
+Trein nummer 4
+"('Amsterdam Centraal', 'Almere Centrum', 20)","('Almere Centrum', 'Amsterdam Centraal', 20)","('Almere Centrum', 'Lelystad Centrum', 14)","('Lelystad Centrum', 'Almere Centrum', 14)","('Lelystad Centrum', 'Almere Centrum', 14)","('Almere Centrum', 'Lelystad Centrum', 14)","('Almere Centrum', 'Lelystad Centrum', 14)","('Lelystad Centrum', 'Almere Centrum', 14)","('Lelystad Centrum', 'Almere Centrum', 14)","('Almere Centrum', 'Lelystad Centrum', 14)","('Almere Centrum', 'Amsterdam Amstel', 27)","('Amsterdam Amstel', 'Almere Centrum', 27)"
+Amsterdam Centraal,Almere Centrum,Lelystad Centrum,Almere Centrum,Lelystad Centrum,Almere Centrum,Amsterdam Amstel
+
+Trein nummer 5
+"('Amersfoort', 'Apeldoorn', 24)","('Apeldoorn', 'Amersfoort', 24)","('Apeldoorn', 'Zutphen', 20)","('Zutphen', 'Apeldoorn', 20)","('Zutphen', 'Apeldoorn', 20)","('Apeldoorn', 'Zutphen', 20)"
+Amersfoort,Apeldoorn,Zutphen,Apeldoorn
+
+Trein nummer 6
+"('Amsterdam Sloterdijk', 'Zaandam', 6)","('Zaandam', 'Amsterdam Sloterdijk', 6)","('Zaandam', 'Castricum', 12)","('Castricum', 'Zaandam', 12)","('Castricum', 'Beverwijk', 13)","('Beverwijk', 'Castricum', 13)","('Beverwijk', 'Haarlem', 16)","('Haarlem', 'Beverwijk', 16)"
+Amsterdam Sloterdijk,Zaandam,Castricum,Beverwijk,Haarlem
+
+Trein nummer 7
+"('Haarlem', 'Heemstede-Aerdenhout', 6)","('Heemstede-Aerdenhout', 'Haarlem', 6)","('Heemstede-Aerdenhout', 'Leiden Centraal', 13)","('Leiden Centraal', 'Heemstede-Aerdenhout', 13)","('Leiden Centraal', 'Heemstede-Aerdenhout', 13)","('Heemstede-Aerdenhout', 'Leiden Centraal', 13)","('Heemstede-Aerdenhout', 'Haarlem', 6)","('Haarlem', 'Heemstede-Aerdenhout', 6)","('Haarlem', 'Beverwijk', 16)","('Beverwijk', 'Haarlem', 16)","('Beverwijk', 'Castricum', 13)","('Castricum', 'Beverwijk', 13)"
+Haarlem,Heemstede-Aerdenhout,Leiden Centraal,Heemstede-Aerdenhout,Haarlem,Beverwijk,Castricum
+
+EOF

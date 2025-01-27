@@ -1,0 +1,18 @@
+4,333,14.0
+Trein nummer 1
+"('Heemstede-Aerdenhout', 'Haarlem', 6)","('Haarlem', 'Heemstede-Aerdenhout', 6)","('Haarlem', 'Heemstede-Aerdenhout', 6)","('Heemstede-Aerdenhout', 'Haarlem', 6)","('Heemstede-Aerdenhout', 'Leiden Centraal', 13)","('Leiden Centraal', 'Heemstede-Aerdenhout', 13)","('Leiden Centraal', 'Schiphol Airport', 15)","('Schiphol Airport', 'Leiden Centraal', 15)","('Schiphol Airport', 'Leiden Centraal', 15)","('Leiden Centraal', 'Schiphol Airport', 15)","('Leiden Centraal', 'Schiphol Airport', 15)","('Schiphol Airport', 'Leiden Centraal', 15)","('Schiphol Airport', 'Leiden Centraal', 15)","('Leiden Centraal', 'Schiphol Airport', 15)","('Leiden Centraal', 'Alphen a/d Rijn', 14)","('Alphen a/d Rijn', 'Leiden Centraal', 14)"
+Heemstede-Aerdenhout,Haarlem,Heemstede-Aerdenhout,Leiden Centraal,Schiphol Airport,Leiden Centraal,Schiphol Airport,Leiden Centraal,Alphen a/d Rijn
+
+Trein nummer 2
+"('Leiden Centraal', 'Schiphol Airport', 15)","('Schiphol Airport', 'Leiden Centraal', 15)","('Schiphol Airport', 'Amsterdam Zuid', 6)","('Amsterdam Zuid', 'Schiphol Airport', 6)","('Amsterdam Zuid', 'Amsterdam Amstel', 10)","('Amsterdam Amstel', 'Amsterdam Zuid', 10)","('Amsterdam Amstel', 'Amsterdam Zuid', 10)","('Amsterdam Zuid', 'Amsterdam Amstel', 10)","('Amsterdam Zuid', 'Amsterdam Amstel', 10)","('Amsterdam Amstel', 'Amsterdam Zuid', 10)","('Amsterdam Amstel', 'Amsterdam Centraal', 8)","('Amsterdam Centraal', 'Amsterdam Amstel', 8)","('Amsterdam Centraal', 'Amsterdam Sloterdijk', 6)","('Amsterdam Sloterdijk', 'Amsterdam Centraal', 6)","('Amsterdam Sloterdijk', 'Zaandam', 6)","('Zaandam', 'Amsterdam Sloterdijk', 6)"
+Leiden Centraal,Schiphol Airport,Amsterdam Zuid,Amsterdam Amstel,Amsterdam Zuid,Amsterdam Amstel,Amsterdam Centraal,Amsterdam Sloterdijk,Zaandam
+
+Trein nummer 3
+"('Leiden Centraal', 'Schiphol Airport', 15)","('Schiphol Airport', 'Leiden Centraal', 15)","('Schiphol Airport', 'Amsterdam Zuid', 6)","('Amsterdam Zuid', 'Schiphol Airport', 6)","('Amsterdam Zuid', 'Schiphol Airport', 6)","('Schiphol Airport', 'Amsterdam Zuid', 6)","('Schiphol Airport', 'Leiden Centraal', 15)","('Leiden Centraal', 'Schiphol Airport', 15)","('Leiden Centraal', 'Heemstede-Aerdenhout', 13)","('Heemstede-Aerdenhout', 'Leiden Centraal', 13)","('Heemstede-Aerdenhout', 'Haarlem', 6)","('Haarlem', 'Heemstede-Aerdenhout', 6)","('Haarlem', 'Beverwijk', 16)","('Beverwijk', 'Haarlem', 16)","('Beverwijk', 'Castricum', 13)","('Castricum', 'Beverwijk', 13)","('Castricum', 'Zaandam', 12)","('Zaandam', 'Castricum', 12)"
+Leiden Centraal,Schiphol Airport,Amsterdam Zuid,Schiphol Airport,Leiden Centraal,Heemstede-Aerdenhout,Haarlem,Beverwijk,Castricum,Zaandam
+
+Trein nummer 4
+"('Heemstede-Aerdenhout', 'Haarlem', 6)","('Haarlem', 'Heemstede-Aerdenhout', 6)","('Haarlem', 'Amsterdam Sloterdijk', 11)","('Amsterdam Sloterdijk', 'Haarlem', 11)","('Amsterdam Sloterdijk', 'Amsterdam Zuid', 16)","('Amsterdam Zuid', 'Amsterdam Sloterdijk', 16)","('Amsterdam Zuid', 'Schiphol Airport', 6)","('Schiphol Airport', 'Amsterdam Zuid', 6)","('Schiphol Airport', 'Amsterdam Zuid', 6)","('Amsterdam Zuid', 'Schiphol Airport', 6)","('Amsterdam Zuid', 'Amsterdam Sloterdijk', 16)","('Amsterdam Sloterdijk', 'Amsterdam Zuid', 16)"
+Heemstede-Aerdenhout,Haarlem,Amsterdam Sloterdijk,Amsterdam Zuid,Schiphol Airport,Amsterdam Zuid,Amsterdam Sloterdijk
+
+EOF

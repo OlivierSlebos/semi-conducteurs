@@ -1,7 +1,7 @@
 def score_bereken(treinen, minuten, verbindingen) -> float:
 
     # fractie gereden verbindingen, 28 verbindingen totaal
-    p = verbindingen / 28
+    p = verbindingen / 89
     score = p * 10000 - ((treinen * 100) + minuten)
     return score
 

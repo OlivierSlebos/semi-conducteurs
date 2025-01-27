@@ -1,0 +1,18 @@
+4,236,11.0
+Trein nummer 1
+"('Den Haag Centraal', 'Delft', 13)","('Delft', 'Den Haag Centraal', 13)","('Delft', 'Schiedam Centrum', 7)","('Schiedam Centrum', 'Delft', 7)","('Schiedam Centrum', 'Rotterdam Centraal', 5)","('Rotterdam Centraal', 'Schiedam Centrum', 5)","('Rotterdam Centraal', 'Rotterdam Alexander', 8)","('Rotterdam Alexander', 'Rotterdam Centraal', 8)","('Rotterdam Alexander', 'Rotterdam Centraal', 8)","('Rotterdam Centraal', 'Rotterdam Alexander', 8)","('Rotterdam Centraal', 'Rotterdam Alexander', 8)","('Rotterdam Alexander', 'Rotterdam Centraal', 8)","('Rotterdam Alexander', 'Gouda', 10)","('Gouda', 'Rotterdam Alexander', 10)"
+Den Haag Centraal,Delft,Schiedam Centrum,Rotterdam Centraal,Rotterdam Alexander,Rotterdam Centraal,Rotterdam Alexander,Gouda
+
+Trein nummer 2
+"('Amsterdam Amstel', 'Amsterdam Zuid', 10)","('Amsterdam Zuid', 'Amsterdam Amstel', 10)","('Amsterdam Zuid', 'Schiphol Airport', 6)","('Schiphol Airport', 'Amsterdam Zuid', 6)","('Schiphol Airport', 'Amsterdam Zuid', 6)","('Amsterdam Zuid', 'Schiphol Airport', 6)","('Amsterdam Zuid', 'Schiphol Airport', 6)","('Schiphol Airport', 'Amsterdam Zuid', 6)","('Schiphol Airport', 'Amsterdam Zuid', 6)","('Amsterdam Zuid', 'Schiphol Airport', 6)","('Amsterdam Zuid', 'Schiphol Airport', 6)","('Schiphol Airport', 'Amsterdam Zuid', 6)","('Schiphol Airport', 'Leiden Centraal', 15)","('Leiden Centraal', 'Schiphol Airport', 15)","('Leiden Centraal', 'Alphen a/d Rijn', 14)","('Alphen a/d Rijn', 'Leiden Centraal', 14)"
+Amsterdam Amstel,Amsterdam Zuid,Schiphol Airport,Amsterdam Zuid,Schiphol Airport,Amsterdam Zuid,Schiphol Airport,Leiden Centraal,Alphen a/d Rijn
+
+Trein nummer 3
+"('Alkmaar', 'Den Helder', 36)","('Den Helder', 'Alkmaar', 36)","('Den Helder', 'Alkmaar', 36)","('Alkmaar', 'Den Helder', 36)"
+Alkmaar,Den Helder,Alkmaar
+
+Trein nummer 4
+"('Den Haag Centraal', 'Gouda', 18)","('Gouda', 'Den Haag Centraal', 18)","('Gouda', 'Den Haag Centraal', 18)","('Den Haag Centraal', 'Gouda', 18)"
+Den Haag Centraal,Gouda,Den Haag Centraal
+
+EOF

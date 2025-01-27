@@ -4,7 +4,7 @@ import ast
 
 from kaart_maken import station_uit_csv, verbinding_uit_csv
 
-def kaart_maken_csv(filename):
+def kaart_maken_csv_per_trein(filename):
     
     is_visited = []
     verbindingen_geweest_2 = []
@@ -36,28 +36,12 @@ def kaart_maken_csv(filename):
             # #Volgende line
             line = f.readline()
             # print(line)
-    kaart_maken_voor_csv(is_visited, verbindingen_geweest_2)
+    kaart_maken_voor_csv_per_trein(is_visited, verbindingen_geweest_2)
 
-def kaart_maken_voor_csv(is_visited, verbindingen_geweest):
+def kaart_maken_voor_csv_per_trein(is_visited, verbindingen_geweest):
     
-    stations = station_uit_csv("Data/stations.csv")
-    verbindingen = verbinding_uit_csv("Data/connecties.csv")
-    
-    # Maak een basismap van Nederland (centraal punt)
-    m = folium.Map(location=[52.3794, 4.9009], zoom_start=8, tiles='CartoDB Positron')
-
-    # Voeg stations toe als markers
-    station_dict = {name: [lat, lon] for name, lat, lon in stations}
-
-    # for g in station_dict:
-    #     station_dict[g].append([])
-
-    for naam, (lat, lon) in station_dict.items():
-        if naam in is_visited: color = 'blue'
-        else: color = 'red'
-        folium.Marker([lat, lon], popup=naam, icon=folium.Icon(color=color)).add_to(m)
-
-    #Voeg verbindingen toe als lijnen tussen stations
+    stations = station_uit_csv("Data/stations_nederland.csv")
+    verbindingen = verbinding_uit_csv("Data/connecties_nederland.csv")
     colors = [
     'yellow',
     'orange',
@@ -65,8 +49,41 @@ def kaart_maken_voor_csv(is_visited, verbindingen_geweest):
     'blue',
     'purple',
     'blue',
-    'black'
+    'black',
+    'beige', 
+    'lightblue', 
+    'gray', 
+    'darkred', 
+    'lightgreen', 
+    'black', 'blue', 'darkblue', 'darkpurple', 'cadetblue', 
+    'lightgray', 
+    'darkgreen'
     ]
+
+    # Maak een basismap van Nederland (centraal punt)
+    m = folium.Map(location=[52.3794, 4.9009], zoom_start=8, tiles='CartoDB Positron')
+
+    # Voeg stations toe als markers
+    station_dict = {name: [lat, lon] for name, lat, lon in stations}
+
+    for g in station_dict:
+        station_dict[g].append([])
+
+    geweest = []
+    k = 0
+    for a in is_visited:
+        k += 1
+        for q in a:
+            geweest.append(q)
+            if f"Trein {k} ({colors[(k-1)]})" not in station_dict[q][2]:
+                station_dict[q][2].append(f"Trein {k} ({colors[(k-1)]})")
+
+    for naam, (lat, lon, loop) in station_dict.items():
+        if naam in geweest: color = 'blue'
+        else: color = 'red'
+        folium.Marker([lat, lon], popup=(naam, station_dict[naam][2]), icon=folium.Icon(color=color)).add_to(m)
+
+    #Voeg verbindingen toe als lijnen tussen stations
     i = 0
     #FOR-LOOP per trein toevoegen
     for g in verbindingen_geweest:
@@ -79,16 +96,16 @@ def kaart_maken_voor_csv(is_visited, verbindingen_geweest):
                 plaats = verbindingen.index(eval(s))
                 verbindingen.pop(plaats)
             start, eind, reistijd = eval(s)
-            start_lat, start_lon = station_dict[start]
-            eind_lat, eind_lon = station_dict[eind]
+            start_lat, start_lon, loop = station_dict[start]
+            eind_lat, eind_lon, loop = station_dict[eind]
             folium.PolyLine([(start_lat + schuiven, start_lon + schuiven), (eind_lat + schuiven, eind_lon + schuiven)], color=color, weight=4, opacity=0.5).add_to(m)
     
     #Alleen als verbinding al is gereden stukje opschuiven
 
     #Alles wat over is rood maken
     for start, eind, reistijd in verbindingen:
-        start_lat, start_lon = station_dict[start]
-        eind_lat, eind_lon = station_dict[eind]
+        start_lat, start_lon, loop = station_dict[start]
+        eind_lat, eind_lon, loop = station_dict[eind]
         color = 'red'
         folium.PolyLine([(start_lat, start_lon), (eind_lat, eind_lon)], color=color, weight=2.5, opacity=0.8).add_to(m)
 
@@ -96,4 +113,4 @@ def kaart_maken_voor_csv(is_visited, verbindingen_geweest):
     m.save("Visualisation/resultaten_kaart.html")
 
 if __name__ == "__main__":
-    kaart_maken_csv("OEPS.csv")
+    kaart_maken_csv_per_trein("run_12_7042.640449438202_2630.csv")

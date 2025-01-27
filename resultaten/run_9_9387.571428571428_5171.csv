@@ -1,0 +1,38 @@
+9,1141,32.0
+Trein nummer 1
+"('Oss', 'Nijmegen', 16)","('Nijmegen', 'Oss', 16)","('Nijmegen', 'Oss', 16)","('Oss', 'Nijmegen', 16)","('Oss', 's-Hertogenbosch', 11)","('s-Hertogenbosch', 'Oss', 11)","('s-Hertogenbosch', 'Utrecht Centraal', 27)","('Utrecht Centraal', 's-Hertogenbosch', 27)","('Utrecht Centraal', 'Amsterdam Centraal', 27)","('Amsterdam Centraal', 'Utrecht Centraal', 27)","('Amsterdam Centraal', 'Amsterdam Sloterdijk', 6)","('Amsterdam Sloterdijk', 'Amsterdam Centraal', 6)","('Amsterdam Sloterdijk', 'Amsterdam Zuid', 16)","('Amsterdam Zuid', 'Amsterdam Sloterdijk', 16)","('Amsterdam Zuid', 'Amsterdam Sloterdijk', 16)","('Amsterdam Sloterdijk', 'Amsterdam Zuid', 16)","('Amsterdam Sloterdijk', 'Haarlem', 11)","('Haarlem', 'Amsterdam Sloterdijk', 11)"
+Oss,Nijmegen,Oss,s-Hertogenbosch,Utrecht Centraal,Amsterdam Centraal,Amsterdam Sloterdijk,Amsterdam Zuid,Amsterdam Sloterdijk,Haarlem
+
+Trein nummer 2
+"('Roermond', 'Sittard', 15)","('Sittard', 'Roermond', 15)","('Sittard', 'Maastricht', 15)","('Maastricht', 'Sittard', 15)","('Maastricht', 'Sittard', 15)","('Sittard', 'Maastricht', 15)","('Sittard', 'Roermond', 15)","('Roermond', 'Sittard', 15)","('Roermond', 'Weert', 14)","('Weert', 'Roermond', 14)","('Weert', 'Roermond', 14)","('Roermond', 'Weert', 14)","('Roermond', 'Sittard', 15)","('Sittard', 'Roermond', 15)","('Sittard', 'Heerlen', 15)","('Heerlen', 'Sittard', 15)","('Heerlen', 'Sittard', 15)","('Sittard', 'Heerlen', 15)","('Sittard', 'Heerlen', 15)","('Heerlen', 'Sittard', 15)"
+Roermond,Sittard,Maastricht,Sittard,Roermond,Weert,Roermond,Sittard,Heerlen,Sittard,Heerlen
+
+Trein nummer 3
+"('Arnhem Centraal', 'Ede-Wageningen', 10)","('Ede-Wageningen', 'Arnhem Centraal', 10)","('Ede-Wageningen', 'Utrecht Centraal', 24)","('Utrecht Centraal', 'Ede-Wageningen', 24)","('Utrecht Centraal', 'Amsterdam Amstel', 19)","('Amsterdam Amstel', 'Utrecht Centraal', 19)","('Amsterdam Amstel', 'Utrecht Centraal', 19)","('Utrecht Centraal', 'Amsterdam Amstel', 19)","('Utrecht Centraal', 'Amsterdam Centraal', 27)","('Amsterdam Centraal', 'Utrecht Centraal', 27)","('Amsterdam Centraal', 'Amsterdam Amstel', 8)","('Amsterdam Amstel', 'Amsterdam Centraal', 8)","('Amsterdam Amstel', 'Almere Centrum', 27)","('Almere Centrum', 'Amsterdam Amstel', 27)","('Almere Centrum', 'Amsterdam Amstel', 27)","('Amsterdam Amstel', 'Almere Centrum', 27)"
+Arnhem Centraal,Ede-Wageningen,Utrecht Centraal,Amsterdam Amstel,Utrecht Centraal,Amsterdam Centraal,Amsterdam Amstel,Almere Centrum,Amsterdam Amstel
+
+Trein nummer 4
+"('Beverwijk', 'Haarlem', 16)","('Haarlem', 'Beverwijk', 16)","('Haarlem', 'Amsterdam Sloterdijk', 11)","('Amsterdam Sloterdijk', 'Haarlem', 11)","('Amsterdam Sloterdijk', 'Zaandam', 6)","('Zaandam', 'Amsterdam Sloterdijk', 6)","('Zaandam', 'Hoorn', 26)","('Hoorn', 'Zaandam', 26)","('Hoorn', 'Zaandam', 26)","('Zaandam', 'Hoorn', 26)","('Zaandam', 'Amsterdam Sloterdijk', 6)","('Amsterdam Sloterdijk', 'Zaandam', 6)","('Amsterdam Sloterdijk', 'Amsterdam Zuid', 16)","('Amsterdam Zuid', 'Amsterdam Sloterdijk', 16)","('Amsterdam Zuid', 'Schiphol Airport', 6)","('Schiphol Airport', 'Amsterdam Zuid', 6)","('Schiphol Airport', 'Amsterdam Zuid', 6)","('Amsterdam Zuid', 'Schiphol Airport', 6)"
+Beverwijk,Haarlem,Amsterdam Sloterdijk,Zaandam,Hoorn,Zaandam,Amsterdam Sloterdijk,Amsterdam Zuid,Schiphol Airport,Amsterdam Zuid
+
+Trein nummer 5
+"('Gouda', 'Den Haag Centraal', 18)","('Den Haag Centraal', 'Gouda', 18)","('Den Haag Centraal', 'Gouda', 18)","('Gouda', 'Den Haag Centraal', 18)","('Gouda', 'Utrecht Centraal', 18)","('Utrecht Centraal', 'Gouda', 18)","('Utrecht Centraal', 'Amersfoort', 14)","('Amersfoort', 'Utrecht Centraal', 14)","('Amersfoort', 'Apeldoorn', 24)","('Apeldoorn', 'Amersfoort', 24)","('Apeldoorn', 'Amersfoort', 24)","('Amersfoort', 'Apeldoorn', 24)"
+Gouda,Den Haag Centraal,Gouda,Utrecht Centraal,Amersfoort,Apeldoorn,Amersfoort
+
+Trein nummer 6
+"('Enschede', 'Hengelo', 7)","('Hengelo', 'Enschede', 7)","('Hengelo', 'Almelo', 10)","('Almelo', 'Hengelo', 10)","('Almelo', 'Deventer', 24)","('Deventer', 'Almelo', 24)","('Deventer', 'Almelo', 24)","('Almelo', 'Deventer', 24)","('Almelo', 'Hengelo', 10)","('Hengelo', 'Almelo', 10)","('Hengelo', 'Almelo', 10)","('Almelo', 'Hengelo', 10)","('Almelo', 'Hengelo', 10)","('Hengelo', 'Almelo', 10)","('Hengelo', 'Enschede', 7)","('Enschede', 'Hengelo', 7)","('Enschede', 'Hengelo', 7)","('Hengelo', 'Enschede', 7)","('Hengelo', 'Enschede', 7)","('Enschede', 'Hengelo', 7)","('Enschede', 'Hengelo', 7)","('Hengelo', 'Enschede', 7)","('Hengelo', 'Enschede', 7)","('Enschede', 'Hengelo', 7)","('Enschede', 'Hengelo', 7)","('Hengelo', 'Enschede', 7)","('Hengelo', 'Almelo', 10)","('Almelo', 'Hengelo', 10)"
+Enschede,Hengelo,Almelo,Deventer,Almelo,Hengelo,Almelo,Hengelo,Enschede,Hengelo,Enschede,Hengelo,Enschede,Hengelo,Almelo
+
+Trein nummer 7
+"('Enschede', 'Hengelo', 7)","('Hengelo', 'Enschede', 7)","('Hengelo', 'Enschede', 7)","('Enschede', 'Hengelo', 7)","('Enschede', 'Hengelo', 7)","('Hengelo', 'Enschede', 7)","('Hengelo', 'Enschede', 7)","('Enschede', 'Hengelo', 7)","('Enschede', 'Hengelo', 7)","('Hengelo', 'Enschede', 7)","('Hengelo', 'Almelo', 10)","('Almelo', 'Hengelo', 10)","('Almelo', 'Deventer', 24)","('Deventer', 'Almelo', 24)","('Deventer', 'Zwolle', 24)","('Zwolle', 'Deventer', 24)"
+Enschede,Hengelo,Enschede,Hengelo,Enschede,Hengelo,Almelo,Deventer,Zwolle
+
+Trein nummer 8
+"('Apeldoorn', 'Deventer', 10)","('Deventer', 'Apeldoorn', 10)","('Deventer', 'Zwolle', 24)","('Zwolle', 'Deventer', 24)","('Zwolle', 'Amersfoort', 35)","('Amersfoort', 'Zwolle', 35)","('Amersfoort', 'Zwolle', 35)","('Zwolle', 'Amersfoort', 35)"
+Apeldoorn,Deventer,Zwolle,Amersfoort,Zwolle
+
+Trein nummer 9
+"('Almere Centrum', 'Hilversum', 26)","('Hilversum', 'Almere Centrum', 26)","('Hilversum', 'Amsterdam Amstel', 28)","('Amsterdam Amstel', 'Hilversum', 28)","('Amsterdam Amstel', 'Almere Centrum', 27)","('Almere Centrum', 'Amsterdam Amstel', 27)","('Almere Centrum', 'Hilversum', 26)","('Hilversum', 'Almere Centrum', 26)"
+Almere Centrum,Hilversum,Amsterdam Amstel,Almere Centrum,Hilversum
+
+EOF

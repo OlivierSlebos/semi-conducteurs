@@ -33,7 +33,7 @@ def verbinding_uit_csv(filename: str) -> list:
             #Split de data op in een lijst
             connection_data = line.split(',')
             #Zet het in een tuple
-            verbinding = (connection_data[0], connection_data[1], int(connection_data[2]))
+            verbinding = (connection_data[0], connection_data[1], int(float(connection_data[2])))
             #Voeg het toe aan de lijst
             verbindingen.append(verbinding)
             #Volgende line

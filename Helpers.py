@@ -4,6 +4,8 @@ from Visualisation.kaart_maken import kaart_maken
 
 import random
 
+import matplotlib.pyplot as plt
+
 def genereer_output(traject, verbindingen, trein_nummer):
     with open('Output.csv', mode='a', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
@@ -85,6 +87,23 @@ def bereken_max(filename):
         line = f.readline()
         som = 0
         for line in f:
-            som += int(line.split(',')[-1])
+            som += int(float(line.split(',')[-1]))
     
-    return som
+    uitslag = (1 * 10000) - (9 * 100 + som)
+    print(uitslag)
+
+def maak_grafiek(score: list, runs: list):
+    # Maak een getrapte grafiek
+    plt.step(runs, score, where='post', label='Score per run', color='blue')
+
+    # Voeg labels en titel toe
+    plt.xlabel('Aantal Runs')
+    plt.ylabel('Score')
+    plt.title('Getrapte Grafiek: Score per Run')
+
+    plt.ylim(5000, 7600)
+
+    # Toon de grafiek
+    plt.legend()
+    plt.grid(True)
+    plt.savefig("Hill_Climber_grafiek.png")

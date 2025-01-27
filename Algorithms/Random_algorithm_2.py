@@ -16,7 +16,7 @@ def roep_functie_aan(spel: Kaart):
 
     #Zet tijd_gereden op 0 & aantal treinen op random
     tijd_gereden = 0
-    aantal_treinen = random.randint(4, 7)
+    aantal_treinen = random.randint(9, 10) #AANGEPAST NAAR HEEL NEDERLAND
 
     #Laat random treinen rijden
     for i in range(aantal_treinen):
@@ -59,7 +59,7 @@ def laat_trein_rijden(spel: Kaart):
     trein.traject_history.push(start_station[1].name)
     
     #Maak een random tijd per trein
-    tijd = random.randint(50, 120)
+    tijd = random.randint(100, 180) #AANGEPAST NAAR HEEL NEDERLAND
 
     #Zolang de tijd niet voorbij is
     while trein.time_driven <= tijd:
