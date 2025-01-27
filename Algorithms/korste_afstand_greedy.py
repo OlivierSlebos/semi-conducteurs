@@ -3,8 +3,8 @@ from Classes.Trein import Trein
 import random
 from score import score_bereken
 from Helpers import schrijf_output
-
-def constructief_algoritme(spel: Kaart) -> None:
+from datetime import datetime
+def kortste_connectie_greedy(spel: Kaart) -> None:
     # maak lege lijsten voor output
     lijst_trajecten = []
     schrijf_output_verbindingen = []
@@ -12,10 +12,11 @@ def constructief_algoritme(spel: Kaart) -> None:
     unieke_connecties_gereden = set()
     tijd_gereden = 0
 
+    r = random.Random(random.seed(datetime.now().timestamp()))
+
     # max treinen en tijd
-    max_tijd_per_traject = 180
-    max_aantal_trajecten = random.randint(10, 14)
-    
+    max_tijd_per_traject = r.randint(60, 180)
+    max_aantal_trajecten = r.randint(9, 16)
     
     for i in range(max_aantal_trajecten):
         # start nieuw traject en sla op
@@ -29,9 +30,6 @@ def constructief_algoritme(spel: Kaart) -> None:
         for connectie in traject_connecties:
             unieke_connecties_gereden.add(tuple(sorted(connectie)))
         tijd_gereden += traject_tijd
-
-        # if len(unieke_connecties_gereden) == sum(station.connection_amount for station in spel.stations.values()) / 2:
-        #     break
     
     aantal_treinen = len(lijst_trajecten)
     aantal_connecties_gereden = len(unieke_connecties_gereden)
