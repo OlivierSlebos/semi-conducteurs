@@ -12,32 +12,13 @@ from Helpers import bereken_max
 
 from Visualisation.kaart_maken import kaart_maken_csv
 
-from Algorithms.Hill_climber_random import hill_climber
+from Algorithms.score_greedy import score_greedy_algorithm
 
-from Algorithms.Hill_climber_heuristiek import hill_climber_2, hill_climber_nederland
-
-from Algorithms.korste_afstand_greedy import kortste_connectie_greedy
+import sys
 
 if __name__ == "__main__":
-    spel = Kaart()
-
-    #  NAAM VAN HET ALGORITME, SPEL, AANTAL TREINEN
-    # for i in range(1000000):
-    #     random_algoritme(spel)
     
-    # for i in range(100):
-    #     roep_functie_aan(spel)
-    #     if i % 100000 == 0:
-    #         print(i)
+    spel = Kaart(sys.argv[5])
 
-    # hill_climber_2(spel)
-
-    # kaart_maken_csv("run_8797.0_4521439157.csv")
-
-    for i in range(10000):
-        kortste_connectie_greedy(spel)
-        spel.reset_kaart()  # Reset de kaart na elke run
-
-    # bereken_max("Data/connecties_nederland.csv")
-
-    #9219 is de maximale score
+    for i in range(int(sys.argv[6])):
+        random_algoritme(spel, int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4]), sys.argv[5])

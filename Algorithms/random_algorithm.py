@@ -10,7 +10,7 @@ from Helpers import schrijf_output
 
 from score import score_bereken
 
-def random_algoritme(spel: Kaart) -> None:
+def random_algoritme(spel: Kaart, trein_min, trein_max, minuten_min, minuten_max, kaart) -> None:
 
     #hou belangrijke variabelen bij 
     lijst_stations_gereden = []
@@ -22,13 +22,13 @@ def random_algoritme(spel: Kaart) -> None:
 
     #bepaal een random seed en bepaal een random aantal treinen 
     r = random.Random(random.seed(datetime.now().timestamp()))
-    aantal_treinen = r.randrange(9,12)
+    aantal_treinen = r.randrange(trein_min, trein_max)
 
     #ga per trein de loop door 
     for i in range(aantal_treinen):
 
         #voer het algoritme uit en update variabelen 
-        traject, verbindingen, reistijd = genereer_lijnvoering(spel)
+        traject, verbindingen, reistijd = genereer_lijnvoering(spel, minuten_min, minuten_max)
 
         #sla de uitkomsten van de history op
         lijst_stations_gereden.extend(traject)
@@ -52,7 +52,7 @@ def random_algoritme(spel: Kaart) -> None:
     #sla de run op in een csv 
     schrijf_output(schrijf_output_verbindingen, schrijf_output_trajecten, aantal_treinen, tijd_gereden, aantal_connecties_gereden, score)
 
-def genereer_lijnvoering(spel: Kaart) -> tuple[list, list, int]:
+def genereer_lijnvoering(spel: Kaart, minuten_min, minuten_max) -> tuple[list, list, int]:
     #random seed generator 
     r = random.Random(random.seed(datetime.now().timestamp()))
 
@@ -62,7 +62,7 @@ def genereer_lijnvoering(spel: Kaart) -> tuple[list, list, int]:
 
     trein1.traject_history.push(trein1.current_station.name)
 
-    time_to_drive = r.randint(60, 180)
+    time_to_drive = r.randint(minuten_min, minuten_max)
     while trein1.time_driven <= time_to_drive:
         
         counter = 0

@@ -2,16 +2,17 @@ from Classes.Station import Station
 
 class Kaart():
 
-    def __init__(self):
+    def __init__(self, kaart: str):
 
         #verbinding station en ID
         self.stations: dict[str, Station] = {}
-
+        
+        
         #Laad de stations in
-        self.load_stations("Data/stations_nederland.csv") #AANGEPAST NAAR HEEL NEDERLAND
+        self.load_stations(f"Data/stations_{kaart}.csv") #AANGEPAST NAAR HEEL NEDERLAND
 
         #Laad de conecties in
-        self.load_connecties("Data/connecties_nederland.csv") #AANGEPAST NAAR HEEL NEDERLAND
+        self.load_connecties(f"Data/connecties_{kaart}.csv") #AANGEPAST NAAR HEEL NEDERLAND
 
     def load_stations(self, filename: str) -> None:
 
