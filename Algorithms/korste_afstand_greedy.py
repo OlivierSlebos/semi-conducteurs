@@ -4,7 +4,7 @@ import random
 from score import score_bereken
 from Helpers import schrijf_output
 from datetime import datetime
-def kortste_connectie_greedy(spel: Kaart) -> None:
+def kortste_connectie_greedy(spel: Kaart, trein_min, trein_max, minuten_min, minuten_max, kaart) -> None:
     # maak lege lijsten voor output
     lijst_trajecten = []
     schrijf_output_verbindingen = []
@@ -12,11 +12,14 @@ def kortste_connectie_greedy(spel: Kaart) -> None:
     unieke_connecties_gereden = set()
     tijd_gereden = 0
 
+    spel.load_connecties("Data/connecties_nederland.csv")
+    spel.load_connecties("Data/connecties_holland.csv")
+    
     r = random.Random(random.seed(datetime.now().timestamp()))
 
     # max treinen en tijd
-    max_tijd_per_traject = r.randint(60, 180)
-    max_aantal_trajecten = r.randint(9, 16)
+    max_tijd_per_traject = r.randint(minuten_min, minuten_max)
+    max_aantal_trajecten = r.randint(trein_min, trein_max)
     
     for i in range(max_aantal_trajecten):
         # start nieuw traject en sla op
