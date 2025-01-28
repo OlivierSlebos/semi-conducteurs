@@ -10,7 +10,7 @@ import copy
 
 from Helpers import schrijf_output, maak_grafiek
 
-def hill_climber(spel: Kaart):
+def hill_climber(spel: Kaart, minimale_treinen: int, maximale_treinen: int, iterations: int):
 
     #Neem een random eerste oplossing
     oplossing_1 = roep_functie_aan(spel)
@@ -46,8 +46,7 @@ def hill_climber(spel: Kaart):
     print(f"Begin Score = {oplossing_huidig['score']}")
 
     #Run nog een x aantal keer als hij nog geen beter score heeft gevonden
-    while k < 500000:
-
+    while k < iterations:
 
         if verbeterd:
             k = 0
@@ -81,9 +80,12 @@ def hill_climber(spel: Kaart):
                 oplossing_tijdelijke["verbindingen"].pop(index)
                 oplossing_tijdelijke["trajecten"].pop(index)
 
-        #Voeg een random aantal oplossingen toe (Totaal max 7)
-        max_toevoegen = 7 - oplossing_tijdelijke["aantal_treinen"]
-        aantal_toevoegen = random.randint(0, max_toevoegen)
+        #Vind een random aantal treinen om toe tevoegen (Totaal mag niet meer dan zeven zijn)
+        max_toevoegen = maximale_treinen - oplossing_tijdelijke["aantal_treinen"] #Bepaal hier het maximum van het aantal treinen
+        minimaal_toevoegen = minimale_treinen - oplossing_tijdelijke["aantal_treinen"] #Bepaal hier het minimale van het aantal treinen
+        if minimaal_toevoegen < 0:
+            minimaal_toevoegen = 0
+        aantal_toevoegen = random.randint(minimaal_toevoegen, max_toevoegen)
         oplossing_tijdelijke["aantal_treinen"] += aantal_toevoegen
 
         #Voeg de nieuwe verbindingen toe

@@ -12,7 +12,7 @@ from Helpers import schrijf_output
 
 from Helpers import maak_grafiek
 
-from Algorithms.connection_driven_greedy import genereer_lijnvoering
+from Algorithms.connection_driven_greedy import genereer_traject
 
 def hill_climber_2(spel: Kaart):
 
@@ -106,7 +106,7 @@ def hill_climber_2(spel: Kaart):
                     huidige_station.set_connection_visited(other_station, int(l[2]))
 
             #Vind een nieuwe oplossing voor 1 trein & voeg dit toe
-            nieuwe_oplossing = genereer_lijnvoering(spel)
+            nieuwe_oplossing = genereer_traject(spel)
             oplossing_tijdelijke["tijd_gereden"] += nieuwe_oplossing[2]
             oplossing_tijdelijke["trajecten"].append(nieuwe_oplossing[0])
             oplossing_tijdelijke["verbindingen"].append(nieuwe_oplossing[1])  
@@ -154,7 +154,7 @@ def hill_climber_2(spel: Kaart):
     #Maak een grafiek
     maak_grafiek(graph_score, graph_runs)
 
-def hill_climber_nederland(spel: Kaart):
+def hill_climber_nederland(spel: Kaart, minimale_treinen: int, maximale_treinen: int, iterations: int):
 
     #Neem een random eerste oplossing
     oplossing_1 = roep_functie_aan(spel)
@@ -190,7 +190,7 @@ def hill_climber_nederland(spel: Kaart):
     print(f"Begin Score = {oplossing_huidig['score']}")
 
     #Run nog een k aantal keer als hij nog geen beter score heeft gevonden
-    while k < 100000:
+    while k < iterations:
 
         #Als hij is verbeterd wordt K weer nul
         if verbeterd:
@@ -228,8 +228,8 @@ def hill_climber_nederland(spel: Kaart):
                 oplossing_tijdelijke["trajecten"].pop(index)
 
         #Vind een random aantal treinen om toe tevoegen (Totaal mag niet meer dan zeven zijn)
-        max_toevoegen = 10 - oplossing_tijdelijke["aantal_treinen"] #Bepaal hier het maximum van het aantal treinen
-        minimaal_toevoegen = 9 - oplossing_tijdelijke["aantal_treinen"] #Bepaal hier het minimale van het aantal treinen
+        max_toevoegen = maximale_treinen - oplossing_tijdelijke["aantal_treinen"] #Bepaal hier het maximum van het aantal treinen
+        minimaal_toevoegen = minimale_treinen - oplossing_tijdelijke["aantal_treinen"] #Bepaal hier het minimale van het aantal treinen
         if minimaal_toevoegen < 0:
             minimaal_toevoegen = 0
         aantal_toevoegen = random.randint(minimaal_toevoegen, max_toevoegen)
@@ -249,7 +249,7 @@ def hill_climber_nederland(spel: Kaart):
         for m in range(aantal_toevoegen):
 
             #Vind een nieuwe oplossing voor 1 trein & voeg dit toe
-            nieuwe_oplossing = genereer_lijnvoering(spel)
+            nieuwe_oplossing = genereer_traject(spel)
             oplossing_tijdelijke["tijd_gereden"] += nieuwe_oplossing[2]
             oplossing_tijdelijke["trajecten"].append(nieuwe_oplossing[0])
             oplossing_tijdelijke["verbindingen"].append(nieuwe_oplossing[1])  
@@ -262,14 +262,11 @@ def hill_climber_nederland(spel: Kaart):
                     nieuwe_lijst_connecties_gereden.append(connectie)
         aantal_connecties_gereden: int = len(nieuwe_lijst_connecties_gereden)/2
 
-        #Voeg dit toe aan de tijdelijke oplossing
+        #Voeg het aantal connectie toe aan de tijdelijke oplossing
         oplossing_tijdelijke["aantal_conecties"] = aantal_connecties_gereden
 
         #Bereken de nieuwe score
         oplossing_tijdelijke["score"] = score_bereken(oplossing_tijdelijke["aantal_treinen"], oplossing_tijdelijke["tijd_gereden"], oplossing_tijdelijke["aantal_conecties"])
-
-        # if runs % 1000 == 12:
-        #     print(f"Treinen Geprobeert = {oplossing_tijdelijke["aantal_treinen"]}")
 
         #Kijk welke score hoger is, nieuw of oud & behoud de hoogste
         if oplossing_huidig["score"] >= oplossing_tijdelijke["score"]:

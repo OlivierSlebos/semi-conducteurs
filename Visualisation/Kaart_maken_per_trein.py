@@ -50,13 +50,12 @@ def kaart_maken_voor_csv_per_trein(is_visited, verbindingen_geweest):
     'purple',
     'blue',
     'black',
-    'beige', 
     'lightblue', 
     'gray', 
     'darkred', 
     'lightgreen', 
     'black', 'blue', 'darkblue', 'darkpurple', 'cadetblue', 
-    'lightgray', 
+    'lightgray', 'beige',
     'darkgreen'
     ]
 
@@ -113,4 +112,4 @@ def kaart_maken_voor_csv_per_trein(is_visited, verbindingen_geweest):
     m.save("Visualisation/resultaten_kaart.html")
 
 if __name__ == "__main__":
-    kaart_maken_csv_per_trein("run_12_7042.640449438202_2630.csv")
+    kaart_maken_csv_per_trein("run_11_96143.40449438202_573.csv")
