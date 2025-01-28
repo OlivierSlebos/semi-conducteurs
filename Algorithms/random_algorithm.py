@@ -14,6 +14,7 @@ from score import score_bereken
 
 def random_algoritme(spel: Kaart) -> None:
 
+    #hou belangrijke variabelen bij 
     lijst_stations_gereden = []
     lijst_connecties_gereden = []
     tijd_gereden = 0
@@ -21,37 +22,36 @@ def random_algoritme(spel: Kaart) -> None:
     schrijf_output_verbindingen = []
     schrijf_output_trajecten = []
 
+    #bepaal een random seed en bepaal een random aantal treinen 
     r = random.Random(random.seed(datetime.now().timestamp()))
     aantal_treinen = r.randrange(9,12)
 
+    #ga per trein de loop door 
     for i in range(aantal_treinen):
 
-        #Voer het algoritme uit
+        #Voer het algoritme uit en update variabelen 
         traject, verbindingen, reistijd = genereer_lijnvoering(spel)
 
-        #Sla de uitkomsten van de history op
+        #sla de uitkomsten van de history op
         lijst_stations_gereden.extend(traject)
         lijst_connecties_gereden.extend(verbindingen)
         tijd_gereden += reistijd
 
-        #Sla op zodat schrijf_output werkt
+        #sla op zodat schrijf_output werkt
         schrijf_output_trajecten.append(traject)
         schrijf_output_verbindingen.append(verbindingen)
-
-        #Genereer output in een csv
-        # genereer_output(traject, verbindingen, i)
     
+    #bepaal hoeveel unieke connecties er gereden zijn 
     nieuwe_lijst_connecties_gereden = []
     for connectie in lijst_connecties_gereden:
         if connectie not in nieuwe_lijst_connecties_gereden:
             nieuwe_lijst_connecties_gereden.append(connectie)
-
     aantal_connecties_gereden: int = len(nieuwe_lijst_connecties_gereden)/2
     
-    # kaart_maken(lijst_stations_gereden, lijst_connecties_gereden)
-
+    #bereken de behaalde score 
     score = score_bereken(aantal_treinen, tijd_gereden, aantal_connecties_gereden)
 
+    #sla de run op in een csv 
     schrijf_output(schrijf_output_verbindingen, schrijf_output_trajecten, aantal_treinen, tijd_gereden, aantal_connecties_gereden, score)
 
 def genereer_lijnvoering(spel: Kaart) -> tuple[list, list, int]:

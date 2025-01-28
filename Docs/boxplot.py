@@ -6,25 +6,27 @@ from uitlezen_boxplot import scores_boxplot_csv
 
 def maak_boxplot(data_csv, output_image):
 
+    #uitlezen in het format voor de boxplot 
     scores_boxplot_csv()
 
+    #kijken of het uitlezen gelukt is 
     try:
-        # Data inlezen en groeperen op aantal treinen
+        #data inlezen en groeperen op aantal treinen
         data = defaultdict(list)
         with open(data_csv, 'r', encoding='utf-8') as csvfile:
             reader = csv.reader(csvfile)
-            next(reader)  # Header overslaan
+            next(reader)  #header overslaan
             for row in reader:
                 if len(row) == 2:
                     trein = int(row[0])
                     score = float(row[1])
                     data[trein].append(score)
         
-        # Data voorbereiden voor boxplot
+        #data voorbereiden voor boxplot
         treinen = sorted(data.keys())  # Sorteer trein-nummers
         scores = [data[trein] for trein in treinen]
         
-        # Boxplot maken
+        #boxplot maken
         plt.figure(figsize=(10, 6))
         plt.ylim(0, 10000)
         plt.boxplot(scores, labels=treinen, patch_artist=True, boxprops=dict(facecolor='skyblue', color='black'), )
@@ -33,7 +35,7 @@ def maak_boxplot(data_csv, output_image):
         plt.ylabel("Kwaliteitsscore (K)", fontsize=14)
         plt.grid(axis='y', linestyle='--', alpha=0.7)
         
-        # Opslaan als afbeelding
+        #opslaan als afbeelding
         plt.savefig(output_image)
         print(f"Boxplot opgeslagen als {output_image}")
         plt.show()
@@ -43,7 +45,7 @@ def maak_boxplot(data_csv, output_image):
 if __name__ == "__main__":
 
 
-    data_csv = "Docs/scores_boxplot.csv"  # Vervang dit door je CSV-bestand
+    data_csv = "Docs/scores_boxplot.csv"  #naam van csv 
     output_image = "boxplot_treinen_scores.png"
 
     # Boxplot maken
