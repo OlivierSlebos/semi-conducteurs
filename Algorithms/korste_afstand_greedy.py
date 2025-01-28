@@ -12,9 +12,11 @@ def kortste_connectie_greedy(spel: Kaart, trein_min, trein_max, minuten_min, min
     unieke_connecties_gereden = set()
     tijd_gereden = 0
 
-    spel.load_connecties("Data/connecties_nederland.csv")
-    spel.load_connecties("Data/connecties_holland.csv")
-    
+    if kaart == "holland":
+        spel.load_connecties("Data/connecties_holland.csv")
+    elif kaart == "nederland":
+        spel.load_connecties("Data/connecties_nederland.csv")
+
     r = random.Random(random.seed(datetime.now().timestamp()))
 
     # max treinen en tijd
