@@ -10,10 +10,10 @@ from score import score_bereken
 
 from Helpers import schrijf_output
 
-def score_greedy_algorithm(spel: Kaart) -> None:
+def score_greedy_algorithm(spel: Kaart, trein_min, trein_max, minuten_min, minuten_max, kaart) -> None:
 
     #zorg dat de connecties herladen worden, zodat de connecties niet op bezocht blijven staan
-    spel.load_connecties("Data/connecties_nederland.csv")
+    spel.load_connecties(f"Data/connecties_{kaart}.csv")
 
     #belangrijke variabelen om bij te houden 
     aantal_gereden_connecties = 0
@@ -23,13 +23,13 @@ def score_greedy_algorithm(spel: Kaart) -> None:
 
     #bepaal een random seed en kies een random aantal treinen 
     r = random.Random(random.seed(datetime.now().timestamp()))
-    aantal_treinen = r.randint(9,16)
+    aantal_treinen = r.randint(trein_min,trein_max)
 
     #ga de loop door voor het aantal treinen 
     for i in range(aantal_treinen):
 
         #genereer een traject per trein en update de nodige variabelen 
-        traject, verbindingen, reistijd, temp_aantal_gereden_connecties = genereer_traject(spel, aantal_gereden_connecties, totale_reistijd, aantal_treinen)
+        traject, verbindingen, reistijd, temp_aantal_gereden_connecties = genereer_traject(spel, aantal_gereden_connecties, totale_reistijd, aantal_treinen, minuten_min, minuten_max)
 
         #Sla de verbindingen & trajecten op per trein
         schrijf_output_trajecten.append(traject)
@@ -39,13 +39,13 @@ def score_greedy_algorithm(spel: Kaart) -> None:
         aantal_gereden_connecties = temp_aantal_gereden_connecties
 
     #bereken een score
-    score = score_bereken(aantal_treinen, totale_reistijd, aantal_gereden_connecties)
+    score = score_bereken(aantal_treinen, totale_reistijd, aantal_gereden_connecties, kaart)
 
     #maak een csv van de run 
     schrijf_output(schrijf_output_verbindingen, schrijf_output_trajecten, aantal_treinen, totale_reistijd, aantal_gereden_connecties, score)
 
 
-def genereer_traject(spel: Kaart, aantal_gereden_connecties, totale_reistijd, aantal_treinen):
+def genereer_traject(spel: Kaart, aantal_gereden_connecties, totale_reistijd, aantal_treinen, minuten_min, minuten_max):
     
     #zet een random seed en kies een random begin station 
     r = random.Random(random.seed(datetime.now().timestamp()))
@@ -58,11 +58,11 @@ def genereer_traject(spel: Kaart, aantal_gereden_connecties, totale_reistijd, aa
     trein1.current_station.set_visited()
 
     #bepaal hoe lang de trein mag rijden 
-    time_to_drive = r.randint(60,180)
+    time_to_drive = r.randint(minuten_min,minuten_max)
     while trein1.time_driven <= time_to_drive and aantal_gereden_connecties < 89:
 
         te_rijden_connectie = None
-        maximale_score = -1000000
+        maximale_score = -10000
 
         #een geshuffelde lijst maken van de opties waar de trein heen kan 
         mogelijke_stations = list(trein1.current_station.connections)

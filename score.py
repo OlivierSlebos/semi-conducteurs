@@ -1,9 +1,18 @@
-def score_bereken(treinen, minuten, verbindingen) -> float:
+def score_bereken(treinen, minuten, verbindingen, kaart) -> float:
 
-    # fractie gereden verbindingen, 28 verbindingen totaal
-    p = verbindingen / 89
-    score = p * 10000 - ((treinen * 100) + minuten)
-    return score
+    if kaart == "nederland":
+        # fractie gereden verbindingen, 89 verbindingen totaal
+        p = verbindingen / 89
+        score = p * 10000 - ((treinen * 100) + minuten)
+        return score
+    elif kaart == "holland":
+        # fractie gereden verbindingen, 28 verbindingen totaal
+        p = verbindingen / 28
+        score = p * 10000 - ((treinen * 100) + minuten)
+        return score
+    else:
+        print("Geen goede kaart meegegeven")
+        return None
 
 
 def score_bereken_csv(filename: str) -> int:

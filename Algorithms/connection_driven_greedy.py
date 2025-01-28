@@ -10,10 +10,10 @@ from Helpers import schrijf_output
 
 from score import score_bereken
 
-def connection_driven_greedy_algoritme(spel: Kaart) -> None:
+def connection_driven_greedy_algoritme(spel: Kaart, trein_min, trein_max, minuten_min, minuten_max, kaart) -> None:
 
     #zorg dat de connecties weer op hun baseline staan 
-    spel.load_connecties("Data/connecties_nederland.csv")
+    spel.load_connecties(f"Data/connecties_{kaart}.csv")
 
     #hou belangrijke variabelen bij 
     lijst_stations_gereden = []
@@ -24,13 +24,13 @@ def connection_driven_greedy_algoritme(spel: Kaart) -> None:
 
     #bepaal een random seed en bepaal een random aantal treinen 
     r = random.Random(random.seed(datetime.now().timestamp()))
-    aantal_treinen = r.randint(9,16)
+    aantal_treinen = r.randint(trein_min, trein_max)
 
     #loop per trein de loop door 
     for i in range(aantal_treinen):
 
         #voer het algoritme uit per trein en update variabelen 
-        traject, verbindingen, reistijd = genereer_traject(spel)
+        traject, verbindingen, reistijd = genereer_traject(spel, minuten_min, minuten_max)
 
         #sla de uitkomsten van de history op
         lijst_stations_gereden.extend(traject)
@@ -49,13 +49,13 @@ def connection_driven_greedy_algoritme(spel: Kaart) -> None:
     aantal_connecties_gereden: int = len(nieuwe_lijst_connecties_gereden)/2
 
     #bereken de behaalde score
-    score = score_bereken(aantal_treinen, tijd_gereden, aantal_connecties_gereden)
+    score = score_bereken(aantal_treinen, tijd_gereden, aantal_connecties_gereden, kaart)
 
     #sla de run op in een csv 
     schrijf_output(schrijf_output_verbindingen, schrijf_output_trajecten, aantal_treinen, tijd_gereden, aantal_connecties_gereden, score)
 
 
-def genereer_traject(spel: Kaart) -> tuple[list, list]:
+def genereer_traject(spel: Kaart, minuten_min, minuten_max) -> tuple[list, list]:
 
     # random seed generator 
     r = random.Random(random.seed(datetime.now().timestamp()))
@@ -81,7 +81,7 @@ def genereer_traject(spel: Kaart) -> tuple[list, list]:
 
     # trein mag 2 uur rijden, dus <= 120
 
-    time_to_drive = r.randint(60,180) #Verhoogd voor holland
+    time_to_drive = r.randint(minuten_min, minuten_max) #Verhoogd voor holland
     while trein1.time_driven <= time_to_drive:
 
         #counter om stations uit de lijst te indexeren en bij te houden of er nog stations over zijn 

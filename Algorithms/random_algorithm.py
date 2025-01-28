@@ -22,7 +22,7 @@ def random_algoritme(spel: Kaart, trein_min, trein_max, minuten_min, minuten_max
 
     #bepaal een random seed en bepaal een random aantal treinen 
     r = random.Random(random.seed(datetime.now().timestamp()))
-    aantal_treinen = r.randrange(trein_min, trein_max)
+    aantal_treinen = r.randint(trein_min, trein_max)
 
     #ga per trein de loop door 
     for i in range(aantal_treinen):
@@ -47,7 +47,7 @@ def random_algoritme(spel: Kaart, trein_min, trein_max, minuten_min, minuten_max
     aantal_connecties_gereden: int = len(nieuwe_lijst_connecties_gereden)/2
     
     #bereken de behaalde score 
-    score = score_bereken(aantal_treinen, tijd_gereden, aantal_connecties_gereden)
+    score = score_bereken(aantal_treinen, tijd_gereden, aantal_connecties_gereden, kaart)
 
     #sla de run op in een csv 
     schrijf_output(schrijf_output_verbindingen, schrijf_output_trajecten, aantal_treinen, tijd_gereden, aantal_connecties_gereden, score)
