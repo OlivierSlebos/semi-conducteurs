@@ -190,7 +190,7 @@ def hill_climber_nederland(spel: Kaart):
     print(f"Begin Score = {oplossing_huidig['score']}")
 
     #Run nog een k aantal keer als hij nog geen beter score heeft gevonden
-    while k < 500000:
+    while k < 100000:
 
         #Als hij is verbeterd wordt K weer nul
         if verbeterd:
@@ -228,22 +228,25 @@ def hill_climber_nederland(spel: Kaart):
                 oplossing_tijdelijke["trajecten"].pop(index)
 
         #Vind een random aantal treinen om toe tevoegen (Totaal mag niet meer dan zeven zijn)
-        max_toevoegen = 12 - oplossing_tijdelijke["aantal_treinen"] #BEpaal hier het maximum van het aantal treinen
-        aantal_toevoegen = random.randint(0, max_toevoegen)
+        max_toevoegen = 10 - oplossing_tijdelijke["aantal_treinen"] #Bepaal hier het maximum van het aantal treinen
+        minimaal_toevoegen = 9 - oplossing_tijdelijke["aantal_treinen"] #Bepaal hier het minimale van het aantal treinen
+        if minimaal_toevoegen < 0:
+            minimaal_toevoegen = 0
+        aantal_toevoegen = random.randint(minimaal_toevoegen, max_toevoegen)
         oplossing_tijdelijke["aantal_treinen"] += aantal_toevoegen
+
+        #Je werkt met een heuristiek, je moet de kaart reseten anders werkt de heuristiek niet
+        spel.load_connecties("Data/connecties_nederland.csv")
+                    
+        #Zorg er voor dat de verbindingen opnieuw worden aangezet van de treinen die niet zijn verwijdert
+        for q in oplossing_tijdelijke["verbindingen"]:
+            for l in q:
+                huidige_station = spel.stations[l[0]]
+                other_station = spel.stations[l[1]]
+                huidige_station.set_connection_visited(other_station, int(l[2]))
 
         #Voeg de nieuwe verbindingen toe
         for m in range(aantal_toevoegen):
-
-            #Je werkt met een heuristiek, je moet de kaart reseten anders werkt de heuristiek niet
-            spel.load_connecties("Data/connecties_nederland.csv")
-            
-            #Zorg er voor dat de verbindingen opnieuw worden aangezet van de treinen die niet zijn verwijdert
-            for q in oplossing_tijdelijke["verbindingen"]:
-                for l in q:
-                    huidige_station = spel.stations[l[0]]
-                    other_station = spel.stations[l[1]]
-                    huidige_station.set_connection_visited(other_station, int(l[2]))
 
             #Vind een nieuwe oplossing voor 1 trein & voeg dit toe
             nieuwe_oplossing = genereer_lijnvoering(spel)
@@ -265,6 +268,9 @@ def hill_climber_nederland(spel: Kaart):
         #Bereken de nieuwe score
         oplossing_tijdelijke["score"] = score_bereken(oplossing_tijdelijke["aantal_treinen"], oplossing_tijdelijke["tijd_gereden"], oplossing_tijdelijke["aantal_conecties"])
 
+        # if runs % 1000 == 12:
+        #     print(f"Treinen Geprobeert = {oplossing_tijdelijke["aantal_treinen"]}")
+
         #Kijk welke score hoger is, nieuw of oud & behoud de hoogste
         if oplossing_huidig["score"] >= oplossing_tijdelijke["score"]:
             oplossing_tijdelijke = copy.deepcopy(oplossing_huidig)
@@ -284,6 +290,7 @@ def hill_climber_nederland(spel: Kaart):
         #Print elke x keer zodat je iets van informatie krijgt
         if runs % 1000 == 0:
             print(oplossing_huidig["score"])
+            # print(f"Treinen = {oplossing_huidig["aantal_treinen"]}")
     
     #Tot slot, print de eind score
     print(f"Eind Score = {oplossing_huidig["score"]}")
