@@ -169,6 +169,9 @@ def score_bereken_csv(filename: str) -> int:
     return score
 
 def station_uit_csv(filename: str) -> list:
+    """
+    Laad de stations in vanuit de DATA-csv om er een kaart van te maken
+    """
     stations = []
     #open document
     with open(filename) as f:
@@ -188,6 +191,9 @@ def station_uit_csv(filename: str) -> list:
     return stations
 
 def verbinding_uit_csv(filename: str) -> list:
+    """
+    Laad de connecties in vanuit de DATA-csv om er een kaart van te maken
+    """
     verbindingen = []
     #open document
     with open(filename) as f:
