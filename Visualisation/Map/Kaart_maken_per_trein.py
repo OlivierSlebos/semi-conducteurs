@@ -2,7 +2,7 @@ import folium
 
 import ast
 
-from kaart_maken import station_uit_csv, verbinding_uit_csv
+from Helpers import station_uit_csv, verbinding_uit_csv
 
 def kaart_maken_csv_per_trein(filename):
     
