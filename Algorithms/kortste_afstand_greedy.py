@@ -9,6 +9,18 @@ from Helpers import score_bereken, schrijf_output
 from datetime import datetime
 
 def kortste_connectie_greedy(spel: Kaart, trein_min, trein_max, minuten_min, minuten_max, kaart) -> None:
+    """
+    Genereert een lijnvoering en maakt lijsten aan om de trajecten, verbindingen en unieke bereden connecties bij te houden.
+    Die later worden gebruikt om de score te berekenen en de output op te slaan.
+
+    (spel: Kaart): Object dat bepaalt of er trajecten rijden over heel nederland of alleen holland
+    trein min: Het minimale aantal treinen dat rijden
+    trein max: Het maximale aantal treinen dat rijden
+    trein min: Het minimale aantal minuten die per traject gereden wordt
+    trein max: Het maximale aantal minuten die per traject gereden wordt
+    kaart: Object dat bepaalt of er trajecten rijden over heel nederland of alleen holland
+    """
+    
     # maak lege lijsten voor output
     lijst_trajecten = []
     schrijf_output_verbindingen = []
@@ -48,6 +60,15 @@ def kortste_connectie_greedy(spel: Kaart, trein_min, trein_max, minuten_min, min
     schrijf_output(schrijf_output_verbindingen, schrijf_output_trajecten, aantal_treinen, tijd_gereden, aantal_connecties_gereden, score)
     
 def bouw_traject(spel: Kaart, max_tijd: int):
+    """
+    Bouwt een traject binnen de max tijd en kiest greedy voor de kortste onbereden connectie.
+    Wanneer er geen onbereden connectie meer is wordt er random voor een connectie gekozen, als het binnen de maximale tijd valt.
+
+    returnt:
+        een lijst met de namen van de stations in het traject.
+        Een set van tuples met bereden verbindingen, inclusief de reistijd.
+        De totale reistijd van het traject
+    """
     # willekeurig station
     start_station = random.choice(list(spel.stations.items()))
     
