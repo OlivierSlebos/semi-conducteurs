@@ -14,7 +14,7 @@ def scores_csv() -> None:
     bestanden = [bestand for bestand in bestanden if os.path.isfile(os.path.join("resultaten/Runs", bestand))]
     
     #csv schrijven
-    with open(fr"Visualisation/Graphs/{bestandsnaam}", mode='w', newline='', encoding='utf-8') as csvfile:
+    with open(fr"resultaten/Combined_Runs/{bestandsnaam}", mode='w', newline='', encoding='utf-8') as csvfile:
         writer = csv.writer(csvfile)
         
         #eerst het runnummer (onbelangrijk, vooral voor het onderscheiden van runs) en dan de score opschrijven 

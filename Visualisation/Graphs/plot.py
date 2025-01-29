@@ -62,7 +62,7 @@ def maak_binned_bargraph(data_csv, output_image, bin_size):
 if __name__ == "__main__":
 
     # CSV-bestand met data
-    data_csv = "resultaten/Combined/Runs/scores.csv"  #het uitgelezen csv bestand 
+    data_csv = "resultaten/Combined_Runs/scores.csv"  #het uitgelezen csv bestand 
     output_image = "Visualisation/Graphs/binned_bargraph_fraction.png"
     bin_size = 300  #bingrootte aan te passen
 

@@ -1,0 +1,22 @@
+5,313,11.0
+Trein nummer 1
+"('Dordrecht', 'Rotterdam Centraal', 17)","('Rotterdam Centraal', 'Dordrecht', 17)","('Rotterdam Centraal', 'Dordrecht', 17)","('Dordrecht', 'Rotterdam Centraal', 17)","('Dordrecht', 'Rotterdam Centraal', 17)","('Rotterdam Centraal', 'Dordrecht', 17)","('Rotterdam Centraal', 'Dordrecht', 17)","('Dordrecht', 'Rotterdam Centraal', 17)"
+Dordrecht,Rotterdam Centraal,Dordrecht,Rotterdam Centraal,Dordrecht
+
+Trein nummer 2
+"('Haarlem', 'Amsterdam Sloterdijk', 11)","('Amsterdam Sloterdijk', 'Haarlem', 11)","('Amsterdam Sloterdijk', 'Zaandam', 6)","('Zaandam', 'Amsterdam Sloterdijk', 6)","('Zaandam', 'Castricum', 12)","('Castricum', 'Zaandam', 12)","('Castricum', 'Beverwijk', 13)","('Beverwijk', 'Castricum', 13)","('Beverwijk', 'Castricum', 13)","('Castricum', 'Beverwijk', 13)","('Castricum', 'Zaandam', 12)","('Zaandam', 'Castricum', 12)"
+Haarlem,Amsterdam Sloterdijk,Zaandam,Castricum,Beverwijk,Castricum,Zaandam
+
+Trein nummer 3
+"('Alkmaar', 'Den Helder', 36)","('Den Helder', 'Alkmaar', 36)","('Den Helder', 'Alkmaar', 36)","('Alkmaar', 'Den Helder', 36)"
+Alkmaar,Den Helder,Alkmaar
+
+Trein nummer 4
+"('Rotterdam Alexander', 'Gouda', 10)","('Gouda', 'Rotterdam Alexander', 10)","('Gouda', 'Alphen a/d Rijn', 19)","('Alphen a/d Rijn', 'Gouda', 19)","('Alphen a/d Rijn', 'Leiden Centraal', 14)","('Leiden Centraal', 'Alphen a/d Rijn', 14)","('Leiden Centraal', 'Den Haag Centraal', 12)","('Den Haag Centraal', 'Leiden Centraal', 12)"
+Rotterdam Alexander,Gouda,Alphen a/d Rijn,Leiden Centraal,Den Haag Centraal
+
+Trein nummer 5
+"('Beverwijk', 'Castricum', 13)","('Castricum', 'Beverwijk', 13)","('Castricum', 'Zaandam', 12)","('Zaandam', 'Castricum', 12)","('Zaandam', 'Hoorn', 26)","('Hoorn', 'Zaandam', 26)"
+Beverwijk,Castricum,Zaandam,Hoorn
+
+EOF

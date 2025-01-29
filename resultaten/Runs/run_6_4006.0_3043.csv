@@ -1,0 +1,26 @@
+6,394,14.0
+Trein nummer 1
+"('Hoorn', 'Alkmaar', 24)","('Alkmaar', 'Hoorn', 24)","('Alkmaar', 'Castricum', 9)","('Castricum', 'Alkmaar', 9)","('Castricum', 'Zaandam', 12)","('Zaandam', 'Castricum', 12)","('Zaandam', 'Amsterdam Sloterdijk', 6)","('Amsterdam Sloterdijk', 'Zaandam', 6)","('Amsterdam Sloterdijk', 'Amsterdam Centraal', 6)","('Amsterdam Centraal', 'Amsterdam Sloterdijk', 6)","('Amsterdam Centraal', 'Amsterdam Amstel', 8)","('Amsterdam Amstel', 'Amsterdam Centraal', 8)"
+Hoorn,Alkmaar,Castricum,Zaandam,Amsterdam Sloterdijk,Amsterdam Centraal,Amsterdam Amstel
+
+Trein nummer 2
+"('Schiphol Airport', 'Leiden Centraal', 15)","('Leiden Centraal', 'Schiphol Airport', 15)","('Leiden Centraal', 'Den Haag Centraal', 12)","('Den Haag Centraal', 'Leiden Centraal', 12)","('Den Haag Centraal', 'Gouda', 18)","('Gouda', 'Den Haag Centraal', 18)","('Gouda', 'Rotterdam Alexander', 10)","('Rotterdam Alexander', 'Gouda', 10)","('Rotterdam Alexander', 'Gouda', 10)","('Gouda', 'Rotterdam Alexander', 10)"
+Schiphol Airport,Leiden Centraal,Den Haag Centraal,Gouda,Rotterdam Alexander,Gouda
+
+Trein nummer 3
+"('Alkmaar', 'Hoorn', 24)","('Hoorn', 'Alkmaar', 24)","('Hoorn', 'Alkmaar', 24)","('Alkmaar', 'Hoorn', 24)"
+Alkmaar,Hoorn,Alkmaar
+
+Trein nummer 4
+"('Schiphol Airport', 'Leiden Centraal', 15)","('Leiden Centraal', 'Schiphol Airport', 15)","('Leiden Centraal', 'Alphen a/d Rijn', 14)","('Alphen a/d Rijn', 'Leiden Centraal', 14)","('Alphen a/d Rijn', 'Leiden Centraal', 14)","('Leiden Centraal', 'Alphen a/d Rijn', 14)","('Leiden Centraal', 'Alphen a/d Rijn', 14)","('Alphen a/d Rijn', 'Leiden Centraal', 14)"
+Schiphol Airport,Leiden Centraal,Alphen a/d Rijn,Leiden Centraal,Alphen a/d Rijn
+
+Trein nummer 5
+"('Leiden Centraal', 'Den Haag Centraal', 12)","('Den Haag Centraal', 'Leiden Centraal', 12)","('Den Haag Centraal', 'Delft', 13)","('Delft', 'Den Haag Centraal', 13)","('Delft', 'Den Haag Centraal', 13)","('Den Haag Centraal', 'Delft', 13)","('Den Haag Centraal', 'Gouda', 18)","('Gouda', 'Den Haag Centraal', 18)"
+Leiden Centraal,Den Haag Centraal,Delft,Den Haag Centraal,Gouda
+
+Trein nummer 6
+"('Amsterdam Sloterdijk', 'Zaandam', 6)","('Zaandam', 'Amsterdam Sloterdijk', 6)","('Zaandam', 'Beverwijk', 25)","('Beverwijk', 'Zaandam', 25)","('Beverwijk', 'Castricum', 13)","('Castricum', 'Beverwijk', 13)","('Castricum', 'Beverwijk', 13)","('Beverwijk', 'Castricum', 13)","('Beverwijk', 'Castricum', 13)","('Castricum', 'Beverwijk', 13)","('Castricum', 'Alkmaar', 9)","('Alkmaar', 'Castricum', 9)","('Alkmaar', 'Hoorn', 24)","('Hoorn', 'Alkmaar', 24)"
+Amsterdam Sloterdijk,Zaandam,Beverwijk,Castricum,Beverwijk,Castricum,Alkmaar,Hoorn
+
+EOF
