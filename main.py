@@ -14,7 +14,7 @@ from Visualisation.kaart_maken import kaart_maken_csv
 
 from Algorithms.score_greedy import score_greedy_algorithm
 
-from Algorithms.Hill_climber_heuristiek import hill_climber_nederland_heuristiek, hill_climber_holland_heuristiek
+from Algorithms.Hill_climber_heuristiek import hill_climber_nederland_heuristiek
 
 from Algorithms.Hill_climber_random import hill_climber_random
 

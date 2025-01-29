@@ -124,7 +124,7 @@ def hill_climber_random(spel: Kaart, min_treinen: int, max_treinen: int, min_min
         if runs % 10000 == 0:
             print(oplossing_huidig["score"])
         
-    print(f"Eind Score = {oplossing_huidig["score"]}")
+    print(f"Eind Score = {oplossing_huidig['score']}")
 
     schrijf_output(oplossing_huidig["verbindingen"], oplossing_huidig["trajecten"], oplossing_huidig["aantal_treinen"], oplossing_huidig["tijd_gereden"],oplossing_huidig["aantal_conecties"], oplossing_huidig["score"])
     maak_grafiek(graph_score, graph_runs, kaart)

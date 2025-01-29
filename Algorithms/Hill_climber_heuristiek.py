@@ -150,7 +150,7 @@ def hill_climber_nederland_heuristiek(spel: Kaart, minimale_treinen: int, maxima
             # print(f"Treinen = {oplossing_huidig["aantal_treinen"]}")
     
     #Tot slot, print de eind score
-    print(f"Eind Score = {oplossing_huidig["score"]}")
+    print(f"Eind Score = {oplossing_huidig['score']}")
 
     #Maak een csv met de best gevonden oplossing
     schrijf_output(oplossing_huidig["verbindingen"], oplossing_huidig["trajecten"], oplossing_huidig["aantal_treinen"], oplossing_huidig["tijd_gereden"],oplossing_huidig["aantal_conecties"], oplossing_huidig["score"])
