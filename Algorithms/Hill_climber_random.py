@@ -1,4 +1,4 @@
-from Random_algorithm_2 import roep_functie_aan, laat_trein_rijden
+from Algorithms.Random_algorithm_2 import roep_functie_aan, laat_trein_rijden
 
 from Classes.Kaart import Kaart
 
@@ -10,10 +10,10 @@ import copy
 
 from Helpers import schrijf_output, maak_grafiek
 
-def hill_climber(spel: Kaart, min_treinen: int, max_treinen: int, min_minuten: int, max_minuten: int, iterations: int, kaart):
+def hill_climber_random(spel: Kaart, min_treinen: int, max_treinen: int, min_minuten: int, max_minuten: int, iterations: int, kaart):
 
     #Neem een random eerste oplossing
-    oplossing_1 = roep_functie_aan(spel, min_treinen, max_treinen, kaart)
+    oplossing_1 = roep_functie_aan(spel, min_treinen, max_treinen, min_minuten, max_minuten, kaart)
     
     oplossing_tijdelijke = {}
     
@@ -106,7 +106,7 @@ def hill_climber(spel: Kaart, min_treinen: int, max_treinen: int, min_minuten: i
         oplossing_tijdelijke["aantal_conecties"] = aantal_connecties_gereden
 
         #Bereken de score
-        oplossing_tijdelijke["score"] = score_bereken(oplossing_tijdelijke["aantal_treinen"], oplossing_tijdelijke["tijd_gereden"], oplossing_tijdelijke["aantal_conecties"])
+        oplossing_tijdelijke["score"] = score_bereken(oplossing_tijdelijke["aantal_treinen"], oplossing_tijdelijke["tijd_gereden"], oplossing_tijdelijke["aantal_conecties"], kaart)
 
         #Kijk welke hoger is
         if oplossing_huidig["score"] >= oplossing_tijdelijke["score"]:
@@ -127,7 +127,7 @@ def hill_climber(spel: Kaart, min_treinen: int, max_treinen: int, min_minuten: i
     print(f"Eind Score = {oplossing_huidig["score"]}")
 
     schrijf_output(oplossing_huidig["verbindingen"], oplossing_huidig["trajecten"], oplossing_huidig["aantal_treinen"], oplossing_huidig["tijd_gereden"],oplossing_huidig["aantal_conecties"], oplossing_huidig["score"])
-    maak_grafiek(graph_score, graph_runs)
+    maak_grafiek(graph_score, graph_runs, kaart)
 
 
 if __name__ == "__main__":

@@ -14,7 +14,9 @@ from Visualisation.kaart_maken import kaart_maken_csv
 
 from Algorithms.score_greedy import score_greedy_algorithm
 
-from Algorithms.Hill_climber_heuristiek import hill_climber_nederland_heuristiek
+from Algorithms.Hill_climber_heuristiek import hill_climber_nederland_heuristiek, hill_climber_holland_heuristiek
+
+from Algorithms.Hill_climber_random import hill_climber_random
 
 import sys
 
@@ -56,15 +58,22 @@ if __name__ == "__main__":
     while not iterations.isdigit() or int(iterations) < 1:
         iterations = input("Hoeveel iterations wil je doen: ")
 
-    ALGORITMES = ["random_algoritme", "score_greedy_algorithm","connection_driven_greedy_algoritme","hill_climber_nederland_heuristiek"]
-    algoritme = input("Welk algortme wil je gebruiken (random_algoritme/score_greedy_algoritme/connection_driven_greedy_algoritme/hill_climber_nederland_heuristiek): ")
+    ALGORITMES = ["random_algoritme", "score_greedy_algorithm","connection_driven_greedy_algoritme","hill_climber_heuristiek", "hill_climber_random"]
+    algoritme = input("Welk algortme wil je gebruiken (random_algoritme/score_greedy_algoritme/connection_driven_greedy_algoritme/hill_climber_heuristiek/hill_climber_random): ")
     while algoritme not in ALGORITMES:
         algoritme = input("Welk algortme wil je gebruiken (random_algoritme/score_greedy_algoritme/connection_driven_greedy_algoritme): ")
 
     spel = Kaart(kaart)
     print(algoritme)
-    if algoritme == "hill_climber_nederland_heuristiek" or algoritme == " hill_climber_nederland_heuristiek":
-        algoritme = globals()[algoritme]
+    if algoritme == "hill_climber_heuristiek" or algoritme == " hill_climber_heuristiek":
+        # if kaart == 'holland':
+        algoritme = globals()['hill_climber_nederland_heuristiek']
+        algoritme(spel, int(trein_min), int(trein_max), int(minuten_min), int(minuten_max), int(iterations), kaart)
+        # elif kaart == 'nederland':
+        #     algoritme = globals()['hill_climber_nederland_heuristiek']
+        #     algoritme(spel, int(trein_min), int(trein_max), int(minuten_min), int(minuten_max), int(iterations), kaart)    
+    elif algoritme == "hill_climber_random" or algoritme == " hill_climber_random":
+        algoritme = globals()['hill_climber_random']
         algoritme(spel, int(trein_min), int(trein_max), int(minuten_min), int(minuten_max), int(iterations), kaart)
     else:
         algoritme = globals()[algoritme]

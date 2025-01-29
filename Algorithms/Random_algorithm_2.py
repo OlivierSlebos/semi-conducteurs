@@ -8,7 +8,7 @@ from score import score_bereken
 
 import random
 
-def roep_functie_aan(spel: Kaart, min_treinen: int, max_treinen: int, kaart):
+def roep_functie_aan(spel: Kaart, min_treinen: int, max_treinen: int, min_minuten: int, max_minuten: int, kaart):
 
     #Maak lege lijsten voor output
     schrijf_output_verbindingen = []
@@ -22,7 +22,7 @@ def roep_functie_aan(spel: Kaart, min_treinen: int, max_treinen: int, kaart):
     for i in range(aantal_treinen):
         
         #Krijg de resultaten
-        traject, verbindingen, reistijd = laat_trein_rijden(spel)
+        traject, verbindingen, reistijd = laat_trein_rijden(spel, min_minuten, max_minuten)
 
         #Sla de verbindingen & trajecten op per trein
         schrijf_output_trajecten.append(traject)

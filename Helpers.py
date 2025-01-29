@@ -92,7 +92,7 @@ def bereken_max(filename):
     uitslag = (1 * 10000) - (9 * 100 + som)
     print(uitslag)
 
-def maak_grafiek(score: list, runs: list):
+def maak_grafiek(score: list, runs: list, kaart):
     # Maak een getrapte grafiek
     plt.step(runs, score, where='post', label='Score per run', color='blue')
 
@@ -101,7 +101,10 @@ def maak_grafiek(score: list, runs: list):
     plt.ylabel('Score')
     plt.title('Getrapte Grafiek: Score per Run')
 
-    plt.ylim(5000, 7600)
+    if kaart == 'nederland':
+        plt.ylim(5000, 7600)
+    else:
+        plt.ylim(7000, 9300)
 
     # Toon de grafiek
     plt.legend()
