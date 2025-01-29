@@ -14,24 +14,13 @@ from Visualisation.kaart_maken import kaart_maken_csv
 
 from Algorithms.score_greedy import score_greedy_algorithm
 
-from Algorithms.Hill_climber_heuristiek import hill_climber_nederland_heuristiek, hill_climber_holland_heuristiek
+from Algorithms.Hill_climber_heuristiek import hill_climber_nederland_heuristiek
 
 from Algorithms.Hill_climber_random import hill_climber_random
 
 import sys
 
 if __name__ == "__main__":
-
-
-    #als je command lines wil gebruiken kan je dit gebruiken, anders eruit commenten
-
-    # spel = Kaart(sys.argv[5])
-    # algoritme = globals()[sys.argv[6]]
-
-    # for i in range(int(sys.argv[6])):
-    #     random_algoritme(spel, int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4]), sys.argv[5])
-
-
     #als je het wil kunnen invullen kan je dit gebruiken, anders eruit commenten
     trein_min = input("Hoeveel treinen wil je dat er minimaal per iteration rijden: ")
     while not trein_min.isdigit() or int(trein_min) < 1 or int(trein_min) > 20:
@@ -41,7 +30,7 @@ if __name__ == "__main__":
     while not trein_max.isdigit() or int(trein_max) < int(trein_min) or int(trein_max) < 1 or int(trein_max) > 20:
         trein_max = input("Hoeveel treinen wil je dat er maximaal per iteration rijden: ")
     
-    #Aanpassen als Holland max is 120 als Nederland max is 120
+    #Aanpassen als Holland max is 180 als Nederland max is 120
     minuten_min = input("Hoeveel minuten wil je dat een trein minimaal rijdt: ")
     while not minuten_min.isdigit() or int(minuten_min) < 1 or int(minuten_min) > 180:
         minuten_min = input("Hoeveel minuten wil je dat een trein minimaal rijdt: ")
@@ -63,18 +52,17 @@ if __name__ == "__main__":
     while algoritme not in ALGORITMES:
         algoritme = input("Welk algortme wil je gebruiken (random_algoritme/score_greedy_algoritme/connection_driven_greedy_algoritme): ")
 
+    #Zet de kaart aan
     spel = Kaart(kaart)
-    print(algoritme)
+
+    #Als het Hill climber is, werkt het anders dus pak dan een ander algoritme systeem
     if algoritme == "hill_climber_heuristiek" or algoritme == " hill_climber_heuristiek":
-        # if kaart == 'holland':
         algoritme = globals()['hill_climber_nederland_heuristiek']
-        algoritme(spel, int(trein_min), int(trein_max), int(minuten_min), int(minuten_max), int(iterations), kaart)
-        # elif kaart == 'nederland':
-        #     algoritme = globals()['hill_climber_nederland_heuristiek']
-        #     algoritme(spel, int(trein_min), int(trein_max), int(minuten_min), int(minuten_max), int(iterations), kaart)    
+        algoritme(spel, int(trein_min), int(trein_max), int(minuten_min), int(minuten_max), int(iterations), kaart)    
     elif algoritme == "hill_climber_random" or algoritme == " hill_climber_random":
         algoritme = globals()['hill_climber_random']
         algoritme(spel, int(trein_min), int(trein_max), int(minuten_min), int(minuten_max), int(iterations), kaart)
+    #Anders gebruik het normale systeem
     else:
         algoritme = globals()[algoritme]
         for i in range(int(iterations)):
