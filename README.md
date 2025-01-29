@@ -20,6 +20,11 @@ Voor elk traject kiest het algoritme een willekeurig startstation, waarna de tre
 
 Aan het einde wordt er een csv bestand aangemaakt met de resultaten van ieder traject.
 
+## Hill Climber Algoritme
+Het algoritme begint met het aanmaken van een random oplossing met het algoritme Algorithms/Random_algorithm_2. De uitkomsten van deze eerste oplossing worden opgeslagen in 2 dicts. Dict 1 is de huidige oplossing, deze zal steeds een copy bevatten van de oplossing die de huidige hoogste score bevat. Dict 2 is een tijdelijke oplossing, de Hill Climber past deze telkens aan. Wanneer de aanpassingen in Dict 2 tot een hogere score lijden zal Dict 1 (huidig) doormiddel van een Deepcopy worden overschreven door Dict 2 (tijdelijk). Wanneer de aanpassingen tot een lagere score leiden zal Dict 2 (tijdelijk) worden overschreven door Dict 1 (huidig) doormiddel van een Deepcopy. In beide gevallen (beter of niet) zal het algoritme opnieuw Dict 2 (tijdelijk) aanpassen om tot een betere score te komen. 
+
+Het aanpassen werkt op twee manieren
+
 ## resultaten reproduceren:
 1. Ga naar de directory semi-conducteurs
 2. Run python3 main.py, hier wordt er gevraagd naar:
@@ -32,5 +37,14 @@ Aan het einde wordt er een csv bestand aangemaakt met de resultaten van ieder tr
 * welk algoritme je wilt laten runnen
 
 3. De resultaten van alle runs zijn nu zichtbaar in de map resulaten/Runs
-4. Run nu python3 Visualisation/Graphs/plot.py. De resultaten zijn nu zichtbaar in grafieken, in de files boxplot_treinen_scores.png en binned_bargraph_fraction.png.
-* Wanneer hill-climber gerunt is, wordt er automatisch al een grafiek gemaakt. Deze is te vinden in de file Hill_Climber_grafiek.png
+4. Run nu python3 Visualisation/Graphs/plot.py . De resultaten zijn nu zichtbaar in grafieken, in de files boxplot_treinen_scores.png en binned_bargraph_fraction.png.
+* Wanneer hill-climber gerunt is, wordt er automatisch al een grafiek gemaakt. Deze is te vinden in de file Visualisation/Graphs/Hill_Climber_grafiek.png
+
+## Een kaart maken van je CSV resultaat
+1. Ga naar de directory semi-conducteurs
+2. Run python3 -m Visualisation.Map.Kaart_maken_per_trein
+* Van welke file wil je een kaart maken?
+* Welke kaart hoort bij deze dienstregeling? (holland/nederland):
+
+De kaart zal worden geopend in je webbrowser & je zal een melding krijgen waar de kaart terug te vinden is. 
+* De kaart is opgeslagen. Bekijk de kaart op: (...)/semi-conducteurs/Visualisation/Map/resultaten_kaart.html

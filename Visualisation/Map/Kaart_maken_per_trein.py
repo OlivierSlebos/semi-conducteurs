@@ -4,7 +4,11 @@ import ast
 
 from Helpers import station_uit_csv, verbinding_uit_csv
 
-def kaart_maken_csv_per_trein(filename):
+import os
+
+import webbrowser
+
+def kaart_maken_csv_per_trein(filename, kaart):
     
     is_visited = []
     verbindingen_geweest_2 = []
@@ -36,12 +40,12 @@ def kaart_maken_csv_per_trein(filename):
             # #Volgende line
             line = f.readline()
             # print(line)
-    kaart_maken_voor_csv_per_trein(is_visited, verbindingen_geweest_2)
+    kaart_maken_voor_csv_per_trein(is_visited, verbindingen_geweest_2, kaart)
 
-def kaart_maken_voor_csv_per_trein(is_visited, verbindingen_geweest):
+def kaart_maken_voor_csv_per_trein(is_visited, verbindingen_geweest, kaart):
     
-    stations = station_uit_csv("Data/stations_nederland.csv")
-    verbindingen = verbinding_uit_csv("Data/connecties_nederland.csv")
+    stations = station_uit_csv(f"Data/stations_{kaart}.csv")
+    verbindingen = verbinding_uit_csv(f"Data/connecties_{kaart}.csv")
     colors = [
     'yellow',
     'orange',
@@ -98,8 +102,6 @@ def kaart_maken_voor_csv_per_trein(is_visited, verbindingen_geweest):
             start_lat, start_lon, loop = station_dict[start]
             eind_lat, eind_lon, loop = station_dict[eind]
             folium.PolyLine([(start_lat + schuiven, start_lon + schuiven), (eind_lat + schuiven, eind_lon + schuiven)], color=color, weight=4, opacity=0.5).add_to(m)
-    
-    #Alleen als verbinding al is gereden stukje opschuiven
 
     #Alles wat over is rood maken
     for start, eind, reistijd in verbindingen:
@@ -112,4 +114,22 @@ def kaart_maken_voor_csv_per_trein(is_visited, verbindingen_geweest):
     m.save("Visualisation/Map/resultaten_kaart.html")
 
 if __name__ == "__main__":
-    kaart_maken_csv_per_trein("run_9_7343.2808988764045_806.csv")
+    
+    #Promt de gebruiker voor een document waar een kaart van is & controleer of deze in de map staat
+    filename = input("Van welke file wil je een kaart maken?")
+    while filename not in os.listdir("resultaten/Runs"):
+        filename = input("Van welke file wil je een kaart maken?")
+
+    #Promp de gebruiker voor welke kaar hij/zij wil gebruiken
+    kaart = input("Welke kaart hoort bij deze dienstregeling? (holland/nederland): ")
+    while not kaart in ["holland", "nederland"]:
+        kaart = input("Met welke kaart wil je werken (holland/nederland): ")
+
+    #Maak de kaart aan met de input
+    kaart_maken_csv_per_trein(filename, kaart)
+
+    #Open de kaart automatisch je in webbrowser
+    webbrowser.open(f'file://{os.path.abspath("Visualisation/Map/resultaten_kaart.html")}')
+    
+    #Vertel de gebruiker waar de kaart terug te vinden is
+    print(f"De kaart is opgeslagen. Bekijk de kaart op: {os.path.abspath("Visualisation/Map/resultaten_kaart.html")}")
