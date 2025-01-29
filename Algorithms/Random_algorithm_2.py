@@ -7,7 +7,13 @@ from Helpers import schrijf_output, score_bereken
 import random
 
 def roep_functie_aan(spel: Kaart, min_treinen: int, max_treinen: int, min_minuten: int, max_minuten: int, kaart):
+    """
+    Genereer de gehele lijnvoering met het random algoritme, sla de informatie op.
 
+    Kies een random aantal treinen tussen min_treinen en max_treinen. 
+    Roep dat aantal keer de functie: laat_trein_rijden aan.
+    Sla de informatie op en genereer een CSV bestand met het resultaat. 
+    """
     #Maak lege lijsten voor output
     schrijf_output_verbindingen = []
     schrijf_output_trajecten = []
@@ -46,7 +52,13 @@ def roep_functie_aan(spel: Kaart, min_treinen: int, max_treinen: int, min_minute
     return (schrijf_output_verbindingen, schrijf_output_trajecten, aantal_treinen, tijd_gereden, aantal_connecties_gereden, score)
 
 def laat_trein_rijden(spel: Kaart, min_minuten: int, max_minuten: int):
-
+    """
+    Laat 1 trein 1 traject rijden op basis van Random keuzes. 
+    
+    Begint op een random startpunt en kiest steeds een random volgende connectie,
+    uit de lijst met mogelijke connecties tot de tijd op is. 
+    De tijd wordt random gekozen tussen de waarde min_minuten en max_minuten. 
+    """
     #Kies een random station
     start_station = random.choice(list(spel.stations.items()))
     

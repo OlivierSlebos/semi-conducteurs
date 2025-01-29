@@ -12,7 +12,7 @@ from Algorithms.connectie_algoritme import genereer_traject
 
 def hill_climber_nederland_heuristiek(spel: Kaart, minimale_treinen: int, maximale_treinen: int, min_minuten: int, max_minuten: int, iterations: int, kaart: str):
     """
-    DAlgorithms.connectie_algoritmeecten aan om de hoogst mogelijk score te vinden, de hoogste score wordt bewaard
+    Deze functie past steeds enkele trajecten aan om de hoogst mogelijk score te vinden, de hoogste score wordt bewaard.
 
     Om een nieuw traject te leggen maakt de functie gebruik van het Heuristiek algoritme (File: connectie_algoritme), 
     dat algoritme maakt een traject dat de voorkeur geeft aan een nog niet bereden connectie. Dat algoritme blijft rijden tot de meegegeven tijd verstreken is. 
