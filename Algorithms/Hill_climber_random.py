@@ -1,4 +1,4 @@
-from Algorithms.Random_algorithm_2 import roep_functie_aan, laat_trein_rijden
+from Random_algorithm_2 import roep_functie_aan, laat_trein_rijden
 
 from Classes.Kaart import Kaart
 
@@ -10,10 +10,10 @@ import copy
 
 from Helpers import schrijf_output, maak_grafiek
 
-def hill_climber(spel: Kaart, minimale_treinen: int, maximale_treinen: int, iterations: int):
+def hill_climber(spel: Kaart, min_treinen: int, max_treinen: int, min_minuten: int, max_minuten: int, iterations: int, kaart):
 
     #Neem een random eerste oplossing
-    oplossing_1 = roep_functie_aan(spel)
+    oplossing_1 = roep_functie_aan(spel, min_treinen, max_treinen, kaart)
     
     oplossing_tijdelijke = {}
     
@@ -81,8 +81,8 @@ def hill_climber(spel: Kaart, minimale_treinen: int, maximale_treinen: int, iter
                 oplossing_tijdelijke["trajecten"].pop(index)
 
         #Vind een random aantal treinen om toe tevoegen (Totaal mag niet meer dan zeven zijn)
-        max_toevoegen = maximale_treinen - oplossing_tijdelijke["aantal_treinen"] #Bepaal hier het maximum van het aantal treinen
-        minimaal_toevoegen = minimale_treinen - oplossing_tijdelijke["aantal_treinen"] #Bepaal hier het minimale van het aantal treinen
+        max_toevoegen = max_treinen - oplossing_tijdelijke["aantal_treinen"] #Bepaal hier het maximum van het aantal treinen
+        minimaal_toevoegen = min_treinen - oplossing_tijdelijke["aantal_treinen"] #Bepaal hier het minimale van het aantal treinen
         if minimaal_toevoegen < 0:
             minimaal_toevoegen = 0
         aantal_toevoegen = random.randint(minimaal_toevoegen, max_toevoegen)
@@ -90,7 +90,7 @@ def hill_climber(spel: Kaart, minimale_treinen: int, maximale_treinen: int, iter
 
         #Voeg de nieuwe verbindingen toe
         for m in range(aantal_toevoegen):
-            nieuwe_oplossing = laat_trein_rijden(spel)
+            nieuwe_oplossing = laat_trein_rijden(spel, min_minuten, max_minuten)
             oplossing_tijdelijke["tijd_gereden"] += nieuwe_oplossing[2]
             oplossing_tijdelijke["trajecten"].append(nieuwe_oplossing[0])
             oplossing_tijdelijke["verbindingen"].append(nieuwe_oplossing[1])
@@ -128,3 +128,9 @@ def hill_climber(spel: Kaart, minimale_treinen: int, maximale_treinen: int, iter
 
     schrijf_output(oplossing_huidig["verbindingen"], oplossing_huidig["trajecten"], oplossing_huidig["aantal_treinen"], oplossing_huidig["tijd_gereden"],oplossing_huidig["aantal_conecties"], oplossing_huidig["score"])
     maak_grafiek(graph_score, graph_runs)
+
+
+if __name__ == "__main__":
+    
+    spel = Kaart('nederland')
+    hill_climber(spel, 9, 12, 160, 180, 100000, 'nederland')

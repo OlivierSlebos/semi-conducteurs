@@ -154,7 +154,7 @@ def hill_climber_2(spel: Kaart):
     #Maak een grafiek
     maak_grafiek(graph_score, graph_runs)
 
-def hill_climber_nederland(spel: Kaart, minimale_treinen: int, maximale_treinen: int, iterations: int):
+def hill_climber_nederland_heuristiek(spel: Kaart, minimale_treinen: int, maximale_treinen: int, min_minuten: int, max_minuten: int, iterations: int, kaart: str):
 
     #Neem een random eerste oplossing
     oplossing_1 = roep_functie_aan(spel)
@@ -236,7 +236,7 @@ def hill_climber_nederland(spel: Kaart, minimale_treinen: int, maximale_treinen:
         oplossing_tijdelijke["aantal_treinen"] += aantal_toevoegen
 
         #Je werkt met een heuristiek, je moet de kaart reseten anders werkt de heuristiek niet
-        spel.load_connecties("Data/connecties_nederland.csv")
+        spel.load_connecties(f"Data/connecties_{kaart}.csv")
                     
         #Zorg er voor dat de verbindingen opnieuw worden aangezet van de treinen die niet zijn verwijdert
         for q in oplossing_tijdelijke["verbindingen"]:
@@ -249,7 +249,7 @@ def hill_climber_nederland(spel: Kaart, minimale_treinen: int, maximale_treinen:
         for m in range(aantal_toevoegen):
 
             #Vind een nieuwe oplossing voor 1 trein & voeg dit toe
-            nieuwe_oplossing = genereer_traject(spel)
+            nieuwe_oplossing = genereer_traject(spel, min_minuten, max_minuten)
             oplossing_tijdelijke["tijd_gereden"] += nieuwe_oplossing[2]
             oplossing_tijdelijke["trajecten"].append(nieuwe_oplossing[0])
             oplossing_tijdelijke["verbindingen"].append(nieuwe_oplossing[1])  
@@ -266,7 +266,7 @@ def hill_climber_nederland(spel: Kaart, minimale_treinen: int, maximale_treinen:
         oplossing_tijdelijke["aantal_conecties"] = aantal_connecties_gereden
 
         #Bereken de nieuwe score
-        oplossing_tijdelijke["score"] = score_bereken(oplossing_tijdelijke["aantal_treinen"], oplossing_tijdelijke["tijd_gereden"], oplossing_tijdelijke["aantal_conecties"])
+        oplossing_tijdelijke["score"] = score_bereken(oplossing_tijdelijke["aantal_treinen"], oplossing_tijdelijke["tijd_gereden"], oplossing_tijdelijke["aantal_conecties"], kaart)
 
         #Kijk welke score hoger is, nieuw of oud & behoud de hoogste
         if oplossing_huidig["score"] >= oplossing_tijdelijke["score"]:

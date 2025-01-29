@@ -8,7 +8,7 @@ from score import score_bereken
 
 import random
 
-def roep_functie_aan(spel: Kaart):
+def roep_functie_aan(spel: Kaart, min_treinen: int, max_treinen: int, kaart):
 
     #Maak lege lijsten voor output
     schrijf_output_verbindingen = []
@@ -16,7 +16,7 @@ def roep_functie_aan(spel: Kaart):
 
     #Zet tijd_gereden op 0 & aantal treinen op random
     tijd_gereden = 0
-    aantal_treinen = random.randint(9, 10) #AANGEPAST NAAR HEEL NEDERLAND
+    aantal_treinen = random.randint(min_treinen, max_treinen) #AANGEPAST NAAR HEEL NEDERLAND
 
     #Laat random treinen rijden
     for i in range(aantal_treinen):
@@ -40,14 +40,14 @@ def roep_functie_aan(spel: Kaart):
     aantal_connecties_gereden: int = len(nieuwe_lijst_connecties_gereden)/2
 
     #Bereken een score
-    score = score_bereken(aantal_treinen, tijd_gereden, aantal_connecties_gereden)
+    score = score_bereken(aantal_treinen, tijd_gereden, aantal_connecties_gereden, kaart)
 
     #Maak een csv
     schrijf_output(schrijf_output_verbindingen, schrijf_output_trajecten, aantal_treinen, tijd_gereden, aantal_connecties_gereden, score)
 
     return (schrijf_output_verbindingen, schrijf_output_trajecten, aantal_treinen, tijd_gereden, aantal_connecties_gereden, score)
 
-def laat_trein_rijden(spel: Kaart):
+def laat_trein_rijden(spel: Kaart, min_minuten: int, max_minuten: int):
 
     #Kies een random station
     start_station = random.choice(list(spel.stations.items()))
@@ -59,7 +59,7 @@ def laat_trein_rijden(spel: Kaart):
     trein.traject_history.push(start_station[1].name)
     
     #Maak een random tijd per trein
-    tijd = random.randint(100, 180) #AANGEPAST NAAR HEEL NEDERLAND
+    tijd = random.randint(min_minuten, max_minuten) #AANGEPAST NAAR HEEL NEDERLAND
 
     #Zolang de tijd niet voorbij is
     while trein.time_driven <= tijd:

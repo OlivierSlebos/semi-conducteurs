@@ -107,3 +107,36 @@ def maak_grafiek(score: list, runs: list):
     plt.legend()
     plt.grid(True)
     plt.savefig("Hill_Climber_grafiek.png")
+
+def controleer_reistijd(filename):
+    with open (filename) as f:
+        # Geef line een waarde
+        line = f.readline()
+        reistijd = int(line.split(',')[1])
+        controle_reistijd = 0
+        print(reistijd)
+        for i, line in enumerate(f, start=1):
+            if i % 2 == 0:
+                resultaat = line.split("\",\"")
+                # print(resultaat)
+                for x in resultaat:
+                    cijfer = x.split(",")
+                    if len(cijfer) > 1:
+                        controle_reistijd += convert_to_int(cijfer[2])
+                        print(convert_to_int(cijfer[2]))
+                        print(controle_reistijd)
+    
+    print(reistijd)
+    print(controle_reistijd/2)
+    if reistijd == (controle_reistijd/2):
+        print("GELUKT!")
+    else: print("OEI DIT IS GROTE PROBLEMEN")
+
+def convert_to_int(s):
+    # Verwijder alles behalve cijfers uit de string
+    clean_string = ''.join(filter(str.isdigit, s))
+    return int(clean_string)  # Zet de schone string om naar een integer
+
+
+if __name__ == "__main__":
+    controleer_reistijd("resultaten/run_11_7202.0_2217.csv")

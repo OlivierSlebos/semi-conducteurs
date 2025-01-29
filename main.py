@@ -14,6 +14,8 @@ from Visualisation.kaart_maken import kaart_maken_csv
 
 from Algorithms.score_greedy import score_greedy_algorithm
 
+from Algorithms.Hill_climber_heuristiek import hill_climber_nederland_heuristiek
+
 import sys
 
 if __name__ == "__main__":
@@ -37,6 +39,7 @@ if __name__ == "__main__":
     while not trein_max.isdigit() or int(trein_max) < int(trein_min) or int(trein_max) < 1 or int(trein_max) > 20:
         trein_max = input("Hoeveel treinen wil je dat er maximaal per iteration rijden: ")
     
+    #Aanpassen als Holland max is 120 als Nederland max is 120
     minuten_min = input("Hoeveel minuten wil je dat een trein minimaal rijdt: ")
     while not minuten_min.isdigit() or int(minuten_min) < 1 or int(minuten_min) > 180:
         minuten_min = input("Hoeveel minuten wil je dat een trein minimaal rijdt: ")
@@ -53,14 +56,17 @@ if __name__ == "__main__":
     while not iterations.isdigit() or int(iterations) < 1:
         iterations = input("Hoeveel iterations wil je doen: ")
 
-    ALGORITMES = ["random_algoritme", "score_greedy_algorithm","connection_driven_greedy_algoritme"]
-    algoritme = input("Welk algortme wil je gebruiken (random_algoritme/score_greedy_algoritme/connection_driven_greedy_algoritme): ")
+    ALGORITMES = ["random_algoritme", "score_greedy_algorithm","connection_driven_greedy_algoritme","hill_climber_nederland_heuristiek"]
+    algoritme = input("Welk algortme wil je gebruiken (random_algoritme/score_greedy_algoritme/connection_driven_greedy_algoritme/hill_climber_nederland_heuristiek): ")
     while algoritme not in ALGORITMES:
         algoritme = input("Welk algortme wil je gebruiken (random_algoritme/score_greedy_algoritme/connection_driven_greedy_algoritme): ")
 
-    algoritme = globals()[algoritme]
-
     spel = Kaart(kaart)
-
-    for i in range(int(iterations)):
-        algoritme(spel, int(trein_min), int(trein_max), int(minuten_min), int(minuten_max), kaart)
+    print(algoritme)
+    if algoritme == "hill_climber_nederland_heuristiek" or algoritme == " hill_climber_nederland_heuristiek":
+        algoritme = globals()[algoritme]
+        algoritme(spel, int(trein_min), int(trein_max), int(minuten_min), int(minuten_max), int(iterations), kaart)
+    else:
+        algoritme = globals()[algoritme]
+        for i in range(int(iterations)):
+            algoritme(spel, int(trein_min), int(trein_max), int(minuten_min), int(minuten_max), kaart)
