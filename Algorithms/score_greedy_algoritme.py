@@ -8,7 +8,11 @@ from Classes.Trein import Trein
 
 from Helpers import score_bereken, schrijf_output
 
-def score_greedy_algorithm(spel: Kaart, trein_min, trein_max, minuten_min, minuten_max, kaart) -> None:
+def score_greedy_algoritme(spel: Kaart, trein_min, trein_max, minuten_min, minuten_max, kaart) -> None:
+    """
+    Dit algoritme geeft een trein een random beginstation. Dan gaat hij alle mogelijke connecties langs en rijdt hij degene die in de hoogste 
+    score resulteert. 
+    """
 
     #zorg dat de connecties herladen worden, zodat de connecties niet op bezocht blijven staan
     spel.load_connecties(f"Data/connecties_{kaart}.csv")

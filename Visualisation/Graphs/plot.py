@@ -10,6 +10,20 @@ from boxplot import maak_boxplot
 #script voor het maken van een plot, waarbij de functie voor het maken van de boxplot ook automatisch wordt uitgevoerd 
 def maak_binned_bargraph(data_csv, output_image, bin_size):
 
+    """
+    Deze functie is geimplementeerd om een staafdiagram te maken van de behaalde scores. Hij werkt door eerst een csv te maken van
+    de behaalde scores met de functie "scores_csv". Hierin staat een run nummer in de eerste kolom en de score op de tweede kolom. 
+    Op basis daarvan maakt deze functie het staafdiagram. 
+
+    Deze functie is gecombineerd met de "maak_boxplot()" functie. Hierdoor wordt door het aanroepen van alleen deze functie beide een 
+    boxplot en een staafdiagram gemaakt. De grafieken komen met bijbehorende namen in de folder Graphs. 
+
+    Als de originele git structuur wordt aangehouden hoeft niks aangepast te worden om automatisch de plots te maken bij het roepen van 
+    python3 Visualisation/Graphs/plot.py. Als er andere folders gebruikt moeten worden dan moet de invoer van de functies op een juiste
+    wijze worden aangepast. 
+
+    """
+
     #boxplot maken met juiste input 
     maak_boxplot("resultaten/Combined_Runs/scores_boxplot.csv", "Visualisation/Graphs/boxplot_treinen_scores.png")
 
@@ -60,11 +74,4 @@ def maak_binned_bargraph(data_csv, output_image, bin_size):
 
 
 if __name__ == "__main__":
-
-    # CSV-bestand met data
-    data_csv = "resultaten/Combined_Runs/scores.csv"  #het uitgelezen csv bestand 
-    output_image = "Visualisation/Graphs/binned_bargraph_fraction.png"
-    bin_size = 300  #bingrootte aan te passen
-
-    # Bargraph maken
-    maak_binned_bargraph(data_csv, output_image, bin_size)
+    maak_binned_bargraph("resultaten/Combined_Runs/scores.csv", "Visualisation/Graphs/binned_bargraph_fraction.png", 300)

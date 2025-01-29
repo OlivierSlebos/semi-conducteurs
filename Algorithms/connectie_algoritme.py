@@ -8,7 +8,13 @@ from Classes.Trein import Trein
 
 from Helpers import schrijf_output, score_bereken
 
-def connection_driven_greedy_algoritme(spel: Kaart, trein_min, trein_max, minuten_min, minuten_max, kaart) -> None:
+def connectie_algoritme(spel: Kaart, trein_min, trein_max, minuten_min, minuten_max, kaart) -> None:
+    """
+    Dit algoritme volgt bovenop het random algoritme 2 heuristieken. Het startstation is altijd een station
+    waar nog onbereden connecties zijn, en het algoritme kiest als mogelijk op elk station een connectie die nog niet is gereden. Als er
+    meerdere connecties onbereden zijn dan maakt het algoritme een random keuze. Als er geen connecties meer onbereden zijn op een station 
+    dan maakt het algoritme ook een random keuze. De trein stopt wanneer alle connecties op een station de maximale reistijd overschreiden.
+    """
 
     #zorg dat de connecties weer op hun baseline staan 
     spel.load_connecties(f"Data/connecties_{kaart}.csv")

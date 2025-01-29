@@ -8,13 +8,13 @@ import copy
 
 from Helpers import schrijf_output, maak_grafiek, score_bereken
 
-from Algorithms.connection_driven_greedy import genereer_traject
+from Algorithms.connectie_algoritme import genereer_traject
 
 def hill_climber_nederland_heuristiek(spel: Kaart, minimale_treinen: int, maximale_treinen: int, min_minuten: int, max_minuten: int, iterations: int, kaart: str):
     """
-    Deze functie past steeds enkele trajecten aan om de hoogst mogelijk score te vinden, de hoogste score wordt bewaard
+    DAlgorithms.connectie_algoritmeecten aan om de hoogst mogelijk score te vinden, de hoogste score wordt bewaard
 
-    Om een nieuw traject te leggen maakt de functie gebruik van het Heuristiek algoritme (File: connection_driven_greedy), 
+    Om een nieuw traject te leggen maakt de functie gebruik van het Heuristiek algoritme (File: connectie_algoritme), 
     dat algoritme maakt een traject dat de voorkeur geeft aan een nog niet bereden connectie. Dat algoritme blijft rijden tot de meegegeven tijd verstreken is. 
     Als het nieuwe traject een betere score oplevert, wordt de dit de nieuwe oplossing waarmee wordt vergeleken, de vorrige wordt verwijderd. 
     """

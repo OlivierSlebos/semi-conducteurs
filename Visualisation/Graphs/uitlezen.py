@@ -3,6 +3,12 @@ import os
 
 #script voor het uitlezen van de resultaten folder om laten een staafdiagram van te kunnen maken 
 def scores_csv() -> None:
+    """
+    Deze functie wordt gebruik door "maak_binned_bargraph()" om een csv te maken in het juiste format. Het leest de 
+    resultaten uit de resultaten/Runs folder en zet in de eerste kolom een run nummer en in de tweede kolom de score. 
+
+    De functie maakt een csv genaamd "scores_.csv" in de folder resultaten/Combined_Runs. 
+    """
 
     #hoe moet de output heten
     bestandsnaam = 'scores.csv'

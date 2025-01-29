@@ -9,6 +9,12 @@ from Classes.Trein import Trein
 from Helpers import schrijf_output, score_bereken
 
 def random_algoritme(spel: Kaart, trein_min, trein_max, minuten_min, minuten_max, kaart) -> None:
+    """
+    Dit algoritme maakt alle keuzes random. Hij kiest een random aantal treinen dat gaat rijden tussen trein_min en trein_max en 
+    kiest per trein een random aantal minuten om te reiden tussen minuten_min en minuten_max. De treinen beginnen op een random station 
+    en kiezen op elk station een random connectie om te rijden totdat de maximale reistijd wordt overschreden door alle mogelijke opties 
+    op een station. Dat is dan het eindstation. 
+    """
 
     #hou belangrijke variabelen bij 
     lijst_stations_gereden = []
