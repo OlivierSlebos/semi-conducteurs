@@ -6,9 +6,7 @@ from Classes.Kaart import Kaart
 
 from Classes.Trein import Trein
 
-from Helpers import schrijf_output
-
-from score import score_bereken
+from Helpers import schrijf_output, score_bereken
 
 def random_algoritme(spel: Kaart, trein_min, trein_max, minuten_min, minuten_max, kaart) -> None:
 

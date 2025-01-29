@@ -4,13 +4,9 @@ from Classes.Kaart import Kaart
 
 import random
 
-from score import score_bereken
-
 import copy
 
-from Helpers import schrijf_output
-
-from Helpers import maak_grafiek
+from Helpers import schrijf_output, maak_grafiek, score_bereken
 
 from Algorithms.connection_driven_greedy import genereer_traject
 

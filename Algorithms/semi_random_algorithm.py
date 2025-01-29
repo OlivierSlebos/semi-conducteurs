@@ -8,9 +8,7 @@ from Classes.Trein import Trein
 
 from Visualisation.kaart_maken import kaart_maken
 
-from Helpers import schrijf_output
-
-from score import score_bereken
+from Helpers import schrijf_output, score_bereken
 
 def semi_random_algoritme(spel: Kaart) -> None:
 

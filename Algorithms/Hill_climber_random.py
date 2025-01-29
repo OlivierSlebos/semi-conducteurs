@@ -4,11 +4,9 @@ from Classes.Kaart import Kaart
 
 import random
 
-from score import score_bereken
-
 import copy
 
-from Helpers import schrijf_output, maak_grafiek
+from Helpers import schrijf_output, maak_grafiek, score_bereken
 
 def hill_climber_random(spel: Kaart, min_treinen: int, max_treinen: int, min_minuten: int, max_minuten: int, iterations: int, kaart):
     """

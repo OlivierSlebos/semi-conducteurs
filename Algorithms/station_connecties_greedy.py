@@ -6,11 +6,7 @@ from Classes.Kaart import Kaart
 
 from Classes.Trein import Trein
 
-from Helpers import genereer_output
-
-from Helpers import schrijf_output
-
-from score import score_bereken
+from Helpers import schrijf_output, score_bereken
 
 def connection_driven_greedy_algoritme(spel: Kaart) -> None:
 

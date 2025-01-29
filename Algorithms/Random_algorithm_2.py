@@ -2,9 +2,7 @@ from Classes.Kaart import Kaart
 
 from Classes.Trein import Trein
 
-from Helpers import schrijf_output
-
-from score import score_bereken
+from Helpers import schrijf_output, score_bereken
 
 import random
 

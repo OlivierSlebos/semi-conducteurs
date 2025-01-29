@@ -118,3 +118,90 @@ def convert_to_int(s):
     # Verwijder alles behalve cijfers uit de string
     clean_string = ''.join(filter(str.isdigit, s))
     return int(clean_string)  # Zet de schone string om naar een integer
+
+def score_bereken(treinen, minuten, verbindingen, kaart) -> float:
+    """
+    Bereken de score van één lijnvoering.
+
+    Deze functie berekend de score van één lijnvoering. 
+    Dit gebeurd op basis van het aantal treinen/trajecten, 
+    het totaal aantal minunten van elle trajecten binnen één lijnvoering samen 
+    en het aantal unieke verbindingen van één lijnvoering. Welke formule wordt uitgevoerd hangt af van welke kaart er is gebruikt. 
+    """
+
+    if kaart == "nederland":
+        # fractie gereden verbindingen, 89 verbindingen totaal
+        p = verbindingen / 89
+        score = p * 10000 - ((treinen * 100) + minuten)
+        return score
+    elif kaart == "holland":
+        # fractie gereden verbindingen, 28 verbindingen totaal
+        p = verbindingen / 28
+        score = p * 10000 - ((treinen * 100) + minuten)
+        return score
+    else:
+        print("Geen goede kaart meegegeven")
+        return None
+
+
+def score_bereken_csv(filename: str) -> int:
+    """
+    Bereken een score vanuit een CSV bestand.
+
+    Deze functie berekend de score van één lijnvoering. 
+    Dit gebeurd op basis van het aantal treinen/trajecten, 
+    het totaal aantal minunten van elle trajecten binnen één lijnvoering samen 
+    en het aantal unieke verbindingen van één lijnvoering.
+    """
+    with open(f"resultaten/{filename}") as f:
+        line = f.readline()
+
+        #gevens splitsen
+        gegevens = line.strip().split(',')
+        
+        aantal_treinen = int(gegevens[0])
+        aantal_minuten = int(gegevens[1])
+        aantal_verbindingen = float(gegevens[2])
+        # fractie gereden verbindingen, 28 verbindingen totaal
+        p = aantal_verbindingen / 28
+        score = p * 10000 - ((aantal_treinen * 100) + aantal_minuten)
+            
+    return score
+
+def station_uit_csv(filename: str) -> list:
+    stations = []
+    #open document
+    with open(filename) as f:
+        #Sla de eerste rij over
+        line = f.readline()
+        line = f.readline()
+
+        while line != "":
+            #Split de data op in een lijst
+            connection_data = line.split(',')
+            #Zet het in een tuple
+            verbinding = (connection_data[0], float(connection_data[1]), float(connection_data[2].strip()))
+            #Voeg het toe aan de lijst
+            stations.append(verbinding)
+            #Volgende line
+            line = f.readline()
+    return stations
+
+def verbinding_uit_csv(filename: str) -> list:
+    verbindingen = []
+    #open document
+    with open(filename) as f:
+        #Sla de eerste rij over
+        line = f.readline()
+        line = f.readline()
+
+        while line != "":
+            #Split de data op in een lijst
+            connection_data = line.split(',')
+            #Zet het in een tuple
+            verbinding = (connection_data[0], connection_data[1], int(float(connection_data[2])))
+            #Voeg het toe aan de lijst
+            verbindingen.append(verbinding)
+            #Volgende line
+            line = f.readline()
+    return verbindingen
