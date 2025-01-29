@@ -1,0 +1,42 @@
+10,1602,47.0
+Trein nummer 1
+"('Schiedam Centrum', 'Delft', 7)","('Delft', 'Schiedam Centrum', 7)","('Delft', 'Schiedam Centrum', 7)","('Schiedam Centrum', 'Delft', 7)","('Schiedam Centrum', 'Delft', 7)","('Delft', 'Schiedam Centrum', 7)","('Delft', 'Schiedam Centrum', 7)","('Schiedam Centrum', 'Delft', 7)","('Schiedam Centrum', 'Rotterdam Blaak', 11)","('Rotterdam Blaak', 'Schiedam Centrum', 11)","('Rotterdam Blaak', 'Dordrecht', 14)","('Dordrecht', 'Rotterdam Blaak', 14)","('Dordrecht', 'Roosendaal', 22)","('Roosendaal', 'Dordrecht', 22)","('Roosendaal', 'Vlissingen', 63)","('Vlissingen', 'Roosendaal', 63)"
+Schiedam Centrum,Delft,Schiedam Centrum,Delft,Schiedam Centrum,Rotterdam Blaak,Dordrecht,Roosendaal,Vlissingen
+
+Trein nummer 2
+"('Heerlen', 'Sittard', 15)","('Sittard', 'Heerlen', 15)","('Sittard', 'Heerlen', 15)","('Heerlen', 'Sittard', 15)","('Heerlen', 'Sittard', 15)","('Sittard', 'Heerlen', 15)","('Sittard', 'Maastricht', 15)","('Maastricht', 'Sittard', 15)","('Maastricht', 'Sittard', 15)","('Sittard', 'Maastricht', 15)","('Sittard', 'Roermond', 15)","('Roermond', 'Sittard', 15)","('Roermond', 'Weert', 14)","('Weert', 'Roermond', 14)","('Weert', 'Eindhoven', 17)","('Eindhoven', 'Weert', 17)","('Eindhoven', 'Tilburg', 21)","('Tilburg', 'Eindhoven', 21)","('Tilburg', 'Eindhoven', 21)","('Eindhoven', 'Tilburg', 21)"
+Heerlen,Sittard,Heerlen,Sittard,Maastricht,Sittard,Roermond,Weert,Eindhoven,Tilburg,Eindhoven
+
+Trein nummer 3
+"('Amsterdam Zuid', 'Schiphol Airport', 6)","('Schiphol Airport', 'Amsterdam Zuid', 6)","('Schiphol Airport', 'Amsterdam Zuid', 6)","('Amsterdam Zuid', 'Schiphol Airport', 6)","('Amsterdam Zuid', 'Amsterdam Amstel', 10)","('Amsterdam Amstel', 'Amsterdam Zuid', 10)","('Amsterdam Amstel', 'Almere Centrum', 27)","('Almere Centrum', 'Amsterdam Amstel', 27)","('Almere Centrum', 'Amsterdam Centraal', 20)","('Amsterdam Centraal', 'Almere Centrum', 20)","('Amsterdam Centraal', 'Almere Centrum', 20)","('Almere Centrum', 'Amsterdam Centraal', 20)","('Almere Centrum', 'Amsterdam Centraal', 20)","('Amsterdam Centraal', 'Almere Centrum', 20)","('Amsterdam Centraal', 'Amsterdam Amstel', 8)","('Amsterdam Amstel', 'Amsterdam Centraal', 8)","('Amsterdam Amstel', 'Amsterdam Zuid', 10)","('Amsterdam Zuid', 'Amsterdam Amstel', 10)","('Amsterdam Zuid', 'Schiphol Airport', 6)","('Schiphol Airport', 'Amsterdam Zuid', 6)","('Schiphol Airport', 'Leiden Centraal', 15)","('Leiden Centraal', 'Schiphol Airport', 15)","('Leiden Centraal', 'Alphen a/d Rijn', 14)","('Alphen a/d Rijn', 'Leiden Centraal', 14)"
+Amsterdam Zuid,Schiphol Airport,Amsterdam Zuid,Amsterdam Amstel,Almere Centrum,Amsterdam Centraal,Almere Centrum,Amsterdam Centraal,Amsterdam Amstel,Amsterdam Zuid,Schiphol Airport,Leiden Centraal,Alphen a/d Rijn
+
+Trein nummer 4
+"('Amsterdam Centraal', 'Amsterdam Amstel', 8)","('Amsterdam Amstel', 'Amsterdam Centraal', 8)","('Amsterdam Amstel', 'Hilversum', 28)","('Hilversum', 'Amsterdam Amstel', 28)","('Hilversum', 'Utrecht Centraal', 15)","('Utrecht Centraal', 'Hilversum', 15)","('Utrecht Centraal', 's-Hertogenbosch', 27)","('s-Hertogenbosch', 'Utrecht Centraal', 27)","('s-Hertogenbosch', 'Eindhoven', 18)","('Eindhoven', 's-Hertogenbosch', 18)","('Eindhoven', 'Tilburg', 21)","('Tilburg', 'Eindhoven', 21)","('Tilburg', 's-Hertogenbosch', 15)","('s-Hertogenbosch', 'Tilburg', 15)","('s-Hertogenbosch', 'Utrecht Centraal', 27)","('Utrecht Centraal', 's-Hertogenbosch', 27)"
+Amsterdam Centraal,Amsterdam Amstel,Hilversum,Utrecht Centraal,s-Hertogenbosch,Eindhoven,Tilburg,s-Hertogenbosch,Utrecht Centraal
+
+Trein nummer 5
+"('Assen', 'Zwolle', 40)","('Zwolle', 'Assen', 40)","('Zwolle', 'Almelo', 42)","('Almelo', 'Zwolle', 42)","('Almelo', 'Deventer', 24)","('Deventer', 'Almelo', 24)","('Deventer', 'Zutphen', 12)","('Zutphen', 'Deventer', 12)","('Zutphen', 'Deventer', 12)","('Deventer', 'Zutphen', 12)","('Deventer', 'Zutphen', 12)","('Zutphen', 'Deventer', 12)","('Zutphen', 'Apeldoorn', 20)","('Apeldoorn', 'Zutphen', 20)"
+Assen,Zwolle,Almelo,Deventer,Zutphen,Deventer,Zutphen,Apeldoorn
+
+Trein nummer 6
+"('Steenwijk', 'Heerenveen', 14)","('Heerenveen', 'Steenwijk', 14)","('Heerenveen', 'Leeuwarden', 16)","('Leeuwarden', 'Heerenveen', 16)","('Leeuwarden', 'Heerenveen', 16)","('Heerenveen', 'Leeuwarden', 16)","('Heerenveen', 'Leeuwarden', 16)","('Leeuwarden', 'Heerenveen', 16)","('Leeuwarden', 'Groningen', 35)","('Groningen', 'Leeuwarden', 35)","('Groningen', 'Assen', 17)","('Assen', 'Groningen', 17)","('Assen', 'Zwolle', 40)","('Zwolle', 'Assen', 40)"
+Steenwijk,Heerenveen,Leeuwarden,Heerenveen,Leeuwarden,Groningen,Assen,Zwolle
+
+Trein nummer 7
+"('Rotterdam Alexander', 'Rotterdam Centraal', 8)","('Rotterdam Centraal', 'Rotterdam Alexander', 8)","('Rotterdam Centraal', 'Dordrecht', 17)","('Dordrecht', 'Rotterdam Centraal', 17)","('Dordrecht', 'Roosendaal', 22)","('Roosendaal', 'Dordrecht', 22)","('Roosendaal', 'Vlissingen', 63)","('Vlissingen', 'Roosendaal', 63)","('Vlissingen', 'Roosendaal', 63)","('Roosendaal', 'Vlissingen', 63)"
+Rotterdam Alexander,Rotterdam Centraal,Dordrecht,Roosendaal,Vlissingen,Roosendaal
+
+Trein nummer 8
+"('Zwolle', 'Deventer', 24)","('Deventer', 'Zwolle', 24)","('Deventer', 'Almelo', 24)","('Almelo', 'Deventer', 24)","('Almelo', 'Hengelo', 10)","('Hengelo', 'Almelo', 10)","('Hengelo', 'Almelo', 10)","('Almelo', 'Hengelo', 10)","('Almelo', 'Zwolle', 42)","('Zwolle', 'Almelo', 42)","('Zwolle', 'Assen', 40)","('Assen', 'Zwolle', 40)"
+Zwolle,Deventer,Almelo,Hengelo,Almelo,Zwolle,Assen
+
+Trein nummer 9
+"('Amsterdam Zuid', 'Schiphol Airport', 6)","('Schiphol Airport', 'Amsterdam Zuid', 6)","('Schiphol Airport', 'Utrecht Centraal', 33)","('Utrecht Centraal', 'Schiphol Airport', 33)","('Utrecht Centraal', 'Alphen a/d Rijn', 28)","('Alphen a/d Rijn', 'Utrecht Centraal', 28)","('Alphen a/d Rijn', 'Utrecht Centraal', 28)","('Utrecht Centraal', 'Alphen a/d Rijn', 28)","('Utrecht Centraal', 'Amsterdam Amstel', 19)","('Amsterdam Amstel', 'Utrecht Centraal', 19)","('Amsterdam Amstel', 'Almere Centrum', 27)","('Almere Centrum', 'Amsterdam Amstel', 27)","('Almere Centrum', 'Amsterdam Centraal', 20)","('Amsterdam Centraal', 'Almere Centrum', 20)"
+Amsterdam Zuid,Schiphol Airport,Utrecht Centraal,Alphen a/d Rijn,Utrecht Centraal,Amsterdam Amstel,Almere Centrum,Amsterdam Centraal
+
+Trein nummer 10
+"('Deventer', 'Zutphen', 12)","('Zutphen', 'Deventer', 12)","('Zutphen', 'Deventer', 12)","('Deventer', 'Zutphen', 12)","('Deventer', 'Apeldoorn', 10)","('Apeldoorn', 'Deventer', 10)","('Apeldoorn', 'Amersfoort', 24)","('Amersfoort', 'Apeldoorn', 24)","('Amersfoort', 'Utrecht Centraal', 14)","('Utrecht Centraal', 'Amersfoort', 14)","('Utrecht Centraal', 'Schiphol Airport', 33)","('Schiphol Airport', 'Utrecht Centraal', 33)","('Schiphol Airport', 'Amsterdam Zuid', 6)","('Amsterdam Zuid', 'Schiphol Airport', 6)","('Amsterdam Zuid', 'Amsterdam Sloterdijk', 16)","('Amsterdam Sloterdijk', 'Amsterdam Zuid', 16)","('Amsterdam Sloterdijk', 'Zaandam', 6)","('Zaandam', 'Amsterdam Sloterdijk', 6)","('Zaandam', 'Castricum', 12)","('Castricum', 'Zaandam', 12)","('Castricum', 'Beverwijk', 13)","('Beverwijk', 'Castricum', 13)","('Beverwijk', 'Castricum', 13)","('Castricum', 'Beverwijk', 13)","('Castricum', 'Alkmaar', 9)","('Alkmaar', 'Castricum', 9)"
+Deventer,Zutphen,Deventer,Apeldoorn,Amersfoort,Utrecht Centraal,Schiphol Airport,Amsterdam Zuid,Amsterdam Sloterdijk,Zaandam,Castricum,Beverwijk,Castricum,Alkmaar
+
+EOF

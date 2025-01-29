@@ -1,0 +1,38 @@
+9,1200,35.0
+Trein nummer 1
+"('Hilversum', 'Almere Centrum', 26)","('Almere Centrum', 'Hilversum', 26)","('Almere Centrum', 'Amsterdam Amstel', 27)","('Amsterdam Amstel', 'Almere Centrum', 27)","('Amsterdam Amstel', 'Amsterdam Zuid', 10)","('Amsterdam Zuid', 'Amsterdam Amstel', 10)","('Amsterdam Zuid', 'Amsterdam Sloterdijk', 16)","('Amsterdam Sloterdijk', 'Amsterdam Zuid', 16)","('Amsterdam Sloterdijk', 'Amsterdam Zuid', 16)","('Amsterdam Zuid', 'Amsterdam Sloterdijk', 16)"
+Hilversum,Almere Centrum,Amsterdam Amstel,Amsterdam Zuid,Amsterdam Sloterdijk,Amsterdam Zuid
+
+Trein nummer 2
+"('Amsterdam Centraal', 'Utrecht Centraal', 27)","('Utrecht Centraal', 'Amsterdam Centraal', 27)","('Utrecht Centraal', 'Alphen a/d Rijn', 28)","('Alphen a/d Rijn', 'Utrecht Centraal', 28)","('Alphen a/d Rijn', 'Utrecht Centraal', 28)","('Utrecht Centraal', 'Alphen a/d Rijn', 28)","('Utrecht Centraal', 'Alphen a/d Rijn', 28)","('Alphen a/d Rijn', 'Utrecht Centraal', 28)","('Alphen a/d Rijn', 'Gouda', 19)","('Gouda', 'Alphen a/d Rijn', 19)","('Gouda', 'Den Haag Laan v NOI', 28)","('Den Haag Laan v NOI', 'Gouda', 28)","('Den Haag Laan v NOI', 'Delft', 12)","('Delft', 'Den Haag Laan v NOI', 12)","('Delft', 'Schiedam Centrum', 7)","('Schiedam Centrum', 'Delft', 7)"
+Amsterdam Centraal,Utrecht Centraal,Alphen a/d Rijn,Utrecht Centraal,Alphen a/d Rijn,Gouda,Den Haag Laan v NOI,Delft,Schiedam Centrum
+
+Trein nummer 3
+"('Alphen a/d Rijn', 'Gouda', 19)","('Gouda', 'Alphen a/d Rijn', 19)","('Gouda', 'Utrecht Centraal', 18)","('Utrecht Centraal', 'Gouda', 18)","('Utrecht Centraal', 's-Hertogenbosch', 27)","('s-Hertogenbosch', 'Utrecht Centraal', 27)","('s-Hertogenbosch', 'Utrecht Centraal', 27)","('Utrecht Centraal', 's-Hertogenbosch', 27)","('Utrecht Centraal', 'Amersfoort', 14)","('Amersfoort', 'Utrecht Centraal', 14)","('Amersfoort', 'Zwolle', 35)","('Zwolle', 'Amersfoort', 35)"
+Alphen a/d Rijn,Gouda,Utrecht Centraal,s-Hertogenbosch,Utrecht Centraal,Amersfoort,Zwolle
+
+Trein nummer 4
+"('Weert', 'Eindhoven', 17)","('Eindhoven', 'Weert', 17)","('Eindhoven', 'Weert', 17)","('Weert', 'Eindhoven', 17)","('Weert', 'Eindhoven', 17)","('Eindhoven', 'Weert', 17)","('Eindhoven', 'Weert', 17)","('Weert', 'Eindhoven', 17)","('Weert', 'Roermond', 14)","('Roermond', 'Weert', 14)","('Roermond', 'Weert', 14)","('Weert', 'Roermond', 14)","('Weert', 'Eindhoven', 17)","('Eindhoven', 'Weert', 17)","('Eindhoven', 's-Hertogenbosch', 18)","('s-Hertogenbosch', 'Eindhoven', 18)"
+Weert,Eindhoven,Weert,Eindhoven,Weert,Roermond,Weert,Eindhoven,s-Hertogenbosch
+
+Trein nummer 5
+"('Delft', 'Den Haag HS', 8)","('Den Haag HS', 'Delft', 8)","('Den Haag HS', 'Gouda', 21)","('Gouda', 'Den Haag HS', 21)","('Gouda', 'Alphen a/d Rijn', 19)","('Alphen a/d Rijn', 'Gouda', 19)","('Alphen a/d Rijn', 'Utrecht Centraal', 28)","('Utrecht Centraal', 'Alphen a/d Rijn', 28)","('Utrecht Centraal', 'Amsterdam Centraal', 27)","('Amsterdam Centraal', 'Utrecht Centraal', 27)","('Amsterdam Centraal', 'Almere Centrum', 20)","('Almere Centrum', 'Amsterdam Centraal', 20)","('Almere Centrum', 'Amsterdam Centraal', 20)","('Amsterdam Centraal', 'Almere Centrum', 20)"
+Delft,Den Haag HS,Gouda,Alphen a/d Rijn,Utrecht Centraal,Amsterdam Centraal,Almere Centrum,Amsterdam Centraal
+
+Trein nummer 6
+"('Eindhoven', 's-Hertogenbosch', 18)","('s-Hertogenbosch', 'Eindhoven', 18)","('s-Hertogenbosch', 'Eindhoven', 18)","('Eindhoven', 's-Hertogenbosch', 18)","('Eindhoven', 's-Hertogenbosch', 18)","('s-Hertogenbosch', 'Eindhoven', 18)","('s-Hertogenbosch', 'Utrecht Centraal', 27)","('Utrecht Centraal', 's-Hertogenbosch', 27)","('Utrecht Centraal', 'Amersfoort', 14)","('Amersfoort', 'Utrecht Centraal', 14)"
+Eindhoven,s-Hertogenbosch,Eindhoven,s-Hertogenbosch,Utrecht Centraal,Amersfoort
+
+Trein nummer 7
+"('Ede-Wageningen', 'Arnhem Centraal', 10)","('Arnhem Centraal', 'Ede-Wageningen', 10)","('Arnhem Centraal', 'Dieren', 12)","('Dieren', 'Arnhem Centraal', 12)","('Dieren', 'Arnhem Centraal', 12)","('Arnhem Centraal', 'Dieren', 12)","('Arnhem Centraal', 'Ede-Wageningen', 10)","('Ede-Wageningen', 'Arnhem Centraal', 10)","('Ede-Wageningen', 'Arnhem Centraal', 10)","('Arnhem Centraal', 'Ede-Wageningen', 10)","('Arnhem Centraal', 'Ede-Wageningen', 10)","('Ede-Wageningen', 'Arnhem Centraal', 10)","('Ede-Wageningen', 'Arnhem Centraal', 10)","('Arnhem Centraal', 'Ede-Wageningen', 10)","('Arnhem Centraal', 'Ede-Wageningen', 10)","('Ede-Wageningen', 'Arnhem Centraal', 10)","('Ede-Wageningen', 'Arnhem Centraal', 10)","('Arnhem Centraal', 'Ede-Wageningen', 10)","('Arnhem Centraal', 'Nijmegen', 12)","('Nijmegen', 'Arnhem Centraal', 12)","('Nijmegen', 'Oss', 16)","('Oss', 'Nijmegen', 16)","('Oss', 's-Hertogenbosch', 11)","('s-Hertogenbosch', 'Oss', 11)"
+Ede-Wageningen,Arnhem Centraal,Dieren,Arnhem Centraal,Ede-Wageningen,Arnhem Centraal,Ede-Wageningen,Arnhem Centraal,Ede-Wageningen,Arnhem Centraal,Nijmegen,Oss,s-Hertogenbosch
+
+Trein nummer 8
+"('Leeuwarden', 'Heerenveen', 16)","('Heerenveen', 'Leeuwarden', 16)","('Heerenveen', 'Leeuwarden', 16)","('Leeuwarden', 'Heerenveen', 16)","('Leeuwarden', 'Heerenveen', 16)","('Heerenveen', 'Leeuwarden', 16)","('Heerenveen', 'Steenwijk', 14)","('Steenwijk', 'Heerenveen', 14)","('Steenwijk', 'Heerenveen', 14)","('Heerenveen', 'Steenwijk', 14)","('Heerenveen', 'Steenwijk', 14)","('Steenwijk', 'Heerenveen', 14)","('Steenwijk', 'Zwolle', 24)","('Zwolle', 'Steenwijk', 24)","('Zwolle', 'Almelo', 42)","('Almelo', 'Zwolle', 42)"
+Leeuwarden,Heerenveen,Leeuwarden,Heerenveen,Steenwijk,Heerenveen,Steenwijk,Zwolle,Almelo
+
+Trein nummer 9
+"('Amsterdam Amstel', 'Hilversum', 28)","('Hilversum', 'Amsterdam Amstel', 28)","('Hilversum', 'Utrecht Centraal', 15)","('Utrecht Centraal', 'Hilversum', 15)","('Utrecht Centraal', 's-Hertogenbosch', 27)","('s-Hertogenbosch', 'Utrecht Centraal', 27)","('s-Hertogenbosch', 'Tilburg', 15)","('Tilburg', 's-Hertogenbosch', 15)","('Tilburg', 'Breda', 13)","('Breda', 'Tilburg', 13)","('Breda', 'Etten-Leur', 7)","('Etten-Leur', 'Breda', 7)","('Etten-Leur', 'Breda', 7)","('Breda', 'Etten-Leur', 7)","('Breda', 'Dordrecht', 18)","('Dordrecht', 'Breda', 18)"
+Amsterdam Amstel,Hilversum,Utrecht Centraal,s-Hertogenbosch,Tilburg,Breda,Etten-Leur,Breda,Dordrecht
+
+EOF

@@ -29,28 +29,6 @@ def genereer_output(traject, verbindingen, trein_nummer):
         #Voeg een lege rij toe
         writer.writerow([])
 
-def run_algoritme(algoritme, spel, aantal_treinen: int):
-
-    lijst_stations_gereden = []
-    lijst_connecties_gerenden = []
-
-    for i in range(aantal_treinen):
-
-        #Voer het algoritme uit
-        antwoord = algoritme(spel)
-
-        #Sla de uitkomsten van de history op
-        lijst_stations_gereden.extend(antwoord[0])
-        lijst_connecties_gerenden.extend(antwoord[1])
-
-        #Genereer output in een csv
-        genereer_output(antwoord[0], antwoord[1], i)
-
-    #Maak een kaart
-    kaart_maken(lijst_stations_gereden, lijst_connecties_gerenden)
-
-# def score_bereken(lijst_connecties, )
-
 def schrijf_output(verbindingen: list[list], trajecten: list, treinen: int, minuten: int, verbinding_aantal: int, score: int):
     
     # if score < 0:
@@ -109,7 +87,7 @@ def maak_grafiek(score: list, runs: list, kaart):
     # Toon de grafiek
     plt.legend()
     plt.grid(True)
-    plt.savefig("Hill_Climber_grafiek.png")
+    plt.savefig("Docs/Hill_Climber_grafiek.png")
 
 def controleer_reistijd(filename):
     with open (filename) as f:

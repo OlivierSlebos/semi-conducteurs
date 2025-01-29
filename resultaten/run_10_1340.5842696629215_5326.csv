@@ -1,0 +1,42 @@
+10,1592,35.0
+Trein nummer 1
+"('Roosendaal', 'Vlissingen', 63)","('Vlissingen', 'Roosendaal', 63)","('Vlissingen', 'Roosendaal', 63)","('Roosendaal', 'Vlissingen', 63)","('Roosendaal', 'Etten-Leur', 11)","('Etten-Leur', 'Roosendaal', 11)","('Etten-Leur', 'Breda', 7)","('Breda', 'Etten-Leur', 7)","('Breda', 'Dordrecht', 18)","('Dordrecht', 'Breda', 18)"
+Roosendaal,Vlissingen,Roosendaal,Etten-Leur,Breda,Dordrecht
+
+Trein nummer 2
+"('Leeuwarden', 'Heerenveen', 16)","('Heerenveen', 'Leeuwarden', 16)","('Heerenveen', 'Steenwijk', 14)","('Steenwijk', 'Heerenveen', 14)","('Steenwijk', 'Zwolle', 24)","('Zwolle', 'Steenwijk', 24)","('Zwolle', 'Steenwijk', 24)","('Steenwijk', 'Zwolle', 24)","('Steenwijk', 'Heerenveen', 14)","('Heerenveen', 'Steenwijk', 14)","('Heerenveen', 'Leeuwarden', 16)","('Leeuwarden', 'Heerenveen', 16)","('Leeuwarden', 'Heerenveen', 16)","('Heerenveen', 'Leeuwarden', 16)","('Heerenveen', 'Steenwijk', 14)","('Steenwijk', 'Heerenveen', 14)","('Steenwijk', 'Zwolle', 24)","('Zwolle', 'Steenwijk', 24)"
+Leeuwarden,Heerenveen,Steenwijk,Zwolle,Steenwijk,Heerenveen,Leeuwarden,Heerenveen,Steenwijk,Zwolle
+
+Trein nummer 3
+"('Helmond', 'Eindhoven', 9)","('Eindhoven', 'Helmond', 9)","('Eindhoven', 'Tilburg', 21)","('Tilburg', 'Eindhoven', 21)","('Tilburg', 'Breda', 13)","('Breda', 'Tilburg', 13)","('Breda', 'Etten-Leur', 7)","('Etten-Leur', 'Breda', 7)","('Etten-Leur', 'Roosendaal', 11)","('Roosendaal', 'Etten-Leur', 11)","('Roosendaal', 'Vlissingen', 63)","('Vlissingen', 'Roosendaal', 63)"
+Helmond,Eindhoven,Tilburg,Breda,Etten-Leur,Roosendaal,Vlissingen
+
+Trein nummer 4
+"('Tilburg', 'Eindhoven', 21)","('Eindhoven', 'Tilburg', 21)","('Eindhoven', 'Tilburg', 21)","('Tilburg', 'Eindhoven', 21)","('Tilburg', 'Eindhoven', 21)","('Eindhoven', 'Tilburg', 21)","('Eindhoven', 's-Hertogenbosch', 18)","('s-Hertogenbosch', 'Eindhoven', 18)","('s-Hertogenbosch', 'Utrecht Centraal', 27)","('Utrecht Centraal', 's-Hertogenbosch', 27)","('Utrecht Centraal', 'Ede-Wageningen', 24)","('Ede-Wageningen', 'Utrecht Centraal', 24)","('Ede-Wageningen', 'Utrecht Centraal', 24)","('Utrecht Centraal', 'Ede-Wageningen', 24)"
+Tilburg,Eindhoven,Tilburg,Eindhoven,s-Hertogenbosch,Utrecht Centraal,Ede-Wageningen,Utrecht Centraal
+
+Trein nummer 5
+"('Almere Centrum', 'Amsterdam Centraal', 20)","('Amsterdam Centraal', 'Almere Centrum', 20)","('Amsterdam Centraal', 'Amsterdam Amstel', 8)","('Amsterdam Amstel', 'Amsterdam Centraal', 8)","('Amsterdam Amstel', 'Utrecht Centraal', 19)","('Utrecht Centraal', 'Amsterdam Amstel', 19)","('Utrecht Centraal', 'Amsterdam Amstel', 19)","('Amsterdam Amstel', 'Utrecht Centraal', 19)","('Amsterdam Amstel', 'Amsterdam Zuid', 10)","('Amsterdam Zuid', 'Amsterdam Amstel', 10)","('Amsterdam Zuid', 'Amsterdam Amstel', 10)","('Amsterdam Amstel', 'Amsterdam Zuid', 10)","('Amsterdam Amstel', 'Amsterdam Zuid', 10)","('Amsterdam Zuid', 'Amsterdam Amstel', 10)","('Amsterdam Zuid', 'Schiphol Airport', 6)","('Schiphol Airport', 'Amsterdam Zuid', 6)","('Schiphol Airport', 'Leiden Centraal', 15)","('Leiden Centraal', 'Schiphol Airport', 15)","('Leiden Centraal', 'Den Haag Laan v NOI', 9)","('Den Haag Laan v NOI', 'Leiden Centraal', 9)","('Den Haag Laan v NOI', 'Leiden Centraal', 9)","('Leiden Centraal', 'Den Haag Laan v NOI', 9)","('Leiden Centraal', 'Heemstede-Aerdenhout', 13)","('Heemstede-Aerdenhout', 'Leiden Centraal', 13)","('Heemstede-Aerdenhout', 'Leiden Centraal', 13)","('Leiden Centraal', 'Heemstede-Aerdenhout', 13)","('Leiden Centraal', 'Den Haag HS', 12)","('Den Haag HS', 'Leiden Centraal', 12)"
+Almere Centrum,Amsterdam Centraal,Amsterdam Amstel,Utrecht Centraal,Amsterdam Amstel,Amsterdam Zuid,Amsterdam Amstel,Amsterdam Zuid,Schiphol Airport,Leiden Centraal,Den Haag Laan v NOI,Leiden Centraal,Heemstede-Aerdenhout,Leiden Centraal,Den Haag HS
+
+Trein nummer 6
+"('Eindhoven', 'Helmond', 9)","('Helmond', 'Eindhoven', 9)","('Helmond', 'Eindhoven', 9)","('Eindhoven', 'Helmond', 9)","('Eindhoven', 'Weert', 17)","('Weert', 'Eindhoven', 17)","('Weert', 'Eindhoven', 17)","('Eindhoven', 'Weert', 17)","('Eindhoven', 's-Hertogenbosch', 18)","('s-Hertogenbosch', 'Eindhoven', 18)","('s-Hertogenbosch', 'Utrecht Centraal', 27)","('Utrecht Centraal', 's-Hertogenbosch', 27)","('Utrecht Centraal', 'Ede-Wageningen', 24)","('Ede-Wageningen', 'Utrecht Centraal', 24)","('Ede-Wageningen', 'Utrecht Centraal', 24)","('Utrecht Centraal', 'Ede-Wageningen', 24)"
+Eindhoven,Helmond,Eindhoven,Weert,Eindhoven,s-Hertogenbosch,Utrecht Centraal,Ede-Wageningen,Utrecht Centraal
+
+Trein nummer 7
+"('Heemstede-Aerdenhout', 'Haarlem', 6)","('Haarlem', 'Heemstede-Aerdenhout', 6)","('Haarlem', 'Beverwijk', 16)","('Beverwijk', 'Haarlem', 16)","('Beverwijk', 'Zaandam', 25)","('Zaandam', 'Beverwijk', 25)","('Zaandam', 'Beverwijk', 25)","('Beverwijk', 'Zaandam', 25)","('Beverwijk', 'Haarlem', 16)","('Haarlem', 'Beverwijk', 16)","('Haarlem', 'Beverwijk', 16)","('Beverwijk', 'Haarlem', 16)","('Beverwijk', 'Castricum', 13)","('Castricum', 'Beverwijk', 13)","('Castricum', 'Zaandam', 12)","('Zaandam', 'Castricum', 12)","('Zaandam', 'Amsterdam Sloterdijk', 6)","('Amsterdam Sloterdijk', 'Zaandam', 6)","('Amsterdam Sloterdijk', 'Amsterdam Zuid', 16)","('Amsterdam Zuid', 'Amsterdam Sloterdijk', 16)","('Amsterdam Zuid', 'Amsterdam Sloterdijk', 16)","('Amsterdam Sloterdijk', 'Amsterdam Zuid', 16)"
+Heemstede-Aerdenhout,Haarlem,Beverwijk,Zaandam,Beverwijk,Haarlem,Beverwijk,Castricum,Zaandam,Amsterdam Sloterdijk,Amsterdam Zuid,Amsterdam Sloterdijk
+
+Trein nummer 8
+"('Roosendaal', 'Vlissingen', 63)","('Vlissingen', 'Roosendaal', 63)","('Vlissingen', 'Roosendaal', 63)","('Roosendaal', 'Vlissingen', 63)","('Roosendaal', 'Dordrecht', 22)","('Dordrecht', 'Roosendaal', 22)","('Dordrecht', 'Rotterdam Centraal', 17)","('Rotterdam Centraal', 'Dordrecht', 17)"
+Roosendaal,Vlissingen,Roosendaal,Dordrecht,Rotterdam Centraal
+
+Trein nummer 9
+"('Hengelo', 'Enschede', 7)","('Enschede', 'Hengelo', 7)","('Enschede', 'Hengelo', 7)","('Hengelo', 'Enschede', 7)","('Hengelo', 'Enschede', 7)","('Enschede', 'Hengelo', 7)","('Enschede', 'Hengelo', 7)","('Hengelo', 'Enschede', 7)","('Hengelo', 'Enschede', 7)","('Enschede', 'Hengelo', 7)","('Enschede', 'Hengelo', 7)","('Hengelo', 'Enschede', 7)","('Hengelo', 'Enschede', 7)","('Enschede', 'Hengelo', 7)","('Enschede', 'Hengelo', 7)","('Hengelo', 'Enschede', 7)","('Hengelo', 'Enschede', 7)","('Enschede', 'Hengelo', 7)","('Enschede', 'Hengelo', 7)","('Hengelo', 'Enschede', 7)","('Hengelo', 'Almelo', 10)","('Almelo', 'Hengelo', 10)","('Almelo', 'Hengelo', 10)","('Hengelo', 'Almelo', 10)","('Hengelo', 'Enschede', 7)","('Enschede', 'Hengelo', 7)","('Enschede', 'Hengelo', 7)","('Hengelo', 'Enschede', 7)","('Hengelo', 'Enschede', 7)","('Enschede', 'Hengelo', 7)","('Enschede', 'Hengelo', 7)","('Hengelo', 'Enschede', 7)","('Hengelo', 'Enschede', 7)","('Enschede', 'Hengelo', 7)","('Enschede', 'Hengelo', 7)","('Hengelo', 'Enschede', 7)","('Hengelo', 'Almelo', 10)","('Almelo', 'Hengelo', 10)","('Almelo', 'Hengelo', 10)","('Hengelo', 'Almelo', 10)","('Hengelo', 'Enschede', 7)","('Enschede', 'Hengelo', 7)","('Enschede', 'Hengelo', 7)","('Hengelo', 'Enschede', 7)"
+Hengelo,Enschede,Hengelo,Enschede,Hengelo,Enschede,Hengelo,Enschede,Hengelo,Enschede,Hengelo,Almelo,Hengelo,Enschede,Hengelo,Enschede,Hengelo,Enschede,Hengelo,Almelo,Hengelo,Enschede,Hengelo
+
+Trein nummer 10
+"('Roosendaal', 'Dordrecht', 22)","('Dordrecht', 'Roosendaal', 22)","('Dordrecht', 'Rotterdam Blaak', 14)","('Rotterdam Blaak', 'Dordrecht', 14)","('Rotterdam Blaak', 'Dordrecht', 14)","('Dordrecht', 'Rotterdam Blaak', 14)","('Dordrecht', 'Breda', 18)","('Breda', 'Dordrecht', 18)","('Breda', 'Dordrecht', 18)","('Dordrecht', 'Breda', 18)","('Dordrecht', 'Breda', 18)","('Breda', 'Dordrecht', 18)","('Breda', 'Tilburg', 13)","('Tilburg', 'Breda', 13)","('Tilburg', 'Eindhoven', 21)","('Eindhoven', 'Tilburg', 21)","('Eindhoven', 'Weert', 17)","('Weert', 'Eindhoven', 17)","('Weert', 'Eindhoven', 17)","('Eindhoven', 'Weert', 17)"
+Roosendaal,Dordrecht,Rotterdam Blaak,Dordrecht,Breda,Dordrecht,Breda,Tilburg,Eindhoven,Weert,Eindhoven
+
+EOF

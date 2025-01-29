@@ -11,6 +11,12 @@ import copy
 from Helpers import schrijf_output, maak_grafiek
 
 def hill_climber_random(spel: Kaart, min_treinen: int, max_treinen: int, min_minuten: int, max_minuten: int, iterations: int, kaart):
+    """
+    Deze functie past steeds enkele trajecten aan om de hoogst mogelijk score te vinden, de hoogste score wordt bewaard
+
+    Om een nieuw traject te leggen maakt de functie gebruik van een random algoritme (File: Random_algorithm_2), 
+    dat algoritme legt steeds een totaal random traject binnen de meegevegen tijd. 
+    """
 
     #Neem een random eerste oplossing
     oplossing_1 = roep_functie_aan(spel, min_treinen, max_treinen, min_minuten, max_minuten, kaart)
@@ -128,9 +134,3 @@ def hill_climber_random(spel: Kaart, min_treinen: int, max_treinen: int, min_min
 
     schrijf_output(oplossing_huidig["verbindingen"], oplossing_huidig["trajecten"], oplossing_huidig["aantal_treinen"], oplossing_huidig["tijd_gereden"],oplossing_huidig["aantal_conecties"], oplossing_huidig["score"])
     maak_grafiek(graph_score, graph_runs, kaart)
-
-
-if __name__ == "__main__":
-    
-    spel = Kaart('nederland')
-    hill_climber(spel, 9, 12, 160, 180, 100000, 'nederland')

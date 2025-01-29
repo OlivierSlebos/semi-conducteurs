@@ -1,0 +1,38 @@
+9,1077,38.0
+Trein nummer 1
+"('Steenwijk', 'Zwolle', 24)","('Zwolle', 'Steenwijk', 24)","('Zwolle', 'Almelo', 42)","('Almelo', 'Zwolle', 42)","('Almelo', 'Hengelo', 10)","('Hengelo', 'Almelo', 10)","('Hengelo', 'Almelo', 10)","('Almelo', 'Hengelo', 10)","('Almelo', 'Hengelo', 10)","('Hengelo', 'Almelo', 10)","('Hengelo', 'Enschede', 7)","('Enschede', 'Hengelo', 7)","('Enschede', 'Hengelo', 7)","('Hengelo', 'Enschede', 7)","('Hengelo', 'Almelo', 10)","('Almelo', 'Hengelo', 10)","('Almelo', 'Hengelo', 10)","('Hengelo', 'Almelo', 10)"
+Steenwijk,Zwolle,Almelo,Hengelo,Almelo,Hengelo,Enschede,Hengelo,Almelo,Hengelo
+
+Trein nummer 2
+"('Etten-Leur', 'Roosendaal', 11)","('Roosendaal', 'Etten-Leur', 11)","('Roosendaal', 'Dordrecht', 22)","('Dordrecht', 'Roosendaal', 22)","('Dordrecht', 'Roosendaal', 22)","('Roosendaal', 'Dordrecht', 22)","('Roosendaal', 'Vlissingen', 63)","('Vlissingen', 'Roosendaal', 63)"
+Etten-Leur,Roosendaal,Dordrecht,Roosendaal,Vlissingen
+
+Trein nummer 3
+"('Venlo', 'Helmond', 30)","('Helmond', 'Venlo', 30)","('Helmond', 'Venlo', 30)","('Venlo', 'Helmond', 30)","('Venlo', 'Helmond', 30)","('Helmond', 'Venlo', 30)","('Helmond', 'Eindhoven', 9)","('Eindhoven', 'Helmond', 9)","('Eindhoven', 'Helmond', 9)","('Helmond', 'Eindhoven', 9)","('Helmond', 'Eindhoven', 9)","('Eindhoven', 'Helmond', 9)"
+Venlo,Helmond,Venlo,Helmond,Eindhoven,Helmond,Eindhoven
+
+Trein nummer 4
+"('s-Hertogenbosch', 'Utrecht Centraal', 27)","('Utrecht Centraal', 's-Hertogenbosch', 27)","('Utrecht Centraal', 'Amsterdam Centraal', 27)","('Amsterdam Centraal', 'Utrecht Centraal', 27)","('Amsterdam Centraal', 'Utrecht Centraal', 27)","('Utrecht Centraal', 'Amsterdam Centraal', 27)","('Utrecht Centraal', 'Gouda', 18)","('Gouda', 'Utrecht Centraal', 18)"
+s-Hertogenbosch,Utrecht Centraal,Amsterdam Centraal,Utrecht Centraal,Gouda
+
+Trein nummer 5
+"('Castricum', 'Beverwijk', 13)","('Beverwijk', 'Castricum', 13)","('Beverwijk', 'Haarlem', 16)","('Haarlem', 'Beverwijk', 16)","('Haarlem', 'Amsterdam Sloterdijk', 11)","('Amsterdam Sloterdijk', 'Haarlem', 11)","('Amsterdam Sloterdijk', 'Zaandam', 6)","('Zaandam', 'Amsterdam Sloterdijk', 6)","('Zaandam', 'Castricum', 12)","('Castricum', 'Zaandam', 12)","('Castricum', 'Alkmaar', 9)","('Alkmaar', 'Castricum', 9)","('Alkmaar', 'Den Helder', 36)","('Den Helder', 'Alkmaar', 36)"
+Castricum,Beverwijk,Haarlem,Amsterdam Sloterdijk,Zaandam,Castricum,Alkmaar,Den Helder
+
+Trein nummer 6
+"('Gouda', 'Den Haag Laan v NOI', 28)","('Den Haag Laan v NOI', 'Gouda', 28)","('Den Haag Laan v NOI', 'Gouda', 28)","('Gouda', 'Den Haag Laan v NOI', 28)","('Gouda', 'Rotterdam Alexander', 10)","('Rotterdam Alexander', 'Gouda', 10)","('Rotterdam Alexander', 'Gouda', 10)","('Gouda', 'Rotterdam Alexander', 10)","('Gouda', 'Alphen a/d Rijn', 19)","('Alphen a/d Rijn', 'Gouda', 19)","('Alphen a/d Rijn', 'Leiden Centraal', 14)","('Leiden Centraal', 'Alphen a/d Rijn', 14)","('Leiden Centraal', 'Den Haag Centraal', 12)","('Den Haag Centraal', 'Leiden Centraal', 12)","('Den Haag Centraal', 'Delft', 13)","('Delft', 'Den Haag Centraal', 13)","('Delft', 'Den Haag HS', 8)","('Den Haag HS', 'Delft', 8)","('Den Haag HS', 'Leiden Centraal', 12)","('Leiden Centraal', 'Den Haag HS', 12)","('Leiden Centraal', 'Heemstede-Aerdenhout', 13)","('Heemstede-Aerdenhout', 'Leiden Centraal', 13)"
+Gouda,Den Haag Laan v NOI,Gouda,Rotterdam Alexander,Gouda,Alphen a/d Rijn,Leiden Centraal,Den Haag Centraal,Delft,Den Haag HS,Leiden Centraal,Heemstede-Aerdenhout
+
+Trein nummer 7
+"('Den Haag Laan v NOI', 'Leiden Centraal', 9)","('Leiden Centraal', 'Den Haag Laan v NOI', 9)","('Leiden Centraal', 'Den Haag Laan v NOI', 9)","('Den Haag Laan v NOI', 'Leiden Centraal', 9)","('Den Haag Laan v NOI', 'Leiden Centraal', 9)","('Leiden Centraal', 'Den Haag Laan v NOI', 9)","('Leiden Centraal', 'Den Haag Centraal', 12)","('Den Haag Centraal', 'Leiden Centraal', 12)","('Den Haag Centraal', 'Leiden Centraal', 12)","('Leiden Centraal', 'Den Haag Centraal', 12)","('Leiden Centraal', 'Den Haag Laan v NOI', 9)","('Den Haag Laan v NOI', 'Leiden Centraal', 9)","('Den Haag Laan v NOI', 'Delft', 12)","('Delft', 'Den Haag Laan v NOI', 12)","('Delft', 'Schiedam Centrum', 7)","('Schiedam Centrum', 'Delft', 7)","('Schiedam Centrum', 'Rotterdam Blaak', 11)","('Rotterdam Blaak', 'Schiedam Centrum', 11)","('Rotterdam Blaak', 'Dordrecht', 14)","('Dordrecht', 'Rotterdam Blaak', 14)","('Dordrecht', 'Breda', 18)","('Breda', 'Dordrecht', 18)","('Breda', 'Dordrecht', 18)","('Dordrecht', 'Breda', 18)"
+Den Haag Laan v NOI,Leiden Centraal,Den Haag Laan v NOI,Leiden Centraal,Den Haag Centraal,Leiden Centraal,Den Haag Laan v NOI,Delft,Schiedam Centrum,Rotterdam Blaak,Dordrecht,Breda,Dordrecht
+
+Trein nummer 8
+"('Amsterdam Zuid', 'Amsterdam Sloterdijk', 16)","('Amsterdam Sloterdijk', 'Amsterdam Zuid', 16)","('Amsterdam Sloterdijk', 'Amsterdam Zuid', 16)","('Amsterdam Zuid', 'Amsterdam Sloterdijk', 16)","('Amsterdam Zuid', 'Schiphol Airport', 6)","('Schiphol Airport', 'Amsterdam Zuid', 6)","('Schiphol Airport', 'Amsterdam Zuid', 6)","('Amsterdam Zuid', 'Schiphol Airport', 6)","('Amsterdam Zuid', 'Amsterdam Sloterdijk', 16)","('Amsterdam Sloterdijk', 'Amsterdam Zuid', 16)","('Amsterdam Sloterdijk', 'Zaandam', 6)","('Zaandam', 'Amsterdam Sloterdijk', 6)","('Zaandam', 'Hoorn', 26)","('Hoorn', 'Zaandam', 26)"
+Amsterdam Zuid,Amsterdam Sloterdijk,Amsterdam Zuid,Schiphol Airport,Amsterdam Zuid,Amsterdam Sloterdijk,Zaandam,Hoorn
+
+Trein nummer 9
+"('Enschede', 'Hengelo', 7)","('Hengelo', 'Enschede', 7)","('Hengelo', 'Enschede', 7)","('Enschede', 'Hengelo', 7)","('Enschede', 'Hengelo', 7)","('Hengelo', 'Enschede', 7)","('Hengelo', 'Enschede', 7)","('Enschede', 'Hengelo', 7)","('Enschede', 'Hengelo', 7)","('Hengelo', 'Enschede', 7)","('Hengelo', 'Enschede', 7)","('Enschede', 'Hengelo', 7)","('Enschede', 'Hengelo', 7)","('Hengelo', 'Enschede', 7)","('Hengelo', 'Enschede', 7)","('Enschede', 'Hengelo', 7)","('Enschede', 'Hengelo', 7)","('Hengelo', 'Enschede', 7)","('Hengelo', 'Enschede', 7)","('Enschede', 'Hengelo', 7)","('Enschede', 'Hengelo', 7)","('Hengelo', 'Enschede', 7)","('Hengelo', 'Almelo', 10)","('Almelo', 'Hengelo', 10)","('Almelo', 'Deventer', 24)","('Deventer', 'Almelo', 24)"
+Enschede,Hengelo,Enschede,Hengelo,Enschede,Hengelo,Enschede,Hengelo,Enschede,Hengelo,Enschede,Hengelo,Almelo,Deventer
+
+EOF

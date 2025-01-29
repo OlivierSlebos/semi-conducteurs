@@ -15,7 +15,13 @@ from Helpers import maak_grafiek
 from Algorithms.connection_driven_greedy import genereer_traject
 
 def hill_climber_nederland_heuristiek(spel: Kaart, minimale_treinen: int, maximale_treinen: int, min_minuten: int, max_minuten: int, iterations: int, kaart: str):
+    """
+    Deze functie past steeds enkele trajecten aan om de hoogst mogelijk score te vinden, de hoogste score wordt bewaard
 
+    Om een nieuw traject te leggen maakt de functie gebruik van het Heuristiek algoritme (File: connection_driven_greedy), 
+    dat algoritme maakt een traject dat de voorkeur geeft aan een nog niet bereden connectie. Dat algoritme blijft rijden tot de meegegeven tijd verstreken is. 
+    Als het nieuwe traject een betere score oplevert, wordt de dit de nieuwe oplossing waarmee wordt vergeleken, de vorrige wordt verwijderd. 
+    """
     #Neem een random eerste oplossing
     oplossing_1 = roep_functie_aan(spel, minimale_treinen, maximale_treinen, min_minuten, max_minuten, kaart)
     
@@ -157,3 +163,8 @@ def hill_climber_nederland_heuristiek(spel: Kaart, minimale_treinen: int, maxima
     
     #Maak een grafiek
     maak_grafiek(graph_score, graph_runs, kaart)
+
+if __name__ == "__main__":
+    spel = Kaart('nederland')
+    hill_climber_nederland_heuristiek(spel, 10, 10, 180, 180, 20000, 'nederland')
+    
