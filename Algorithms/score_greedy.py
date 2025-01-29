@@ -29,7 +29,7 @@ def score_greedy_algorithm(spel: Kaart, trein_min, trein_max, minuten_min, minut
     for i in range(aantal_treinen):
 
         #genereer een traject per trein en update de nodige variabelen 
-        traject, verbindingen, reistijd, temp_aantal_gereden_connecties = genereer_traject(spel, aantal_gereden_connecties, totale_reistijd, aantal_treinen, minuten_min, minuten_max)
+        traject, verbindingen, reistijd, temp_aantal_gereden_connecties = genereer_traject(spel, aantal_gereden_connecties, totale_reistijd, aantal_treinen, minuten_min, minuten_max, kaart)
 
         #Sla de verbindingen & trajecten op per trein
         schrijf_output_trajecten.append(traject)
@@ -45,7 +45,7 @@ def score_greedy_algorithm(spel: Kaart, trein_min, trein_max, minuten_min, minut
     schrijf_output(schrijf_output_verbindingen, schrijf_output_trajecten, aantal_treinen, totale_reistijd, aantal_gereden_connecties, score)
 
 
-def genereer_traject(spel: Kaart, aantal_gereden_connecties, totale_reistijd, aantal_treinen, minuten_min, minuten_max):
+def genereer_traject(spel: Kaart, aantal_gereden_connecties, totale_reistijd, aantal_treinen, minuten_min, minuten_max, kaart):
     
     #zet een random seed en kies een random begin station 
     r = random.Random(random.seed(datetime.now().timestamp()))
@@ -72,9 +72,9 @@ def genereer_traject(spel: Kaart, aantal_gereden_connecties, totale_reistijd, aa
         for connectie in mogelijke_stations:
             station_item, reisduur, connection_visited = trein1.current_station.connections[connectie]
             if not connection_visited:
-                tussentijdse_score = score_bereken(aantal_treinen, totale_reistijd + reisduur, aantal_gereden_connecties + 1)
+                tussentijdse_score = score_bereken(aantal_treinen, totale_reistijd + reisduur, aantal_gereden_connecties + 1, kaart)
             else:
-                tussentijdse_score = score_bereken(aantal_treinen, totale_reistijd + reisduur, aantal_gereden_connecties)
+                tussentijdse_score = score_bereken(aantal_treinen, totale_reistijd + reisduur, aantal_gereden_connecties, kaart)
             if tussentijdse_score > maximale_score and trein1.time_driven + reisduur < time_to_drive:
                 maximale_score = tussentijdse_score
                 te_rijden_connectie = connectie

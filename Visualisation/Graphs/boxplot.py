@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import csv
 from collections import defaultdict
 
-from uitlezen_boxplot import scores_boxplot_csv
+from Graphs.uitlezen_boxplot import scores_boxplot_csv
 
 def maak_boxplot(data_csv, output_image):
 

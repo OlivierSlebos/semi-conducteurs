@@ -52,7 +52,7 @@ if __name__ == "__main__":
     ALGORITMES = ["random_algoritme", "score_greedy_algorithm","connection_driven_greedy_algoritme","hill_climber_heuristiek", "hill_climber_random", "kortste_connectie_greedy"]
     algoritme = input("Welk algortme wil je gebruiken (random_algoritme/score_greedy_algoritme/connection_driven_greedy_algoritme/hill_climber_heuristiek/hill_climber_random/kortste_connectie_greedy): ")
     while algoritme not in ALGORITMES:
-        algoritme = input("Welk algortme wil je gebruiken (random_algoritme/score_greedy_algoritme/connection_driven_greedy_algoritme/kortste_connectie_greedy): ")
+        algoritme = input("Welk algortme wil je gebruiken (random_algoritme/score_greedy_algoritme/connection_driven_greedy_algoritme/hill_climber_heuristiek/hill_climber_random/kortste_connectie_greedy): ")
 
     #Zet de kaart aan
     spel = Kaart(kaart)
@@ -61,6 +61,7 @@ if __name__ == "__main__":
     if algoritme == "hill_climber_heuristiek" or algoritme == " hill_climber_heuristiek":
         algoritme = globals()['hill_climber_nederland_heuristiek']
         algoritme(spel, int(trein_min), int(trein_max), int(minuten_min), int(minuten_max), int(iterations), kaart)    
+
     elif algoritme == "hill_climber_random" or algoritme == " hill_climber_random":
         algoritme = globals()['hill_climber_random']
         algoritme(spel, int(trein_min), int(trein_max), int(minuten_min), int(minuten_max), int(iterations), kaart)
