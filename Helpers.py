@@ -6,31 +6,14 @@ import random
 
 import matplotlib.pyplot as plt
 
-def genereer_output(traject, verbindingen, trein_nummer):
-    with open('Output.csv', mode='a', newline='', encoding='utf-8') as file:
-        writer = csv.writer(file)
-
-        if trein_nummer == 0:
-            writer.writerow(['NIEUWE DIENSTREGELING'])
-            writer.writerow([])
-
-        #Voeg trein nummer toe
-        writer.writerow([f'Trein nummer {trein_nummer}'])
-
-        #Voeg de conectie toe aan de csv
-        writer.writerow(traject)
-
-        #Voeg een lege rij toe
-        writer.writerow([])
-
-        #Voeg de verbindingen toe
-        writer.writerow(verbindingen)
-
-        #Voeg een lege rij toe
-        writer.writerow([])
-
 def schrijf_output(verbindingen: list[list], trajecten: list, treinen: int, minuten: int, verbinding_aantal: int, score: int):
-    
+    """
+    Zet de resultaten van één lijnvoering in een CSV bestand. 
+
+    Deze functie zet de resultaten van één lijnvoering in een CSV bestand. 
+    Per trein is het mogelijk om in te zien welk traject er is afgelegd. 
+    Dit CSV bestand is zo gemaakt dat het kan worden uitgelezen door verschillende functies
+    """ 
     # if score < 0:
     #     return None
 
@@ -60,7 +43,11 @@ def schrijf_output(verbindingen: list[list], trajecten: list, treinen: int, minu
         writer.writerow(['EOF'])
 
 def bereken_max(filename):
-    
+    """
+    Deze ondersteunden functie berekend de theoretisch maximale score die een stations-kaart kan hebben. 
+    Met de kwaliteit formule -> K = p * 10.000 - (T * 100 - minuten)
+    """
+
     with open(filename) as f:
         line = f.readline()
         som = 0
@@ -71,6 +58,11 @@ def bereken_max(filename):
     print(uitslag)
 
 def maak_grafiek(score: list, runs: list, kaart):
+    """
+    Deze functie maakt een grafiek voor de Hill-Climber. 
+    Dit gebeurt op basis van de scores (y-as) en het aantal keer dat de functie is gerunt (x-as). 
+    """
+    
     # Maak een getrapte grafiek
     plt.step(runs, score, where='post', label='Score per run', color='blue')
 
@@ -87,9 +79,15 @@ def maak_grafiek(score: list, runs: list, kaart):
     # Toon de grafiek
     plt.legend()
     plt.grid(True)
-    plt.savefig("Docs/Hill_Climber_grafiek.png")
+    plt.savefig("Visualisation/Graphs/Hill_Climber_grafiek.png")
 
 def controleer_reistijd(filename):
+    """
+    Deze functie controleert een CSV bestand, 
+    is de optel som van de conecties van elke trein even hoog als de totale reistijd die de CSV laat zien. 
+    Is dit het geval dan print de functie (GELUKT). 
+    """
+    
     with open (filename) as f:
         # Geef line een waarde
         line = f.readline()
@@ -114,10 +112,9 @@ def controleer_reistijd(filename):
     else: print("OEI DIT IS GROTE PROBLEMEN")
 
 def convert_to_int(s):
+    """
+    Deze functie convert de string s naar een int
+    """
     # Verwijder alles behalve cijfers uit de string
     clean_string = ''.join(filter(str.isdigit, s))
     return int(clean_string)  # Zet de schone string om naar een integer
-
-
-if __name__ == "__main__":
-    controleer_reistijd("resultaten/run_11_7202.0_2217.csv")
