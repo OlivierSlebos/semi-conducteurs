@@ -44,7 +44,7 @@ def kortste_connectie_greedy(spel: Kaart, trein_min, trein_max, minuten_min, min
     
     aantal_treinen = len(lijst_trajecten)
     aantal_connecties_gereden = len(unieke_connecties_gereden)
-    score = score_bereken(aantal_treinen, tijd_gereden, aantal_connecties_gereden)
+    score = score_bereken(aantal_treinen, tijd_gereden, aantal_connecties_gereden, kaart)
 
     # Schrijf de output naar een CSV
     schrijf_output(schrijf_output_verbindingen, schrijf_output_trajecten, aantal_treinen, tijd_gereden, aantal_connecties_gereden, score)
