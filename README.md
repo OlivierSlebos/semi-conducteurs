@@ -32,8 +32,10 @@ Het aanpassen werkt Dict 2 (tijdelijk) werkt alsvolgt.
 Er wordt een aantal trajecten gekozen dat wordt verwijderder tussen 0 en het huidige aantal trajecten. 
 Vervolgens wordt alle informatie van deze trajecten/ treinen verwijderd.
 Daarna wordt er een aantal trajecten gekozen dat wordt toegevoegd. Dit aantal is altijd zo dat het nieuwe aantal treinen tussen het minimum en maximum aantal trajecten/ treinen komt dat vooraf is meegegeven. 
-Deze nieuwe trajecten worden gegenereerd. 
-Het genereren algoritme kan Rand
+Deze nieuwe trajecten worden gegenereerd op basis van een ander algoritme. 
+Bij Hill_climber_Random worden de nieuwe lijnen gegenereerd op basis van het random algoritme (random_algoritm_2). 
+Bij Hill_climber_Heuristiek worden de nieuwe lijnen gegenereerd op basis van het Connectie Heuristiek algoritme (connectie_algoritme.py). (Bij dit algoritme wordt de spel kaart tussen door ook worden aangepast). 
+De nieuwe informatie van de trajecten wordt toegevoegd. En de score wordt berekend. 
 
 ## Score greedy algoritme 
 Dit algoritme zet een trein op een random beginstation. Dan gaat hij alle mogelijke connecties vanaf dat station langs en rijdt hij degene die in de hoogste score resulteert. Dit doet hij totdat er op een station geen opties zijn die de maximale reistijd niet overschreiden. Ook stopt hij wanneer alle unieke connecties zijn gereden. 
