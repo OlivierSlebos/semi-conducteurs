@@ -18,6 +18,8 @@ from Algorithms.Hill_climber_heuristiek import hill_climber_nederland_heuristiek
 
 from Algorithms.Hill_climber_random import hill_climber_random
 
+from Algorithms.kortste_afstand_greedy import kortste_connectie_greedy
+
 import sys
 
 if __name__ == "__main__":
@@ -47,10 +49,10 @@ if __name__ == "__main__":
     while not iterations.isdigit() or int(iterations) < 1:
         iterations = input("Hoeveel iterations wil je doen: ")
 
-    ALGORITMES = ["random_algoritme", "score_greedy_algorithm","connection_driven_greedy_algoritme","hill_climber_heuristiek", "hill_climber_random"]
-    algoritme = input("Welk algortme wil je gebruiken (random_algoritme/score_greedy_algoritme/connection_driven_greedy_algoritme/hill_climber_heuristiek/hill_climber_random): ")
+    ALGORITMES = ["random_algoritme", "score_greedy_algorithm","connection_driven_greedy_algoritme","hill_climber_heuristiek", "hill_climber_random", "kortste_connectie_greedy"]
+    algoritme = input("Welk algortme wil je gebruiken (random_algoritme/score_greedy_algoritme/connection_driven_greedy_algoritme/hill_climber_heuristiek/hill_climber_random/kortste_connectie_greedy): ")
     while algoritme not in ALGORITMES:
-        algoritme = input("Welk algortme wil je gebruiken (random_algoritme/score_greedy_algoritme/connection_driven_greedy_algoritme): ")
+        algoritme = input("Welk algortme wil je gebruiken (random_algoritme/score_greedy_algoritme/connection_driven_greedy_algoritme/kortste_connectie_greedy): ")
 
     #Zet de kaart aan
     spel = Kaart(kaart)
