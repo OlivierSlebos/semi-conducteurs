@@ -14,6 +14,9 @@ def connectie_algoritme(spel: Kaart, trein_min, trein_max, minuten_min, minuten_
     waar nog onbereden connecties zijn, en het algoritme kiest als mogelijk op elk station een connectie die nog niet is gereden. Als er
     meerdere connecties onbereden zijn dan maakt het algoritme een random keuze. Als er geen connecties meer onbereden zijn op een station 
     dan maakt het algoritme ook een random keuze. De trein stopt wanneer alle connecties op een station de maximale reistijd overschreiden.
+
+    Tijdens het runnen van het algoritme wordt de reistijd, de bezochte stations en de gereden connecties bijgehouden. 
+    Op basis van deze variabelen wordt een score berekend en wordt een csv met de run aangemaakt. 
     """
 
     #zorg dat de connecties weer op hun baseline staan 
