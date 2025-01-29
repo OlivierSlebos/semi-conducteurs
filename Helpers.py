@@ -6,31 +6,14 @@ import random
 
 import matplotlib.pyplot as plt
 
-def genereer_output(traject, verbindingen, trein_nummer):
-    with open('Output.csv', mode='a', newline='', encoding='utf-8') as file:
-        writer = csv.writer(file)
-
-        if trein_nummer == 0:
-            writer.writerow(['NIEUWE DIENSTREGELING'])
-            writer.writerow([])
-
-        #Voeg trein nummer toe
-        writer.writerow([f'Trein nummer {trein_nummer}'])
-
-        #Voeg de conectie toe aan de csv
-        writer.writerow(traject)
-
-        #Voeg een lege rij toe
-        writer.writerow([])
-
-        #Voeg de verbindingen toe
-        writer.writerow(verbindingen)
-
-        #Voeg een lege rij toe
-        writer.writerow([])
-
 def schrijf_output(verbindingen: list[list], trajecten: list, treinen: int, minuten: int, verbinding_aantal: int, score: int):
-    
+    """
+    Zet de resultaten van één lijnvoering in een CSV bestand. 
+
+    Deze functie zet de resultaten van één lijnvoering in een CSV bestand. 
+    Per trein is het mogelijk om in te zien welk traject er is afgelegd. 
+    Dit CSV bestand is zo gemaakt dat het kan worden uitgelezen door verschillende functies
+    """ 
     # if score < 0:
     #     return None
 
@@ -60,7 +43,11 @@ def schrijf_output(verbindingen: list[list], trajecten: list, treinen: int, minu
         writer.writerow(['EOF'])
 
 def bereken_max(filename):
-    
+    """
+    Deze ondersteunden functie berekend de theoretisch maximale score die een stations-kaart kan hebben. 
+    Met de kwaliteit formule -> K = p * 10.000 - (T * 100 - minuten)
+    """
+
     with open(filename) as f:
         line = f.readline()
         som = 0
@@ -71,6 +58,11 @@ def bereken_max(filename):
     print(uitslag)
 
 def maak_grafiek(score: list, runs: list, kaart):
+    """
+    Deze functie maakt een grafiek voor de Hill-Climber. 
+    Dit gebeurt op basis van de scores (y-as) en het aantal keer dat de functie is gerunt (x-as). 
+    """
+    
     # Maak een getrapte grafiek
     plt.step(runs, score, where='post', label='Score per run', color='blue')
 
@@ -87,9 +79,15 @@ def maak_grafiek(score: list, runs: list, kaart):
     # Toon de grafiek
     plt.legend()
     plt.grid(True)
-    plt.savefig("Docs/Hill_Climber_grafiek.png")
+    plt.savefig("Visualisation/Graphs/Hill_Climber_grafiek.png")
 
 def controleer_reistijd(filename):
+    """
+    Deze functie controleert een CSV bestand, 
+    is de optel som van de conecties van elke trein even hoog als de totale reistijd die de CSV laat zien. 
+    Is dit het geval dan print de functie (GELUKT). 
+    """
+    
     with open (filename) as f:
         # Geef line een waarde
         line = f.readline()
@@ -114,10 +112,96 @@ def controleer_reistijd(filename):
     else: print("OEI DIT IS GROTE PROBLEMEN")
 
 def convert_to_int(s):
+    """
+    Deze functie convert de string s naar een int
+    """
     # Verwijder alles behalve cijfers uit de string
     clean_string = ''.join(filter(str.isdigit, s))
     return int(clean_string)  # Zet de schone string om naar een integer
 
+def score_bereken(treinen, minuten, verbindingen, kaart) -> float:
+    """
+    Bereken de score van één lijnvoering.
 
-if __name__ == "__main__":
-    controleer_reistijd("resultaten/run_11_7202.0_2217.csv")
+    Deze functie berekend de score van één lijnvoering. 
+    Dit gebeurd op basis van het aantal treinen/trajecten, 
+    het totaal aantal minunten van elle trajecten binnen één lijnvoering samen 
+    en het aantal unieke verbindingen van één lijnvoering. Welke formule wordt uitgevoerd hangt af van welke kaart er is gebruikt. 
+    """
+
+    if kaart == "nederland":
+        # fractie gereden verbindingen, 89 verbindingen totaal
+        p = verbindingen / 89
+        score = p * 10000 - ((treinen * 100) + minuten)
+        return score
+    elif kaart == "holland":
+        # fractie gereden verbindingen, 28 verbindingen totaal
+        p = verbindingen / 28
+        score = p * 10000 - ((treinen * 100) + minuten)
+        return score
+    else:
+        print("Geen goede kaart meegegeven")
+        return None
+
+
+def score_bereken_csv(filename: str) -> int:
+    """
+    Bereken een score vanuit een CSV bestand.
+
+    Deze functie berekend de score van één lijnvoering. 
+    Dit gebeurd op basis van het aantal treinen/trajecten, 
+    het totaal aantal minunten van elle trajecten binnen één lijnvoering samen 
+    en het aantal unieke verbindingen van één lijnvoering.
+    """
+    with open(f"resultaten/{filename}") as f:
+        line = f.readline()
+
+        #gevens splitsen
+        gegevens = line.strip().split(',')
+        
+        aantal_treinen = int(gegevens[0])
+        aantal_minuten = int(gegevens[1])
+        aantal_verbindingen = float(gegevens[2])
+        # fractie gereden verbindingen, 28 verbindingen totaal
+        p = aantal_verbindingen / 28
+        score = p * 10000 - ((aantal_treinen * 100) + aantal_minuten)
+            
+    return score
+
+def station_uit_csv(filename: str) -> list:
+    stations = []
+    #open document
+    with open(filename) as f:
+        #Sla de eerste rij over
+        line = f.readline()
+        line = f.readline()
+
+        while line != "":
+            #Split de data op in een lijst
+            connection_data = line.split(',')
+            #Zet het in een tuple
+            verbinding = (connection_data[0], float(connection_data[1]), float(connection_data[2].strip()))
+            #Voeg het toe aan de lijst
+            stations.append(verbinding)
+            #Volgende line
+            line = f.readline()
+    return stations
+
+def verbinding_uit_csv(filename: str) -> list:
+    verbindingen = []
+    #open document
+    with open(filename) as f:
+        #Sla de eerste rij over
+        line = f.readline()
+        line = f.readline()
+
+        while line != "":
+            #Split de data op in een lijst
+            connection_data = line.split(',')
+            #Zet het in een tuple
+            verbinding = (connection_data[0], connection_data[1], int(float(connection_data[2])))
+            #Voeg het toe aan de lijst
+            verbindingen.append(verbinding)
+            #Volgende line
+            line = f.readline()
+    return verbindingen

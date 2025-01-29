@@ -4,9 +4,7 @@ from Classes.Trein import Trein
 
 import random
 
-from score import score_bereken
-
-from Helpers import schrijf_output
+from Helpers import score_bereken, schrijf_output
 
 from datetime import datetime
 

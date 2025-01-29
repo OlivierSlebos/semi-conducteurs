@@ -6,9 +6,7 @@ from Classes.Kaart import Kaart
 
 from Classes.Trein import Trein
 
-from score import score_bereken
-
-from Helpers import schrijf_output
+from Helpers import score_bereken, schrijf_output
 
 def score_greedy_algorithm(spel: Kaart, trein_min, trein_max, minuten_min, minuten_max, kaart) -> None:
 
