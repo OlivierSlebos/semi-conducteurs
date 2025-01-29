@@ -39,7 +39,7 @@ def kortste_connectie_greedy(spel: Kaart, trein_min, trein_max, minuten_min, min
         schrijf_output_verbindingen.append(traject_connecties)
         # filter dubbele connecties er uit
         for connectie in traject_connecties:
-            unieke_connecties_gereden.add(tuple(sorted(connectie)))
+            unieke_connecties_gereden.add((*sorted(connectie[:2]), connectie[2]))
         tijd_gereden += traject_tijd
     
     aantal_treinen = len(lijst_trajecten)
@@ -99,8 +99,8 @@ def bouw_traject(spel: Kaart, max_tijd: int):
         # Update de tijd en voeg verbindingen toe aan de geschiedenis
         trein.time_driven += reistijd
         traject_tijd += reistijd
-        traject_connecties.add((trein.current_station.name, volgende_station))
-        traject_connecties.add((volgende_station, trein.current_station.name))
+        traject_connecties.add((trein.current_station.name, volgende_station, reistijd))
+        traject_connecties.add((volgende_station, trein.current_station.name, reistijd))
         traject.append(volgende_station)
 
         # Markeer de verbinding als bereden
