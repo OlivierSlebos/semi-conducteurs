@@ -5,6 +5,16 @@ from collections import defaultdict
 from uitlezen_boxplot import scores_boxplot_csv
 
 def maak_boxplot(data_csv, output_image):
+    """
+    Deze functie is geimplementeerd om een boxplot te maken van de verkregen resultaten. Hij werkt door eerst een csv te maken 
+    van de behaalde scores met de functie "scores_boxplot_csv()". Deze zet in de eerste kolom het aantal treinen, en in de tweede de score.
+    Dan maakt deze functie een boxplot van de scores. Het figuur komt in de folder Graphs. 
+
+    Als de originele git structuur wordt aangehouden hoeft niks aangepast te worden om automatisch de plot te maken bij het roepen van 
+    python3 Visualisation/Graphs/plot.py. Als er andere folders gebruikt moeten worden dan moet de invoer van de functies op een juiste
+    wijze worden aangepast. 
+
+    """
 
     #uitlezen in het format voor de boxplot 
     scores_boxplot_csv()
@@ -41,12 +51,3 @@ def maak_boxplot(data_csv, output_image):
         plt.show()
     except Exception as e:
         print(f"Er is een fout opgetreden: {e}")
-
-if __name__ == "__main__":
-
-
-    data_csv = "Docs/scores_boxplot.csv"  #naam van csv 
-    output_image = "boxplot_treinen_scores.png"
-
-    # Boxplot maken
-    maak_boxplot(data_csv, output_image)

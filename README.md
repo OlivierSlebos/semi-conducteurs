@@ -13,6 +13,11 @@ Voor het eerste deel zijn er in totaal 22 verbindingen in noord- en zuid-holland
 Voor heel nederland mogen er 20 trajceten in totaal rijden, waar er 89 verbindingen zijn en er maximaal 180 minuten per trein gereden wordt. 
 
 # inplementatie
+## Random algoritme
+Dit algoritme maakt alle keuzes random. Hij kiest een random aantal treinen dat gaat rijden tussen trein_min en trein_max en 
+kiest per trein een random aantal minuten om te reiden tussen minuten_min en minuten_max. De treinen beginnen op een random station 
+en kiezen op elk station een random connectie om te rijden, totdat de trein op een station aankomt waar bij alle mogelijke opties de reistijd wordt overschreden. Dat is dan het eindstation. 
+
 ## korste_afstand_greedy.py
 Het algoritme begint met het aanmaken van een aantal lege lijsten waarin de gereden trajecten, verbindingen en de totale rijtijd worden opgeslagen. Vervolgens wordt willekeurig bepaald hoeveel trajecten worden gegenereerd, dit wordt vanuit de main meegegeven aan de functie. Ook wordt er gekozen voor heel nederland of alleen noord- en zuid-holland.
 
@@ -30,9 +35,18 @@ Daarna wordt er een aantal trajecten gekozen dat wordt toegevoegd. Dit aantal is
 Deze nieuwe trajecten worden gegenereerd. 
 Het genereren algoritme kan Rand
 
+## Score greedy algoritme 
+Dit algoritme zet een trein op een random beginstation. Dan gaat hij alle mogelijke connecties vanaf dat station langs en rijdt hij degene die in de hoogste score resulteert. Dit doet hij totdat er op een station geen opties zijn die de maximale reistijd niet overschreiden. Ook stopt hij wanneer alle unieke connecties zijn gereden. 
+
+## Connectie algoritme 
+Dit algoritme volgt bovenop het random algoritme 2 heuristieken. Het startstation is altijd een station
+waar nog onbereden connecties zijn, en het algoritme kiest als mogelijk op elk station een connectie die nog niet is gereden. Als er
+meerdere connecties onbereden zijn dan maakt het algoritme een random keuze. Als er geen connecties meer onbereden zijn op een station 
+dan maakt het algoritme ook een random keuze. De trein stopt wanneer alle connecties op een station de maximale reistijd overschreiden.
+
 ## resultaten reproduceren:
 1. Ga naar de directory semi-conducteurs
-2. Run python3 main.py, hier wordt er gevraagd naar:
+2. Run "python3 main.py", hier wordt er gevraagd naar:
 * Hoeveel treinen je wilt dat er minimaal reiden
 * hoeveel treinen je wilt dat er maximaal reiden
 * De minimale aantal minuten per trein
@@ -42,7 +56,7 @@ Het genereren algoritme kan Rand
 * welk algoritme je wilt laten runnen
 
 3. De resultaten van alle runs zijn nu zichtbaar in de map resulaten/Runs
-4. Run nu python3 Visualisation/Graphs/plot.py . De resultaten zijn nu zichtbaar in grafieken, in de files boxplot_treinen_scores.png en binned_bargraph_fraction.png.
+4. Run nu "python3 Visualisation/Graphs/plot.py". De resultaten zijn nu zichtbaar in grafieken, in de files boxplot_treinen_scores.png en binned_bargraph_fraction.png.
 * Wanneer hill-climber gerunt is, wordt er automatisch al een grafiek gemaakt. Deze is te vinden in de file Visualisation/Graphs/Hill_Climber_grafiek.png
 
 ## Een kaart maken van je CSV resultaat

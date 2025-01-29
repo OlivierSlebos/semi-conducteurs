@@ -3,6 +3,12 @@ import os
 
 #script voor het uitlezen van de resultaten folder om later een boxplot van te kunnen maken 
 def scores_boxplot_csv() -> None:
+    """
+    Deze functie wordt gebruik door "maak_boxplot()" om een csv te maken in het juiste format. Het leest de 
+    resultaten uit de resultaten/Runs folder en zet in de eerste kolom het aantal treinen en in de tweede kolom de score. 
+
+    De functie maakt een csv genaamd "scores_boxplot.csv" in de folder resultaten/Combined_Runs. 
+    """
 
     #hoe moet de output heten 
     bestandsnaam = 'scores_boxplot.csv'
