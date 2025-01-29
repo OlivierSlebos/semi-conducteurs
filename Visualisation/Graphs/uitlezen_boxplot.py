@@ -8,13 +8,13 @@ def scores_boxplot_csv() -> None:
     bestandsnaam = 'scores_boxplot.csv'
     
     #lijst van bestanden in de map maken
-    bestanden = os.listdir("Resultaten")
+    bestanden = os.listdir("resultaten/Runs")
     
     #alleen bestanden selecteren, geen mappen
-    bestanden = [bestand for bestand in bestanden if os.path.isfile(os.path.join("Resultaten", bestand))]
+    bestanden = [bestand for bestand in bestanden if os.path.isfile(os.path.join("resultaten/Runs", bestand))]
     
     #csv schrijven
-    with open(fr"Docs/{bestandsnaam}", mode='w', newline='', encoding='utf-8') as csvfile:
+    with open(fr"Visualisation/Graphs/{bestandsnaam}", mode='w', newline='', encoding='utf-8') as csvfile:
         writer = csv.writer(csvfile)
         
         #aantal treinen en bijbehorende score opschrijven

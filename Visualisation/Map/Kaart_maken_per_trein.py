@@ -9,7 +9,7 @@ def kaart_maken_csv_per_trein(filename):
     is_visited = []
     verbindingen_geweest_2 = []
 
-    with open(f'resultaten/{filename}') as f:
+    with open(f'resultaten/Runs/{filename}') as f:
         #Sla de eerste rij over
         line = f.readline()
 
@@ -109,7 +109,7 @@ def kaart_maken_voor_csv_per_trein(is_visited, verbindingen_geweest):
         folium.PolyLine([(start_lat, start_lon), (eind_lat, eind_lon)], color=color, weight=2.5, opacity=0.8).add_to(m)
 
     # Bewaar de kaart in een HTML bestand
-    m.save("Visualisation/resultaten_kaart.html")
+    m.save("Visualisation/Map/resultaten_kaart.html")
 
 if __name__ == "__main__":
     kaart_maken_csv_per_trein("run_9_7343.2808988764045_806.csv")

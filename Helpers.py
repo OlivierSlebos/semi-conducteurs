@@ -1,7 +1,5 @@
 import csv
 
-from Visualisation.kaart_maken import kaart_maken
-
 import random
 
 import matplotlib.pyplot as plt
@@ -21,7 +19,7 @@ def schrijf_output(verbindingen: list[list], trajecten: list, treinen: int, minu
     bestandsnaam = f'run_{treinen}_{score}_{getal}.csv'
     
     # Open het bestand in schrijfmodus ('w'), waardoor het bestand wordt aangemaakt als het nog niet bestaat
-    with open(fr'Resultaten/{bestandsnaam}', mode='w', newline='') as bestand:
+    with open(fr'resultaten/Runs/{bestandsnaam}', mode='w', newline='') as bestand:
         # Maak een CSV writer object aan
         writer = csv.writer(bestand)
         
@@ -153,7 +151,7 @@ def score_bereken_csv(filename: str) -> int:
     het totaal aantal minunten van elle trajecten binnen één lijnvoering samen 
     en het aantal unieke verbindingen van één lijnvoering.
     """
-    with open(f"resultaten/{filename}") as f:
+    with open(f"resultaten/Runs/{filename}") as f:
         line = f.readline()
 
         #gevens splitsen

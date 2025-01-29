@@ -11,7 +11,7 @@ from boxplot import maak_boxplot
 def maak_binned_bargraph(data_csv, output_image, bin_size):
 
     #boxplot maken met juiste input 
-    maak_boxplot("Docs/scores_boxplot.csv", "boxplot_treinen_scores.png")
+    maak_boxplot("resultaten/Combined_Runs/scores_boxplot.csv", "Visualisation/Graphs/boxplot_treinen_scores.png")
 
     #scores uitlezen in het format voor de staafdiagram 
     scores_csv()
@@ -62,8 +62,8 @@ def maak_binned_bargraph(data_csv, output_image, bin_size):
 if __name__ == "__main__":
 
     # CSV-bestand met data
-    data_csv = "Docs/scores.csv"  #het uitgelezen csv bestand 
-    output_image = "binned_bargraph_fraction.png"
+    data_csv = "resultaten/Combined/Runs/scores.csv"  #het uitgelezen csv bestand 
+    output_image = "Visualisation/Graphs/binned_bargraph_fraction.png"
     bin_size = 300  #bingrootte aan te passen
 
     # Bargraph maken

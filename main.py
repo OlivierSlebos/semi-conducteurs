@@ -2,15 +2,13 @@ from Classes.Kaart import Kaart
 
 from Algorithms.connection_driven_greedy import connection_driven_greedy_algoritme
 
-from Algorithms.semi_random_algorithm import semi_random_algoritme
-
 from Algorithms.random_algorithm import random_algoritme
 
 from Algorithms.Random_algorithm_2 import roep_functie_aan
 
 from Helpers import bereken_max
 
-from Visualisation.kaart_maken import kaart_maken_csv
+from Visualisation.Map.Kaart_maken_per_trein import kaart_maken_csv_per_trein, kaart_maken_voor_csv_per_trein
 
 from Algorithms.score_greedy import score_greedy_algorithm
 
