@@ -23,7 +23,12 @@ Aan het einde wordt er een csv bestand aangemaakt met de resultaten van ieder tr
 ## Hill Climber Algoritme
 Het algoritme begint met het aanmaken van een random oplossing met het algoritme Algorithms/Random_algorithm_2. De uitkomsten van deze eerste oplossing worden opgeslagen in 2 dicts. Dict 1 is de huidige oplossing, deze zal steeds een copy bevatten van de oplossing die de huidige hoogste score bevat. Dict 2 is een tijdelijke oplossing, de Hill Climber past deze telkens aan. Wanneer de aanpassingen in Dict 2 tot een hogere score lijden zal Dict 1 (huidig) doormiddel van een Deepcopy worden overschreven door Dict 2 (tijdelijk). Wanneer de aanpassingen tot een lagere score leiden zal Dict 2 (tijdelijk) worden overschreven door Dict 1 (huidig) doormiddel van een Deepcopy. In beide gevallen (beter of niet) zal het algoritme opnieuw Dict 2 (tijdelijk) aanpassen om tot een betere score te komen. 
 
-Het aanpassen werkt op twee manieren
+Het aanpassen werkt Dict 2 (tijdelijk) werkt alsvolgt. 
+Er wordt een aantal trajecten gekozen dat wordt verwijderder tussen 0 en het huidige aantal trajecten. 
+Vervolgens wordt alle informatie van deze trajecten/ treinen verwijderd.
+Daarna wordt er een aantal trajecten gekozen dat wordt toegevoegd. Dit aantal is altijd zo dat het nieuwe aantal treinen tussen het minimum en maximum aantal trajecten/ treinen komt dat vooraf is meegegeven. 
+Deze nieuwe trajecten worden gegenereerd. 
+Het genereren algoritme kan Rand
 
 ## resultaten reproduceren:
 1. Ga naar de directory semi-conducteurs
