@@ -48,7 +48,7 @@ if __name__ == "__main__":
         iterations = input("Hoeveel iterations wil je doen: ")
 
     ALGORITMES = ["random_algoritme", "score_greedy_algoritme","connectie_algoritme","hill_climber_heuristiek", "hill_climber_random", "kortste_connectie_greedy"]
-    algoritme = input("Welk algortme wil je gebruiken (random_algoritme/score_greedy_algoritme/connection_driven_greedy_algoritme/hill_climber_heuristiek/hill_climber_random/kortste_connectie_greedy): ")
+    algoritme = input("Welk algortme wil je gebruiken (random_algoritme/score_greedy_algoritme/connectie_algoritme/hill_climber_heuristiek/hill_climber_random/kortste_connectie_greedy): ")
     while algoritme not in ALGORITMES:
         algoritme = input("Welk algortme wil je gebruiken (random_algoritme/score_greedy_algoritme/connectie_algoritme/hill_climber_heuristiek/hill_climber_random/kortste_connectie_greedy): ")
 
