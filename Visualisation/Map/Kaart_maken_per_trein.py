@@ -132,4 +132,4 @@ if __name__ == "__main__":
     webbrowser.open(f'file://{os.path.abspath("Visualisation/Map/resultaten_kaart.html")}')
     
     #Vertel de gebruiker waar de kaart terug te vinden is
-    print(f"De kaart is opgeslagen. Bekijk de kaart op: {os.path.abspath("Visualisation/Map/resultaten_kaart.html")}")
+    print(f"De kaart is opgeslagen. Bekijk de kaart op: {os.path.abspath('Visualisation/Map/resultaten_kaart.html')}")
